@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -17,6 +19,9 @@ module.exports = {
         presets: [require.resolve("@emotion/babel-preset-css-prop")],
       },
     })
+    config.resolve.alias = {
+      "~": path.resolve(__dirname, "/src"), // こっちは私の趣味です
+    }
     return config
   },
 }
