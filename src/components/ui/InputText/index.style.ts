@@ -1,16 +1,21 @@
 import { css } from "@emotion/react"
+import { colors, fontSizes } from "~/styles/variables"
 
-export const style = {
-  inputText: css({
+export const styles = {
+  wrapper: css({
     display: "flex",
-    color: "red",
-  }),
-
-  label: css({
-    fontSize: "12px",
+    flexDirection: "column",
   }),
 
   input: css({
-    marginLeft: "8px",
+    marginTop: "8px",
+    fontSize: fontSizes.default,
+    padding: "8px 16px",
+    outline: "none",
+    border: "1px solid #d3d3d3",
+    borderRadius: "8px",
+    "&:focus": {
+      borderColor: colors.primary,
+    },
   }),
 }

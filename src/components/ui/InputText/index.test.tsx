@@ -8,6 +8,7 @@ describe("InputTextのテスト", () => {
   it("snapshot", () => {
     const { asFragment } = render(
       <InputText
+        name="test"
         value="test"
         label="test"
         id="test"
@@ -21,6 +22,7 @@ describe("InputTextのテスト", () => {
   it("labelが表示される", () => {
     render(
       <InputText
+        name="test"
         label="ラベル"
         value=""
         id="test"
@@ -34,6 +36,7 @@ describe("InputTextのテスト", () => {
   it("初期値が表示される", () => {
     render(
       <InputText
+        name="test"
         label="ラベル"
         value="test"
         id="test"
@@ -47,6 +50,7 @@ describe("InputTextのテスト", () => {
   it("idが設定されている", () => {
     render(
       <InputText
+        name="test"
         label="ラベル"
         value="test"
         id="test"
@@ -60,14 +64,15 @@ describe("InputTextのテスト", () => {
   it("入力時にonChangeが呼ばれる", async () => {
     render(
       <InputText
+        name="test"
         label="ラベル"
         value=""
         id="test"
-        placeholder=""
+        placeholder="test"
         onChange={onChange}
       />
     )
-    const input = screen.getByLabelText("ラベル")
+    const input = screen.getByRole("textbox")
     userEvent.type(input, "テスト")
     expect(onChange).toBeCalledTimes(3)
   })

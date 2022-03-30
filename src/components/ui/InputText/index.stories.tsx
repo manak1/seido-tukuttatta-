@@ -9,6 +9,7 @@ export default {
   title: "InputText",
   component: InputText,
   argTypes: {
+    name: { control: "text", defaultValue: "test" },
     value: { control: "text", defaultValue: "" },
     label: { control: "text", defaultValue: "ラベル" },
     id: { control: "text" },
@@ -20,7 +21,10 @@ export default {
 const Template: ComponentStory<typeof InputText> = (args) => {
   const [_, updateArgValues] = useArgs()
   return (
-    <InputText {...args} onChange={(value) => updateArgValues({ value })} />
+    <InputText
+      {...args}
+      onChange={(e) => updateArgValues({ value: e.target.value })}
+    />
   )
 }
 

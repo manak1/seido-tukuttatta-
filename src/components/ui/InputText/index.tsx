@@ -1,29 +1,20 @@
 import React from "react"
-import { style } from "./index.style"
+import Label from "../Label"
 
-type Props = {
-  value: string
+import { styles } from "./index.style"
+
+type Props = React.ComponentProps<"input"> & {
+  name: string
   label: string
-  id: string
-  placeholder: string
-  onChange: (value: string) => void
+  required?: boolean
 }
 
 const InputText: React.VFC<Props> = (props) => {
-  const { value, label, id, placeholder, onChange } = props
+  const { name, label, required, ...rest } = props
   return (
-    <div css={style.inputText}>
-      <label css={style.label} htmlFor={id}>
-        {label}
-      </label>
-      <input
-        id={id}
-        css={style.input}
-        type="text"
-        placeholder={placeholder}
-        onChange={(event) => onChange(event.target.value)}
-        value={value}
-      />
+    <div css={styles.wrapper}>
+      <Label htmlFor={name} label={label} required={required} />
+      <input css={styles.input} id={name} type="text" {...rest} />
     </div>
   )
 }
