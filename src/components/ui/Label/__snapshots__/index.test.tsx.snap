@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputTextのテスト snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="css-od4lv7-Label"
+  >
+    ラベル
+  </label>
+</DocumentFragment>
+`;
