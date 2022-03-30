@@ -8,7 +8,6 @@ export default {
   component: Label,
   argTypes: {
     label: { control: "text", defaultValue: "ラベル" },
-    required: { control: "boolean" },
   },
 } as ComponentMeta<typeof Label>
 
@@ -19,8 +18,7 @@ const Template: ComponentStory<typeof Label> = (args) => {
 
 export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Required = Template.bind({
-  args: {
-    required: true,
-  },
-})
+export const Required = Template.bind({})
+Required.args = {
+  required: true,
+}
