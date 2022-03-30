@@ -7,5 +7,6 @@ export const fontSizes = {
 } as const
 
 export const colors = {
+  primary: "#7856FF",
   error: "#FF5656",
 } as const
