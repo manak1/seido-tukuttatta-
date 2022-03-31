@@ -9,14 +9,14 @@ exports[`InputTextのテスト snapshot 1`] = `
       class="css-69i1ev"
     >
       <label
-        class="css-z6ajj0"
+        class="css-1lu35ut"
         for="test"
       >
         test
       </label>
     </div>
     <input
-      class="css-1fsc6b1"
+      class="css-rknwl4"
       id="test"
       placeholder="test"
       type="text"
