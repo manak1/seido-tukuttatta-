@@ -16,7 +16,7 @@ exports[`InputTextのテスト snapshot 1`] = `
       </label>
     </div>
     <input
-      class="css-xkdwnf"
+      class="css-1fsc6b1"
       id="test"
       placeholder="test"
       type="text"
