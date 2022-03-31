@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextAreaのテスト snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-j7qwjs"
+  >
+    <div
+      class="css-69i1ev"
+    >
+      <label
+        class="css-z6ajj0"
+        for="test"
+      >
+        テキストエリア
+      </label>
+    </div>
+    <textarea
+      class="css-1vw70bv"
+      id="test"
+    />
+  </div>
+</DocumentFragment>
+`;
