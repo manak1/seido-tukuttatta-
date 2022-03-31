@@ -1,18 +1,18 @@
 import React from "react"
-import { styles } from "./index.style"
+import * as Styled from "./index.style"
 
-type Props = React.ComponentProps<"label"> & {
+export type LabelProps = React.ComponentProps<"label"> & {
   label: string
   required?: boolean
 }
 
-const Label: React.VFC<Props> = (props) => {
+const Label: React.VFC<LabelProps> = (props) => {
   const { label, required, ...rest } = props
   return (
-    <label {...rest} css={styles.label}>
-      {required && <span css={styles.required}>*</span>}
+    <Styled.Label {...rest}>
+      {required && <Styled.Required>*</Styled.Required>}
       {label}
-    </label>
+    </Styled.Label>
   )
 }
 

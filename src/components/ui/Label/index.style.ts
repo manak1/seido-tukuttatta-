@@ -1,11 +1,15 @@
-import { css } from "@emotion/react"
-import { colors, fontSizes } from "~/styles/variables"
+import styled from "@emotion/styled"
+import { LabelProps } from "."
 
-export const styles = {
-  label: css({
-    fontSize: fontSizes.small,
-  }),
-  required: css({
-    color: colors.error,
-  }),
-}
+export const Label = styled.label<Omit<LabelProps, "label">>(
+  {
+    color: "#ddd",
+  },
+  (props) => ({
+    color: props.theme.colors.black,
+  })
+)
+
+export const Required = styled.span({}, ({ theme }) => ({
+  color: theme.colors.error,
+}))
