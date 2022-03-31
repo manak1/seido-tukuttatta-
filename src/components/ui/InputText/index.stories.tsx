@@ -29,4 +29,7 @@ const Template: ComponentStory<typeof InputText> = (args) => {
 }
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const Optional = Template.bind({})
+Optional.args = {
+  isOptional: true,
+}

@@ -30,8 +30,6 @@ export const Input = styled.input(
   },
   ({ theme }) => ({
     fontSize: theme.fontSizes.small,
-    "&:focus": {
-      borderColor: theme.colors.primary,
-    },
+    ...theme.focus,
   })
 )
