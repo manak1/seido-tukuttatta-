@@ -11,4 +11,10 @@ export const theme = {
     primary: "#7856FF",
     error: "#FF5656",
   } as const,
+  focus: {
+    transition: "box-shadow 0.2s ease",
+    "&:focus": {
+      boxShadow: "0 0 0 2px rgba(120, 86, 255, 0.3)",
+    },
+  },
 }

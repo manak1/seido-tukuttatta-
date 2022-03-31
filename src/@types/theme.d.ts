@@ -5,6 +5,7 @@ declare module "@emotion/react" {
   interface Theme {
     fontSizes: FontSizes
     colors: Colors
+    focus: typeof theme["focus"]
   }
 }
 
