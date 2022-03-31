@@ -18,6 +18,7 @@
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@prisma/client": "^3.11.1",
     "@storybook/cli": "^6.4.19",
     "next": "12.1.0",
