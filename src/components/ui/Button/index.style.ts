@@ -18,7 +18,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
       filter: "brightness(95%)",
       transition: "filter 0.2s ease-out",
     },
-    ...setVariant(variant, theme),
+    ...setVariant(variant ?? "primary", theme),
     ...theme.focus,
     transition: "box-shadow, filter, 0.2s ease-in",
   })

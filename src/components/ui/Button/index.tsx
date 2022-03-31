@@ -10,17 +10,13 @@ export type ButtonProps = React.ComponentProps<"button"> & {
 }
 
 const Button: React.VFC<ButtonProps> = (props) => {
-  const { label, variant, ...rest } = props
+  const { label, variant = "primary", ...rest } = props
+
   return (
     <Styled.Button {...rest} variant={variant}>
       {label}
     </Styled.Button>
   )
-}
-
-Button.defaultProps = {
-  variant: "primary",
-  isFullWidth: false,
 }
 
 export default Button
