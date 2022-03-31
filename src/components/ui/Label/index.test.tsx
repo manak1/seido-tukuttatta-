@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { render } from "~/test/test-utils"
 import Label from "./index"
 
 describe("InputTextのテスト", () => {

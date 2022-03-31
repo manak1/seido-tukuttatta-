@@ -3,16 +3,20 @@
 exports[`InputTextのテスト snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="css-191jwla-InputText"
+    class="css-j7qwjs"
   >
-    <label
-      class="css-od4lv7-Label"
-      for="test"
+    <div
+      class="css-69i1ev"
     >
-      test
-    </label>
+      <label
+        class="css-z6ajj0"
+        for="test"
+      >
+        test
+      </label>
+    </div>
     <input
-      class="css-19pey1s-InputText"
+      class="css-xkdwnf"
       id="test"
       placeholder="test"
       type="text"

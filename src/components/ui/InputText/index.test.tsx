@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react"
 import InputText from "./index"
 import userEvent from "@testing-library/user-event"
+import { render, screen } from "~/test/test-utils"
 
 describe("InputTextのテスト", () => {
   const onChange = jest.fn()
