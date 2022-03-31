@@ -15,6 +15,7 @@ export const theme = {
     transition: "box-shadow 0.2s ease",
     "&:focus": {
       boxShadow: "0 0 0 2px rgba(120, 86, 255, 0.3)",
+      transition: "box-shadow 0.2s ease-out",
     },
   },
 }
