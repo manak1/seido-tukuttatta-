@@ -17,8 +17,3 @@ const Template: ComponentStory<typeof Label> = (args) => {
 }
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Required = Template.bind({})
-Required.args = {
-  required: true,
-}

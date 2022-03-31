@@ -5,14 +5,13 @@ import * as Styled from "./index.style"
 type Props = React.ComponentProps<"textarea"> & {
   name: string
   label: string
-  required?: boolean
 }
 
 const TextArea: React.VFC<Props> = (props) => {
-  const { name, label, required, ...rest } = props
+  const { name, label, ...rest } = props
   return (
     <Styled.Wrapper>
-      <Label required={required} label={label} htmlFor={name} />
+      <Label label={label} htmlFor={name} />
       <Styled.TextArea id={name} {...rest} />
     </Styled.Wrapper>
   )
