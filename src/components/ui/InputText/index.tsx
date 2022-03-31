@@ -1,21 +1,21 @@
 import React from "react"
 import Label from "../Label"
 
-import { styles } from "./index.style"
+import * as Styled from "./index.style"
 
-type Props = React.ComponentProps<"input"> & {
+type InputTextProps = React.ComponentProps<"input"> & {
   name: string
   label: string
   required?: boolean
 }
 
-const InputText: React.VFC<Props> = (props) => {
+const InputText: React.VFC<InputTextProps> = (props) => {
   const { name, label, required, ...rest } = props
   return (
-    <div css={styles.wrapper}>
+    <Styled.Wrapper>
       <Label htmlFor={name} label={label} required={required} />
-      <input css={styles.input} id={name} type="text" {...rest} />
-    </div>
+      <Styled.Input id={name} type="text" {...rest} />
+    </Styled.Wrapper>
   )
 }
 
