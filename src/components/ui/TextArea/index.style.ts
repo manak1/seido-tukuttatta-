@@ -5,6 +5,21 @@ export const Wrapper = styled.div({
   flexDirection: "column",
 })
 
+export const Box = styled.div({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+})
+
+export const OptionalText = styled.div(
+  {
+    color: "#d3d3d3",
+  },
+  ({ theme }) => ({
+    fontSize: theme.fontSizes.xsmall,
+  })
+)
+
 export const TextArea = styled.textarea(
   {
     outline: "none",

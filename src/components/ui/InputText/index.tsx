@@ -6,13 +6,17 @@ import * as Styled from "./index.style"
 type InputTextProps = React.ComponentProps<"input"> & {
   name: string
   label: string
+  isOptional?: boolean
 }
 
 const InputText: React.VFC<InputTextProps> = (props) => {
-  const { name, label, ...rest } = props
+  const { name, label, isOptional, ...rest } = props
   return (
     <Styled.Wrapper>
-      <Label htmlFor={name} label={label} />
+      <Styled.Box>
+        <Label htmlFor={name} label={label} />
+        {isOptional && <Styled.OptionalText>任意</Styled.OptionalText>}
+      </Styled.Box>
       <Styled.Input id={name} type="text" {...rest} />
     </Styled.Wrapper>
   )
