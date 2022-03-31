@@ -29,7 +29,7 @@ export const Input = styled.input(
     borderRadius: "8px",
   },
   ({ theme }) => ({
-    fontSize: theme.fontSizes.small,
+    fontSize: theme.fontSizes.default,
     ...theme.focus,
   })
 )
