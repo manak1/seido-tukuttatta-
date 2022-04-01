@@ -17,6 +17,21 @@ export const Select = styled.select(
   })
 )
 
+export const Box = styled.div({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+})
+
+export const OptionalText = styled.div(
+  {
+    color: "#d3d3d3",
+  },
+  ({ theme }) => ({
+    fontSize: theme.fontSizes.xsmall,
+  })
+)
+
 export const SelectBox = styled.div({
   position: "relative",
 })
