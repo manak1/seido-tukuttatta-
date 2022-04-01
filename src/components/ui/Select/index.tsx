@@ -10,7 +10,7 @@ type SelectItem = {
 export type SelectProps = React.ComponentProps<"select"> & {
   label: string
   items: SelectItem[]
-  isOptional: boolean
+  isOptional?: boolean
 }
 
 const Select: React.VFC<SelectProps> = (props) => {
