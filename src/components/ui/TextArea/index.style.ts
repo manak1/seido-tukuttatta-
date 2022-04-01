@@ -32,6 +32,6 @@ export const TextArea = styled.textarea(
   },
   ({ theme }) => ({
     fontSize: theme.fontSizes.default,
-    ...theme.focus,
+    ...theme.focus(),
   })
 )
