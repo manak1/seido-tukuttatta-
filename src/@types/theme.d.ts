@@ -1,18 +1,12 @@
 import "@emotion/react"
 import { theme } from "~/styles/theme"
 
+type CustomTheme = typeof theme
+
 declare module "@emotion/react" {
-  interface Theme {
-    fontSizes: FontSizes
-    colors: Colors
-    focus: typeof theme["focus"]
+  export interface Theme {
+    fontSizes: CustomTheme["fontSizes"]
+    colors: CustomTheme["colors"]
+    focus: CustomTheme["focus"]
   }
-}
-
-type FontSizes = {
-  [P in keyof typeof theme["fontSizes"]]: string
-}
-
-type Colors = {
-  [P in keyof typeof theme["colors"]]: string
 }
