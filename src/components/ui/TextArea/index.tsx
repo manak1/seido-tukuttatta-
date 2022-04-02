@@ -5,7 +5,7 @@ import * as Styled from "./index.style"
 type Props = React.ComponentProps<"textarea"> & {
   name: string
   label: string
-  isOptional: boolean
+  isOptional?: boolean
 }
 
 const TextArea: React.VFC<Props> = (props) => {
