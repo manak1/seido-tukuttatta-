@@ -12,13 +12,12 @@ exports[`InputTextのテスト snapshot 1`] = `
         class="css-1lu35ut"
         for="test"
       >
-        test
+        ラベル
       </label>
     </div>
     <input
       class="css-rknwl4"
       id="test"
-      placeholder="test"
       type="text"
       value="test"
     />

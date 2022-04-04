@@ -2,7 +2,6 @@ import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
 import InputText from "./index"
-import { useArgs } from "@storybook/client-api"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -10,26 +9,30 @@ export default {
   component: InputText,
   argTypes: {
     name: { control: "text", defaultValue: "test" },
-    value: { control: "text", defaultValue: "" },
+    value: { control: "text", defaultValue: "test" },
     label: { control: "text", defaultValue: "ラベル" },
-    id: { control: "text" },
+    id: { control: "text", defaultValue: "test" },
     onChange: { action: "onChange" },
   },
 } as ComponentMeta<typeof InputText>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof InputText> = (args) => {
-  const [_, updateArgValues] = useArgs()
-  return (
-    <InputText
-      {...args}
-      onChange={(e) => updateArgValues({ value: e.target.value })}
-    />
-  )
+  return <InputText {...args} />
 }
 
 export const Default = Template.bind({})
+Default.args = {
+  label: "ラベル",
+  value: "test",
+  id: "test",
+  name: "test",
+}
 export const Optional = Template.bind({})
 Optional.args = {
+  label: "ラベル",
   isOptional: true,
+  value: "test",
+  id: "test",
+  name: "test",
 }
