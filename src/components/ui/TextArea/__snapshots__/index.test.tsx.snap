@@ -10,14 +10,14 @@ exports[`TextAreaのテスト snapshot 1`] = `
     >
       <label
         class="css-1lu35ut"
-        for="test"
+        for="id"
       >
-        テキストエリア
+        ラベル
       </label>
     </div>
     <textarea
       class="css-1vw70bv"
-      id="test"
+      id="id"
     />
   </div>
 </DocumentFragment>

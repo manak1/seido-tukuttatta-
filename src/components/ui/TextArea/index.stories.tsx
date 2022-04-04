@@ -18,8 +18,14 @@ const Template: ComponentStory<typeof Component> = (args) => {
 }
 
 export const Default = Template.bind({})
+Default.args = {
+  name: "id",
+  label: "ラベル",
+}
 
 export const Optional = Template.bind({})
 Optional.args = {
+  name: "id",
+  label: "ラベル",
   isOptional: true,
 }
