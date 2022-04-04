@@ -1,15 +1,13 @@
+import { JSONSchemaType } from "ajv"
 import { CompanySystem } from "~/@types"
 
-type Schema = {
-  companySystem: {
-    [k in keyof Omit<CompanySystem, "id">]: object
-  }
-}
-
-export const schemas: Schema = {
-  companySystem: {
+export const companySystemSchema: JSONSchemaType<Omit<CompanySystem, "id">> = {
+  type: "object",
+  properties: {
     name: { type: "string", minLength: 1, maxLength: 100 },
     description: { type: "string", minLength: 10, maxLength: 1000 },
     author: { type: "string", minLength: 1, maxLength: 100 },
   },
+  required: ["name", "description"],
+  additionalProperties: false,
 }

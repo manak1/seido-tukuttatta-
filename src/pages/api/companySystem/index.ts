@@ -1,7 +1,7 @@
 import prisma from "~/libs/prisma"
 import handler from "~/libs/next-connect"
-import { validateBody } from "~/libs/ajv"
-import { schemas } from "~/constants/schemas"
+import { validationMiddleware } from "~/middlewares/validation"
+import { companySystemSchema } from "~/constants/schemas"
 import { CompanySystem } from "@prisma/client"
 
 handler.get(async (req, res) => {
@@ -9,16 +9,9 @@ handler.get(async (req, res) => {
   res.status(200).json({ data: companySystem })
 })
 
-handler.post(
-  validateBody({
-    type: "object",
-    properties: {
-      ...schemas.companySystem,
-    },
-    required: ["name", "description"],
-    additionalProperties: false,
-  }),
-  async (req, res) => {
+handler
+  .use(validationMiddleware(companySystemSchema))
+  .post(async (req, res) => {
     const body = req.body as CompanySystem
     const result = await prisma.companySystem.create({
       data: {
@@ -28,7 +21,6 @@ handler.post(
       },
     })
     res.status(200).json({ data: result })
-  }
-)
+  })
 
 export default handler
