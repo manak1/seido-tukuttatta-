@@ -1,9 +1,13 @@
 import { render } from "~/test/test-utils"
-import Label from "./index"
+
+import * as stories from "./index.stories"
+import { composeStories } from "@storybook/testing-react"
+
+const { Default } = composeStories(stories)
 
 describe("Labelのテスト", () => {
   it("snapshot", () => {
-    const { asFragment } = render(<Label label="ラベル" />)
+    const { asFragment } = render(<Default />)
     expect(asFragment()).toMatchSnapshot()
   })
 })
