@@ -18,11 +18,16 @@ const Template: ComponentStory<typeof Component> = (args) => {
 }
 
 export const Primary = Template.bind({})
+Primary.args = {
+  label: "ボタン",
+}
 export const Danger = Template.bind({})
 Danger.args = {
+  label: "ボタン",
   variant: "danger",
 }
 export const Cancel = Template.bind({})
 Cancel.args = {
+  label: "ボタン",
   variant: "cancel",
 }
