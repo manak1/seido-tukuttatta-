@@ -3,6 +3,8 @@ import { EmotionIcon } from "@emotion-icons/emotion-icon"
 import * as Styled from "./index.style"
 
 import { navLinks } from "~/constants/navbar"
+import { useRouter } from "next/router"
+import { useCallback } from "react"
 
 export type NavItem = {
   label: string
@@ -15,6 +17,17 @@ export type NavBottomProps = React.ComponentProps<"nav"> & {
 }
 
 const NavBottom: React.VFC<NavBottomProps> = (props) => {
+  const router = useRouter()
+
+  const isActive = useCallback(
+    (href: string) => {
+      if (!router) return false
+      if (href === "/" && router.pathname !== "/") return false
+      return router.pathname.includes(href)
+    },
+    [router]
+  )
+
   return (
     <Styled.Nav {...props}>
       <Styled.List>
@@ -22,7 +35,9 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
           navLinks.map((link) => (
             <Styled.ListItem key={link.label}>
               <Link href={link.href} passHref>
-                <Styled.Link>{link && <link.icon size={"40"} />}</Styled.Link>
+                <Styled.Link isActive={isActive(link.href)}>
+                  {<link.icon size={"40"} role="img" />}
+                </Styled.Link>
               </Link>
             </Styled.ListItem>
           ))}
