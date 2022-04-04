@@ -17,3 +17,6 @@ const Template: ComponentStory<typeof Label> = (args) => {
 }
 
 export const Default = Template.bind({})
+Default.args = {
+  label: "ラベル",
+}
