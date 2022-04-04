@@ -4,6 +4,7 @@ exports[`Labelのテスト snapshot 1`] = `
 <DocumentFragment>
   <label
     class="css-1lu35ut"
+    for="for"
   >
     ラベル
   </label>
