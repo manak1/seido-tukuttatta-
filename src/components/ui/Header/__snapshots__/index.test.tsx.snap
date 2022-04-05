@@ -3,13 +3,18 @@
 exports[`Headerのテスト snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="css-1ey0wzg"
+    class="css-1yz2was"
   >
-    <h1
-      class="css-7zf89x"
+    <a
+      class="css-ytumd6"
+      href="/"
     >
-      制度作ってみたったー
-    </h1>
+      <h1
+        class="css-1uk7tyj"
+      >
+        制度作ってみたったー
+      </h1>
+    </a>
   </header>
 </DocumentFragment>
 `;
