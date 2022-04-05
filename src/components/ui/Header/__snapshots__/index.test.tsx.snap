@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headerのテスト snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="css-1ey0wzg"
+  >
+    <h1
+      class="css-7zf89x"
+    >
+      制度作ってみたったー
+    </h1>
+  </header>
+</DocumentFragment>
+`;
