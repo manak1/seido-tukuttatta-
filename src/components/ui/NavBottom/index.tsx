@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { EmotionIcon } from "@emotion-icons/emotion-icon"
 import * as Styled from "./index.style"
-
 import { navLinks } from "~/constants/navbar"
 import { useRouter } from "next/router"
 import { useCallback } from "react"
 import { theme } from "~/styles/theme"
 import styled from "@emotion/styled"
+import Wrapper from "~/components/ui/Wrapper"
+import { css } from "@emotion/react"
 
 export type NavItem = {
   label: string
@@ -40,18 +41,24 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
 
   return (
     <Styled.Nav {...props}>
-      <Styled.List>
-        {navLinks &&
-          navLinks.map((link) => (
-            <Styled.ListItem key={link.label}>
-              <Link href={link.href} passHref>
-                <Styled.Link isActive={isActive(link.href)}>
-                  {renderIcon(link)}
-                </Styled.Link>
-              </Link>
-            </Styled.ListItem>
-          ))}
-      </Styled.List>
+      <Wrapper
+        css={css`
+          padding: 0;
+        `}
+      >
+        <Styled.List>
+          {navLinks &&
+            navLinks.map((link) => (
+              <Styled.ListItem key={link.label}>
+                <Link href={link.href} passHref>
+                  <Styled.Link isActive={isActive(link.href)}>
+                    {renderIcon(link)}
+                  </Styled.Link>
+                </Link>
+              </Styled.ListItem>
+            ))}
+        </Styled.List>
+      </Wrapper>
     </Styled.Nav>
   )
 }
