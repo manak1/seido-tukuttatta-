@@ -13,6 +13,7 @@ export const Select = styled.select(
   },
   ({ theme }) => ({
     fontSize: theme.fontSizes.default,
+    backgroundColor: theme.colors.white,
     ...theme.focus(),
   })
 )
