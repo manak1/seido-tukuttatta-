@@ -12,14 +12,6 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
-model Inquiry {
-  id Int @default(autoincrement()) @id
-  name String
-  email String
-  message String
-  subject String?
-}
-
 model CompanySystem {
   id Int @default(autoincrement()) @id
   name String
