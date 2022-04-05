@@ -8,5 +8,6 @@ declare module "@emotion/react" {
     fontSizes: CustomTheme["fontSizes"]
     colors: CustomTheme["colors"]
     focus: CustomTheme["focus"]
+    maxWidth: CustomTheme["maxWidth"]
   }
 }
