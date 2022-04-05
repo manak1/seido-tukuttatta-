@@ -3,21 +3,22 @@
 exports[`NavBottomテスト snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="css-cywhwk"
+    class="css-mmst5v"
   >
     <ul
-      class="css-1lqekw4"
+      class="css-18863k"
     >
       <li
-        class="css-pcyopu"
+        class="css-1hxuc68"
       >
         <a
-          class="css-7l93dn"
+          class="css-eilro2"
           href="/"
         >
           <svg
             aria-hidden="true"
-            class="css-18cthx4-EmotionIconBase ex0cdmw0"
+            aria-label="ホーム"
+            class="css-p4649-EmotionIconBase ex0cdmw0"
             fill="currentColor"
             focusable="false"
             height="40"
@@ -37,15 +38,16 @@ exports[`NavBottomテスト snapshot 1`] = `
         </a>
       </li>
       <li
-        class="css-pcyopu"
+        class="css-1hxuc68"
       >
         <a
-          class="css-7l93dn"
+          class="css-eilro2"
           href="/search"
         >
           <svg
             aria-hidden="true"
-            class="css-18cthx4-EmotionIconBase ex0cdmw0"
+            aria-label="検索"
+            class="css-p4649-EmotionIconBase ex0cdmw0"
             fill="currentColor"
             focusable="false"
             height="40"
@@ -65,15 +67,16 @@ exports[`NavBottomテスト snapshot 1`] = `
         </a>
       </li>
       <li
-        class="css-pcyopu"
+        class="css-1hxuc68"
       >
         <a
-          class="css-7l93dn"
+          class="css-eilro2"
           href="/ranking"
         >
           <svg
             aria-hidden="true"
-            class="css-18cthx4-EmotionIconBase ex0cdmw0"
+            aria-label="ランキング"
+            class="css-p4649-EmotionIconBase ex0cdmw0"
             fill="currentColor"
             focusable="false"
             height="40"
@@ -94,15 +97,16 @@ exports[`NavBottomテスト snapshot 1`] = `
         </a>
       </li>
       <li
-        class="css-pcyopu"
+        class="css-1hxuc68"
       >
         <a
-          class="css-7l93dn"
+          class="css-eilro2"
           href="/tag"
         >
           <svg
             aria-hidden="true"
-            class="css-18cthx4-EmotionIconBase ex0cdmw0"
+            aria-label="タグ"
+            class="css-p4649-EmotionIconBase ex0cdmw0"
             fill="currentColor"
             focusable="false"
             height="40"

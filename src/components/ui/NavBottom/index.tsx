@@ -5,6 +5,8 @@ import * as Styled from "./index.style"
 import { navLinks } from "~/constants/navbar"
 import { useRouter } from "next/router"
 import { useCallback } from "react"
+import { theme } from "~/styles/theme"
+import styled from "@emotion/styled"
 
 export type NavItem = {
   label: string
@@ -28,6 +30,14 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
     [router]
   )
 
+  const renderIcon = (navItem: NavItem) => {
+    const { label, icon, href } = navItem
+    const StyledIcon = styled(icon)({
+      color: isActive(href) ? theme.colors.primary : theme.colors.black,
+    })
+    return <StyledIcon size={"40"} role="img" aria-label={label} />
+  }
+
   return (
     <Styled.Nav {...props}>
       <Styled.List>
@@ -36,7 +46,7 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
             <Styled.ListItem key={link.label}>
               <Link href={link.href} passHref>
                 <Styled.Link isActive={isActive(link.href)}>
-                  {<link.icon size={"40"} role="img" />}
+                  {renderIcon(link)}
                 </Styled.Link>
               </Link>
             </Styled.ListItem>

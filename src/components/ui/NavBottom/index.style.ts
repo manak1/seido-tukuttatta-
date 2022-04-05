@@ -5,21 +5,34 @@ export const Nav = styled.nav(
     width: "100%",
   },
   ({ theme }) => ({
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.white,
   })
 )
 
-export const List = styled.ul({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: "4px",
-  margin: "0",
-  listStyle: "none",
-})
+export const List = styled.ul(
+  {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0",
+    listStyle: "none",
+  },
+  ({ theme }) => ({
+    "&:after": {
+      position: "absolute",
+      top: 0,
+      content: '""',
+      width: "100%",
+      height: "1px",
+      backgroundColor: theme.colors.gray,
+    },
+  })
+)
 
 export const ListItem = styled.li(
   {
+    width: "25%",
     color: "#fff",
     fontWeight: "bold",
   },
@@ -30,14 +43,14 @@ export const ListItem = styled.li(
 
 export const Link = styled.a<{ isActive: boolean }>(
   {
-    width: "80px",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     color: "#fff",
     textDecoration: "none",
-    padding: "6px 0",
     position: "relative",
+    padding: "6px 0",
   },
   ({ theme, isActive }) => ({
     fontSize: theme.fontSizes.small,
@@ -45,15 +58,13 @@ export const Link = styled.a<{ isActive: boolean }>(
     transition: "background-color , opacity 0.2s ease-in-out",
     "&:before": {
       content: "''",
-      width: "50px",
-      height: "50px",
-      borderRadius: "9999px",
-      backgroundColor: isActive
-        ? "rgba(256,256,256,0.2)"
-        : "rgba(256,256,256,0)",
+      width: "100%",
+      height: "100%",
+      backgroundColor: isActive ? "rgba(120,86,255,0.2)" : "rgba(120,86,255,0)",
       top: "1px",
       display: "inline-block",
       position: "absolute",
+      borderRadius: "8px",
     },
   })
 )
