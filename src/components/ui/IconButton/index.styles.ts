@@ -8,8 +8,10 @@ export const Button = styled.button(
     position: "relative",
     outline: "none",
     border: "none",
+    cursor: "pointer",
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.primary,
+    ...theme.focus(),
   })
 )
