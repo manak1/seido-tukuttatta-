@@ -4,7 +4,7 @@ import Component from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Header",
+  title: "ui/Header",
   component: Component,
 } as ComponentMeta<typeof Component>
 

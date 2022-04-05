@@ -6,7 +6,7 @@ import { navLinks } from "~/constants/navbar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "NavBottom",
+  title: "ui/NavBottom",
   component: NavBottom,
   argTypes: {
     links: { control: "array", defaultValue: navLinks },

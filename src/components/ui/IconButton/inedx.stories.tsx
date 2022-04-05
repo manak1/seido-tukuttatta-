@@ -5,7 +5,7 @@ import Component from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "IconButton",
+  title: "ui/IconButton",
   component: Component,
   argTypes: {
     icon: { control: "object", defaultValue: Add },

@@ -5,7 +5,7 @@ import InputText from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "InputText",
+  title: "ui/InputText",
   component: InputText,
   argTypes: {
     name: { control: "text", defaultValue: "test" },

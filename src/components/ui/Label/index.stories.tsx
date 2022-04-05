@@ -4,7 +4,7 @@ import Label from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Label",
+  title: "ui/Label",
   component: Label,
   argTypes: {
     label: { control: "text", defaultValue: "ラベル" },
