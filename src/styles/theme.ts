@@ -13,6 +13,7 @@ export const theme = {
     primary: "#7856FF",
     error: "#FF5656",
     white: "#fff",
+    gray: "#d3d3d3",
   } as const,
   focus: (extraStyle?: CSSObject) => ({
     transition: "box-shadow 0.2s ease",
