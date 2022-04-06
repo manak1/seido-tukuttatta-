@@ -31,7 +31,7 @@ export type IconProps = {
 const Icon: React.VFC<IconProps> = (props) => {
   const { icon, size, variant } = props
 
-  const StyledIcon = Styled.Styled.CreateIcon(icon)
+  const StyledIcon = Styled.CreateIcon(icon)
   const setSize = useMemo(() => {
     if (size === "small") return "20px"
     return "40px"
