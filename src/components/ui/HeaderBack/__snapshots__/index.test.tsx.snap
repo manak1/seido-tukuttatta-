@@ -3,17 +3,17 @@
 exports[`HeaderBackのテスト snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="css-1hiho1y"
+    class="css-11a06ge"
   >
     <div
-      class="css-iv3cw0"
+      class="css-1by1wmo"
     >
       <button
         class="css-2p1pmn"
       >
         <svg
           aria-hidden="true"
-          class="css-zdklvw-EmotionIconBase ex0cdmw0"
+          class="css-10eisgu-EmotionIconBase ex0cdmw0"
           fill="currentColor"
           focusable="false"
           height="20px"
