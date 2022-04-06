@@ -12,6 +12,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     cursor: "pointer",
   },
   ({ variant, isFullWidth, theme }) => ({
+    fontSize: theme.fontSizes.default,
     width: isFullWidth ? "100%" : "auto",
     fontWeight: "bold",
     "&:hover": {
