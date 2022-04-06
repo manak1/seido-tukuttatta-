@@ -24,7 +24,7 @@ export const TextArea = styled.textarea(
   {
     outline: "none",
     border: "1px solid #d3d3d3",
-    marginTop: "4px",
+    marginTop: "8px",
     padding: "8px",
     minHeight: "180px",
     borderRadius: "8px",

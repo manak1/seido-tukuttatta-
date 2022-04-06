@@ -22,8 +22,8 @@ export const OptionalText = styled.div(
 
 export const Input = styled.input(
   {
-    marginTop: "4px",
-    padding: "8px",
+    marginTop: "8px",
+    padding: "10px 8px",
     outline: "none",
     border: "1px solid #d3d3d3",
     borderRadius: "8px",
