@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Square } from "emotion-icons/bootstrap"
 import { Add } from "emotion-icons/material"
 
 import Component from "./index"
