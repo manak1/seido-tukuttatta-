@@ -7,6 +7,7 @@ export const Header = styled.header(
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.white,
+    borderBottom: `1px solid ${theme.colors.gray}`,
     padding: "8px 0",
   })
 )
