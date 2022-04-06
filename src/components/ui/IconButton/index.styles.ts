@@ -71,7 +71,6 @@ function setIconSize(size: IconProps["size"]) {
 }
 
 function setIconPosition(size: IconProps["size"]) {
-  console.log(size)
   switch (size) {
     case "small":
       return {
