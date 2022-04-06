@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { Square } from "emotion-icons/bootstrap"
 import { Add } from "emotion-icons/material"
 
 import Component from "./index"
@@ -19,3 +20,8 @@ const Template: ComponentStory<typeof Component> = (args) => {
 }
 
 export const Default = Template.bind({})
+
+export const Square = Template.bind({})
+Square.args = {
+  variant: "square",
+}

@@ -3,8 +3,11 @@ import * as Styled from "./index.styles"
 import { EmotionIcon } from "@emotion-icons/emotion-icon"
 import styled from "@emotion/styled"
 
-type IconButtonProps = React.ComponentProps<"button"> & {
+type IconButtonVariants = "square"
+
+export type IconButtonProps = React.ComponentProps<"button"> & {
   icon: EmotionIcon
+  variant?: IconButtonVariants
 }
 
 const IconButton: React.VFC<IconButtonProps> = (props) => {

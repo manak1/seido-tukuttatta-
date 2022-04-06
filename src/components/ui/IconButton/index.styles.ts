@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
+import { IconButtonProps } from "."
 
-export const Button = styled.button(
+export const Button = styled.button<Omit<IconButtonProps, "icon">>(
   {
     width: "56px",
     height: "56px",
@@ -10,8 +11,18 @@ export const Button = styled.button(
     border: "none",
     cursor: "pointer",
   },
-  ({ theme }) => ({
+  ({ theme, variant }) => ({
     backgroundColor: theme.colors.primary,
     ...theme.focus(),
+    ...setVariant(variant),
   })
 )
+
+function setVariant(variant: IconButtonProps["variant"]) {
+  switch (variant) {
+    case "square":
+      return {
+        borderRadius: "8px",
+      }
+  }
+}
