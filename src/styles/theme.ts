@@ -17,7 +17,7 @@ export const theme = {
   } as const,
   maxWidth: {
     full: "100%",
-    default: "640px",
+    default: "580px",
   },
   focus: (extraStyle?: CSSObject) => ({
     transition: "box-shadow 0.2s ease",
