@@ -47,6 +47,8 @@ export const CreateIcon = (icon: EmotionIcon) => {
   const StyledIcon = styled(icon)<Omit<IconProps, "icon">>(
     {
       position: "absolute",
+      top: "8px",
+      left: "8px",
     },
     ({ theme, variant, size }) => ({
       color:
