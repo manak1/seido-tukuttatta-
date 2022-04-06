@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 export const Nav = styled.nav(
   {
     width: "100%",
+    paddingBottom: "env(safe-area-inset-bottom)",
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.white,

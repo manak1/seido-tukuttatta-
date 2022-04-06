@@ -19,7 +19,8 @@ export type NavBottomProps = React.ComponentProps<"nav"> & {
   links: NavItem[]
 }
 
-const NavBottom: React.VFC<NavBottomProps> = (props) => {
+const NavBottom: React.FC<NavBottomProps> = (props) => {
+  const { children, ...rest } = props
   const router = useRouter()
 
   const isActive = useCallback(
@@ -40,7 +41,7 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
   }
 
   return (
-    <Styled.Nav {...props}>
+    <Styled.Nav {...rest}>
       <Wrapper
         css={css`
           padding: 0;
@@ -58,6 +59,7 @@ const NavBottom: React.VFC<NavBottomProps> = (props) => {
               </Styled.ListItem>
             ))}
         </Styled.List>
+        {children}
       </Wrapper>
     </Styled.Nav>
   )
