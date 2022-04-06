@@ -13,13 +13,24 @@ handler
   .use(validationMiddleware(companySystemSchema))
   .post(async (req, res) => {
     const body = req.body as CompanySystem
-    const result = await prisma.companySystem.create({
-      data: {
-        name: body.name,
-        description: body.description,
-        author: body.author,
-      },
-    })
+    const result = await prisma.companySystem
+      .create({
+        data: {
+          name: body.name,
+          description: body.description,
+          author: body.author,
+        },
+      })
+      .catch((error) => {
+        console.error(error)
+        res
+          .status(500)
+          .json({
+            message:
+              "制度の作成に失敗しました。しばらく待ってからもう一度やりなおしてください。",
+            success: false,
+          })
+      })
     res.status(200).json({ data: result })
   })
 
