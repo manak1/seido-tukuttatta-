@@ -10,7 +10,13 @@ const DefaultLayout: React.FC = (props) => {
   return (
     <>
       <HeaderBack title="新規作成" />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper
+        css={css`
+          min-height: 100vh;
+        `}
+      >
+        {children}
+      </Wrapper>
       <NavBottom
         links={navLinks}
         css={css`
