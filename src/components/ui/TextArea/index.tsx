@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import Label from "~/components/ui/Label"
 import * as Styled from "./index.style"
 
@@ -8,7 +8,7 @@ type Props = React.ComponentProps<"textarea"> & {
   isOptional?: boolean
 }
 
-const TextArea: React.VFC<Props> = (props) => {
+const TextArea = forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
   const { name, label, isOptional, ...rest } = props
   return (
     <Styled.Wrapper>
@@ -16,9 +16,10 @@ const TextArea: React.VFC<Props> = (props) => {
         <Label label={label} htmlFor={name} />
         {isOptional && <Styled.OptionalText>任意</Styled.OptionalText>}
       </Styled.Box>
-      <Styled.TextArea id={name} {...rest} />
+      <Styled.TextArea ref={ref} id={name} {...rest} />
     </Styled.Wrapper>
   )
-}
+})
+TextArea.displayName = "TextArea"
 
 export default TextArea
