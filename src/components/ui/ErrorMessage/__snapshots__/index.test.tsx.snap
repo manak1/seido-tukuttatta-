@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessageテスト snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="css-824kd8"
+  >
+    エラー内容がここに入ります。
+  </p>
+</DocumentFragment>
+`;
