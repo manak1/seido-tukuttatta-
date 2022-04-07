@@ -9,6 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Global
         styles={{
           color: theme.colors.black,
+          "::placeholder": {
+            color: "rgb(117,117,117)",
+          },
         }}
       />
       <Component {...pageProps} />
