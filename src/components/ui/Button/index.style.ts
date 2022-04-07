@@ -11,7 +11,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     borderRadius: "9999px",
     cursor: "pointer",
   },
-  ({ variant, isFullWidth, theme }) => ({
+  ({ variant, isFullWidth, theme, disabled }) => ({
     fontSize: theme.fontSizes.default,
     width: isFullWidth ? "100%" : "auto",
     fontWeight: "bold",
@@ -19,13 +19,22 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
       filter: "brightness(95%)",
       transition: "filter 0.2s ease-out",
     },
-    ...setVariant(variant ?? "primary", theme),
+    ...setVariant(variant ?? "primary", theme, disabled),
     ...theme.focus(),
     transition: "box-shadow, filter, 0.2s ease-in",
   })
 )
 
-function setVariant(variant: ButtonVariant, theme: Theme) {
+function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
+  if (disabled) {
+    return {
+      opacity: 0.7,
+      color: "rgba(0, 0, 0, 0.3)",
+      backgroundColor: theme.colors.gray,
+      pointerEvent: "none",
+    }
+  }
+
   switch (variant) {
     case "primary":
       return {
