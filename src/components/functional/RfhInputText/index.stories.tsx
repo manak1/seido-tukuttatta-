@@ -2,15 +2,14 @@ import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
 import Component from "./index"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import messages from "~/constants/validationMessage"
+import { useFormContext } from "react-hook-form"
+import { rfhProvider } from "../../../../.storybook/provider"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "functional/RfhInputText",
   component: Component,
+  decorators: [rfhProvider],
   argTypes: {
     name: { control: "text", defaultValue: "test" },
     value: { control: "text", defaultValue: "test" },
@@ -20,20 +19,8 @@ export default {
 } as ComponentMeta<typeof Component>
 
 const Template: ComponentStory<typeof Component> = (args) => {
-  const { getValues, control } = useForm({
-    mode: "onChange",
-    resolver: zodResolver(
-      z.object({
-        test: z.string().min(1, messages.required("ラベル")),
-      })
-    ),
-  })
-  return (
-    <>
-      {getValues("test")}
-      <Component {...args} name="test" control={control} />
-    </>
-  )
+  const { control } = useFormContext()
+  return <Component {...args} name="text" control={control} />
 }
 
 export const Default = Template.bind({})
