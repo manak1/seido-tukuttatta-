@@ -5,6 +5,6 @@
 
 [chromatic](https://www.chromatic.com/library?appId=6244845fef6817003abba475)
 
-[Storybook](https://6244845fef6817003abba475-ybfldoduse.chromatic.com/?path=/story/button--cancel)
+[Storybook](https://6244845fef6817003abba475-uznjnepqxa.chromatic.com)
 
 
