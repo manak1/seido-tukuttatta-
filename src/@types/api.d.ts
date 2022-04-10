@@ -1,9 +1,15 @@
-export type ApiErrorResponseType = {
+type ApiCommonResponseProperties<T, U = undefined> = {
+  success: T;
+  data: U;
   message: string;
-  success: false;
 };
 
-export type ApiSuccessResponseType = {
-  data: T;
-  success: true;
-};
+export type ApiSuccessResponseType = Omit<
+  ApiCommonResponseProperties<true, T>,
+  "message"
+>;
+
+export type ApiErrorResponseType = Omit<
+  ApiCommonResponseProperties<false>,
+  "data"
+>;
