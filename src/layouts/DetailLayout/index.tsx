@@ -13,6 +13,7 @@ const DefaultLayout: React.FC = (props) => {
       <Wrapper
         css={css`
           min-height: 100vh;
+          padding-bottom: 64px;
         `}
       >
         {children}
