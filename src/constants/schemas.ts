@@ -6,7 +6,7 @@ export const companySystemSchema: JSONSchemaType<Omit<CompanySystem, "id">> = {
   properties: {
     name: { type: "string", minLength: 1, maxLength: 100 },
     description: { type: "string", minLength: 10, maxLength: 1000 },
-    author: { type: "string", minLength: 1, maxLength: 100 },
+    author: { type: "string", minLength: 1, maxLength: 100, nullable: true },
   },
   required: ["name", "description"],
   additionalProperties: false,
