@@ -17,6 +17,7 @@ export const companySystemSchema = schemaForType<Omit<CompanySystem, "id">>()(
       .min(1, messages.required("制度名"))
       .max(100, messages.maxLength("制度名", 100)),
     author: z.string().optional(),
+    thumbnailType: z.string(),
     description: z
       .string()
       .min(30, messages.minMaxLength("制度の概要", 30, 300))

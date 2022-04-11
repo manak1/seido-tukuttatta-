@@ -16,5 +16,6 @@ model CompanySystem {
   id Int @default(autoincrement()) @id
   name String
   description String
+  thmbnailType String
   author String?
 } 
