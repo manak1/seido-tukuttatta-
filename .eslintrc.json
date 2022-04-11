@@ -8,8 +8,69 @@
   ],
   "overrides": [
     {
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:jest/recommended","plugin:testing-library/react"]
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:jest/recommended", "plugin:testing-library/react"]
     }
-  ]
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          { "pattern": "~/libs/**", "group": "internal", "position": "before" },
+          {
+            "pattern": "~/generated/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/components/ui/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/components/functional/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/layouts/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./**.style.ts",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/@types/**",
+            "group": "type",
+            "position": "before"
+          },
+          // constants
+          {
+            "pattern": "~/constants/**",
+            "group": "index",
+            "position": "before"
+          }
+        ]
+      }
+    ]
+  }
 }
