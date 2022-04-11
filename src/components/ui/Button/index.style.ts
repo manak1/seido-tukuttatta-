@@ -1,6 +1,7 @@
-import styled from "@emotion/styled"
-import { ButtonProps, ButtonVariant } from "./index"
 import { Theme } from "@emotion/react"
+import styled from "@emotion/styled"
+
+import { ButtonProps, ButtonVariant } from "./index"
 
 export const Button = styled.button<Omit<ButtonProps, "label">>(
   {

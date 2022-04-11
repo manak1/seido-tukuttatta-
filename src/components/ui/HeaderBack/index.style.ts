@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+
 import WrapperComponent from "~/components/ui/Wrapper"
 
 export const Header = styled.header(

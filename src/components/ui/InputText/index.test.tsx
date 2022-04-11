@@ -1,8 +1,9 @@
+import { composeStories } from "@storybook/testing-react"
 import userEvent from "@testing-library/user-event"
+
 import { render, screen } from "~/test/test-utils"
 
 import * as stories from "./index.stories"
-import { composeStories } from "@storybook/testing-react"
 
 const { Default, Optional } = composeStories(stories)
 

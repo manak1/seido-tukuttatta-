@@ -1,8 +1,10 @@
-import React from "react"
-import HeaderBack from "~/components/ui/HeaderBack"
-import Wrapper from "~/components/ui/Wrapper"
-import NavBottom from "~/components/ui/NavBottom"
 import { css } from "@emotion/react"
+import React from "react"
+
+import HeaderBack from "~/components/ui/HeaderBack"
+import NavBottom from "~/components/ui/NavBottom"
+import Wrapper from "~/components/ui/Wrapper"
+
 import { navLinks } from "~/constants/navbar"
 
 const DefaultLayout: React.FC = (props) => {

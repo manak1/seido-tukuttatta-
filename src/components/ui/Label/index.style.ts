@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+
 import { LabelProps } from "."
 
 export const Label = styled.label<Omit<LabelProps, "label">>(

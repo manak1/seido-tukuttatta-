@@ -1,4 +1,5 @@
 import { JSONSchemaType } from "ajv"
+
 import { CompanySystem } from "~/@types"
 
 export const companySystemSchema: JSONSchemaType<Omit<CompanySystem, "id">> = {

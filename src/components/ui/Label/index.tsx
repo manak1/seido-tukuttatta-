@@ -1,4 +1,5 @@
 import React from "react"
+
 import * as Styled from "./index.style"
 
 export type LabelProps = React.ComponentProps<"label"> & {

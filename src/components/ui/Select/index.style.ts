@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
 import { ChevronDown } from "@emotion-icons/fa-solid"
+import styled from "@emotion/styled"
 
 export const Select = styled.select(
   {

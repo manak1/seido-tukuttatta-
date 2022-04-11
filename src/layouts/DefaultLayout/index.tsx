@@ -1,12 +1,14 @@
-import React, { useCallback } from "react"
-import Header from "~/components/ui/Header"
-import Wrapper from "~/components/ui/Wrapper"
-import NavBottom from "~/components/ui/NavBottom"
 import { css } from "@emotion/react"
-import { navLinks } from "~/constants/navbar"
-import IconButton from "~/components/ui/IconButton"
 import { Add } from "emotion-icons/material"
 import { useRouter } from "next/router"
+import React, { useCallback } from "react"
+
+import Header from "~/components/ui/Header"
+import IconButton from "~/components/ui/IconButton"
+import NavBottom from "~/components/ui/NavBottom"
+import Wrapper from "~/components/ui/Wrapper"
+
+import { navLinks } from "~/constants/navbar"
 
 const DefaultLayout: React.FC = (props) => {
   const { children } = props

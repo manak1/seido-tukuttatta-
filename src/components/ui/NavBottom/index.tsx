@@ -1,13 +1,17 @@
-import Link from "next/link"
 import { EmotionIcon } from "@emotion-icons/emotion-icon"
-import * as Styled from "./index.style"
-import { navLinks } from "~/constants/navbar"
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { useCallback } from "react"
-import { theme } from "~/styles/theme"
-import styled from "@emotion/styled"
+
 import Wrapper from "~/components/ui/Wrapper"
-import { css } from "@emotion/react"
+
+import { theme } from "~/styles/theme"
+
+import * as Styled from "./index.style"
+
+import { navLinks } from "~/constants/navbar"
 
 export type NavItem = {
   label: string

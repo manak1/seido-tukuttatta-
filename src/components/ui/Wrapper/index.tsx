@@ -1,4 +1,5 @@
 import React from "react"
+
 import * as Styled from "./index.style"
 
 type WrapperProps = React.ComponentProps<"div">

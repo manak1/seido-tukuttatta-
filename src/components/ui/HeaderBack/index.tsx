@@ -1,8 +1,10 @@
-import React, { useCallback } from "react"
-import * as Styled from "./index.style"
 import { ArrowBack } from "emotion-icons/material"
-import IconButton from "~/components/ui/IconButton"
 import { useRouter } from "next/router"
+import React, { useCallback } from "react"
+
+import IconButton from "~/components/ui/IconButton"
+
+import * as Styled from "./index.style"
 
 type HeaderBackProps = React.ComponentProps<"header"> & {
   title: string

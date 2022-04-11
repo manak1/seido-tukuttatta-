@@ -1,5 +1,6 @@
-import { NavItem } from "~/components/ui/NavBottom"
 import { Home, Search, EmojiEvents, Tag } from "@emotion-icons/material"
+
+import { NavItem } from "~/components/ui/NavBottom"
 
 export const navLinks: NavItem[] = [
   {

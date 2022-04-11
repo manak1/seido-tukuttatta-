@@ -1,10 +1,12 @@
-import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
+import React from "react"
+import { useFormContext } from "react-hook-form"
+
+import { rfhProvider } from "../../../../.storybook/provider"
+
+import { thumbnailItems } from "~/constants/select"
 
 import Component from "./index"
-import { useFormContext } from "react-hook-form"
-import { rfhProvider } from "../../../../.storybook/provider"
-import { thumbnailItems } from "~/constants/select"
 
 export default {
   title: "functional/RfhSelect",

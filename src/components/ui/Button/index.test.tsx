@@ -1,8 +1,9 @@
 import { userEvent } from "@storybook/testing-library"
+import { composeStories } from "@storybook/testing-react"
+
 import { render, screen } from "~/test/test-utils"
 
 import * as stories from "./index.stories"
-import { composeStories } from "@storybook/testing-react"
 const { Primary } = composeStories(stories)
 
 describe("Buttonのテスト", () => {

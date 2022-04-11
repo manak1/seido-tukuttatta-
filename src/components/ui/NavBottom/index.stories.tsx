@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import NavBottom from "./index"
-
 import { navLinks } from "~/constants/navbar"
+
+import NavBottom from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

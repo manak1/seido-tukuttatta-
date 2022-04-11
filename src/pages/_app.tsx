@@ -1,6 +1,8 @@
 import { ThemeProvider, Global } from "@emotion/react"
-import type { AppProps } from "next/app"
+
 import { theme } from "~/styles/theme"
+
+import type { AppProps } from "next/app"
 import "sanitize.css"
 
 function MyApp({ Component, pageProps }: AppProps) {

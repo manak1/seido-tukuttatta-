@@ -1,6 +1,7 @@
-import React, { useMemo } from "react"
-import * as Styled from "./index.styles"
 import { EmotionIcon } from "@emotion-icons/emotion-icon"
+import React, { useMemo } from "react"
+
+import * as Styled from "./index.styles"
 
 type IconButtonVariants = "square" | "transparent"
 type IconButtonSizez = "small"

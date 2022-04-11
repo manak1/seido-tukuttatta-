@@ -1,7 +1,9 @@
-import React from "react"
 import Link from "next/link"
-import * as Styled from "./index.style"
+import React from "react"
+
 import Wrapper from "~/components/ui/Wrapper"
+
+import * as Styled from "./index.style"
 
 type HeaderProps = React.ComponentProps<"header">
 

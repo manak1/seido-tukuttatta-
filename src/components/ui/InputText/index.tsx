@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react"
-import Label from "../Label"
 
+import Label from "../Label"
 import * as Styled from "./index.style"
 
 export type InputTextProps = React.ComponentProps<"input"> & {

@@ -1,16 +1,22 @@
-import { NextPage } from "next"
-import DetailLayout from "~/layouts/DetailLayout"
-import InputText from "~/components/ui/InputText"
-import RfhTextArea from "~/components/functional/RfhTextArea"
-import * as Styled from "./index.style"
-import Button from "~/components/ui/Button"
-import { useForm } from "react-hook-form"
-import { CompanySystem } from "@prisma/client"
-import RfhInputText from "~/components/functional/RfhInputText"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { NextPage } from "next"
+import { useForm } from "react-hook-form"
+
 import { companySystemSchema } from "~/libs/zod"
+
+import Button from "~/components/ui/Button"
 import Label from "~/components/ui/Label"
-import Select from "~/components/ui/Select"
+
+import RfhInputText from "~/components/functional/RfhInputText"
+import RfhSelect from "~/components/functional/RfhSelect"
+import RfhTextArea from "~/components/functional/RfhTextArea"
+
+import DetailLayout from "~/layouts/DetailLayout"
+
+import { CompanySystem } from "~/@types"
+
+import * as Styled from "./index.style"
+
 import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
@@ -25,6 +31,7 @@ export const CreateSystemPage: NextPage = () => {
       name: "",
       description: "",
       author: "",
+      thumbnailType: "",
     },
   })
 
@@ -48,16 +55,23 @@ export const CreateSystemPage: NextPage = () => {
           name="description"
           placeholder="傷病、育児、家族の看護・介護など、不測の事態、避けられない事態によって、将来、働けなくなるリスクを少しでも解消するために、無制限で有給休暇を取得することが可能です。"
         />
-        <InputText
+        <RfhInputText
           label="あなたのお名前は？"
-          name="name"
-          placeholder="お名前を入力してください。"
+          placeholder="@mikeanakida"
+          name="author"
+          control={control}
         />
         <div>
           <Label label="完成イメージ" />
           <Styled.Image src="/test.png" />
         </div>
-        <Select label="サムネイルパターン" items={thumbnailItems} />
+        <RfhSelect
+          items={thumbnailItems}
+          label="制度の名前は？"
+          placeholder="有給取り放題制度"
+          name="thumbnailType"
+          control={control}
+        />
         <Button
           type="submit"
           disabled={!isValid}

@@ -1,6 +1,7 @@
-import styled from "@emotion/styled"
-import { IconButtonProps, IconProps } from "."
 import { EmotionIcon } from "@emotion-icons/emotion-icon"
+import styled from "@emotion/styled"
+
+import { IconButtonProps, IconProps } from "."
 
 export const Button = styled.button<Omit<IconButtonProps, "icon">>(
   {
