@@ -17,7 +17,13 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>((props, ref) => {
         <Label htmlFor={name} label={label} />
         {isOptional && <Styled.OptionalText>任意</Styled.OptionalText>}
       </Styled.Box>
-      <Styled.Input id={name} type="text" ref={ref} {...rest} />
+      <Styled.Input
+        id={name}
+        type="text"
+        ref={ref}
+        {...rest}
+        autoComplete="off"
+      />
     </Styled.Wrapper>
   )
 })
