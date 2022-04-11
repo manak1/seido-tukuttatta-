@@ -2,12 +2,15 @@ import { NextApiResponse } from "next"
 
 import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api"
 
-const OK = <T>(res: NextApiResponse<ApiSuccessResponseType>, data: T): void => {
+const OK = <T>(
+  res: NextApiResponse<ApiSuccessResponseType<T>>,
+  data: T
+): void => {
   res.status(200).json({ data, success: true })
 }
 
 const Created = <T>(
-  res: NextApiResponse<ApiSuccessResponseType>,
+  res: NextApiResponse<ApiSuccessResponseType<T>>,
   data: T
 ): void => {
   res.status(201).json({ data, success: true })

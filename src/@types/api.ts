@@ -1,15 +1,15 @@
-type ApiCommonResponseProperties<T, U = undefined> = {
+type ApiCommonResponseProperties<T, U> = {
   success: T
   data: U
   message: string
 }
 
-export type ApiSuccessResponseType = Omit<
-  ApiCommonResponseProperties<true>,
+export type ApiSuccessResponseType<K> = Omit<
+  ApiCommonResponseProperties<true, K>,
   "message"
 >
 
 export type ApiErrorResponseType = Omit<
-  ApiCommonResponseProperties<false>,
+  ApiCommonResponseProperties<false, never>,
   "data"
 >
