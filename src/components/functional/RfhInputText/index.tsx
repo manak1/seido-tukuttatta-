@@ -7,7 +7,6 @@ type RfhInputText<T extends FieldValues> = InputTextProps &
   UseControllerProps<T>
 
 const RfhInputText = <T extends FieldValues>(props: RfhInputText<T>) => {
-  const { name, isOptional, label, ...rest } = props
   const {
     field,
     fieldState: { error },
@@ -15,13 +14,7 @@ const RfhInputText = <T extends FieldValues>(props: RfhInputText<T>) => {
 
   return (
     <>
-      <InputText
-        {...rest}
-        {...field}
-        name={name}
-        isOptional={isOptional}
-        label={label}
-      />
+      <InputText {...props} {...field} />
       <Styled.Error>{error?.message}</Styled.Error>
     </>
   )
