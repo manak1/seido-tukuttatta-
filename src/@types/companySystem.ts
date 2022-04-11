@@ -5,3 +5,5 @@ export type CompanySystem = {
   thumbnailType: string
   author?: string
 }
+
+export type CreateCompanySystem = Omit<CompanySystem, "id">

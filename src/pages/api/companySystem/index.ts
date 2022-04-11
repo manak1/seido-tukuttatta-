@@ -1,4 +1,3 @@
-import { CompanySystem } from "@prisma/client"
 import { PrismaClientValidationError } from "@prisma/client/runtime"
 
 import { setResponse } from "~/libs/api"
@@ -6,6 +5,8 @@ import handler from "~/libs/next-connect"
 import prisma from "~/libs/prisma"
 
 import { validationMiddleware } from "~/middlewares/validation"
+
+import { CreateCompanySystem } from "~/@types/companySystem"
 
 import { companySystemSchema } from "~/constants/schemas"
 
@@ -17,18 +18,19 @@ handler.get(async (req, res) => {
 handler
   .use(validationMiddleware(companySystemSchema))
   .post(async (req, res) => {
-    const body = req.body as CompanySystem
+    const { name, description, author, thumbnailType } =
+      req.body as CreateCompanySystem
     try {
       const result = await prisma.companySystem.create({
         data: {
-          name: body.name,
-          description: body.description,
-          author: body.author,
+          name,
+          description,
+          author,
+          thumbnailType,
         },
       })
       setResponse.Created(res, result)
     } catch (error) {
-      console.error(error)
       if (error instanceof PrismaClientValidationError) {
         setResponse.BadRequest(res)
         return

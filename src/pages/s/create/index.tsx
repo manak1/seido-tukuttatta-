@@ -13,7 +13,7 @@ import RfhTextArea from "~/components/functional/RfhTextArea"
 
 import DetailLayout from "~/layouts/DetailLayout"
 
-import { CompanySystem } from "~/@types"
+import { CreateCompanySystem } from "~/@types"
 
 import * as Styled from "./index.style"
 
@@ -24,7 +24,7 @@ export const CreateSystemPage: NextPage = () => {
     control,
     handleSubmit,
     formState: { isValid },
-  } = useForm<Omit<CompanySystem, "id">>({
+  } = useForm<CreateCompanySystem>({
     mode: "onChange",
     resolver: zodResolver(companySystemSchema),
     defaultValues: {
@@ -35,7 +35,7 @@ export const CreateSystemPage: NextPage = () => {
     },
   })
 
-  const onSubmit = (data: Omit<CompanySystem, "id">) => {
+  const onSubmit = (data: CreateCompanySystem) => {
     console.log("submitted for with value", data)
   }
 
