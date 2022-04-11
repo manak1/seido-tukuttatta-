@@ -16,6 +16,7 @@ exports[`InputTextのテスト snapshot 1`] = `
       </label>
     </div>
     <input
+      autocomplete="off"
       class="css-glhwro"
       id="test"
       type="text"
