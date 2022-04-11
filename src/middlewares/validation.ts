@@ -17,7 +17,6 @@ export const validationMiddleware = (schema: object) => {
     if (isValid) {
       return next()
     }
-    console.log(validate.errors)
     setResponse.BadRequest(res, "入力内容に不備があります。")
   }
 }
