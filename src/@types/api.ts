@@ -5,7 +5,7 @@ type ApiCommonResponseProperties<T, U = undefined> = {
 }
 
 export type ApiSuccessResponseType = Omit<
-  ApiCommonResponseProperties<true, T>,
+  ApiCommonResponseProperties<true>,
   "message"
 >
 
