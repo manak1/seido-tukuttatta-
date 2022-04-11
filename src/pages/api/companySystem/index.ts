@@ -8,7 +8,7 @@ import { validationMiddleware } from "~/middlewares/validation"
 
 import { CreateCompanySystem } from "~/@types/companySystem"
 
-import { companySystemSchema } from "~/constants/schemas"
+import { createCompanySystemSchema } from "~/constants/schemas"
 
 handler.get(async (req, res) => {
   const companySystem = await prisma.companySystem.findMany()
@@ -16,7 +16,7 @@ handler.get(async (req, res) => {
 })
 
 handler
-  .use(validationMiddleware(companySystemSchema))
+  .use(validationMiddleware(createCompanySystemSchema))
   .post(async (req, res) => {
     const { name, description, author, thumbnailType } =
       req.body as CreateCompanySystem
