@@ -40,8 +40,8 @@ export const SelectBox = styled.div({
 export const Icon = styled(ChevronDown)(
   {
     position: "absolute",
-    right: "5px",
-    top: "14px",
+    right: "8px",
+    top: "20px",
     width: "16px",
     height: "16px",
     color: "#333",
