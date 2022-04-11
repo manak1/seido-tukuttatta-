@@ -1,6 +1,6 @@
 import * as z from "zod"
 
-import { CompanySystem } from "~/@types/index"
+import { CreateCompanySystem } from "~/@types/index"
 
 import messages from "~/constants/validationMessage"
 /*
@@ -12,7 +12,7 @@ export const schemaForType =
     return arg
   }
 
-export const companySystemSchema = schemaForType<Omit<CompanySystem, "id">>()(
+export const companySystemSchema = schemaForType<CreateCompanySystem>()(
   z.object({
     name: z
       .string()
