@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
+import axios from "axios"
 import { NextPage } from "next"
 import { useForm } from "react-hook-form"
 
@@ -14,12 +15,15 @@ import RfhTextArea from "~/components/functional/RfhTextArea"
 import DetailLayout from "~/layouts/DetailLayout"
 
 import { CreateCompanySystem } from "~/@types"
+import { usePostCompanySystem } from "~/hooks/api/companySystem"
 
 import * as Styled from "./index.style"
 
 import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
+  const { post, isLoading } = usePostCompanySystem()
+
   const {
     control,
     handleSubmit,
@@ -31,12 +35,18 @@ export const CreateSystemPage: NextPage = () => {
       name: "",
       description: "",
       author: "",
-      thumbnailType: "",
+      thumbnailType: "1",
     },
   })
 
-  const onSubmit = (data: CreateCompanySystem) => {
-    console.log("submitted for with value", data)
+  const onSubmit = async (data: CreateCompanySystem) => {
+    console.log(data)
+    if (isLoading) return
+    await post(data).catch((e) => {
+      if (axios.isAxiosError(e)) {
+        console.error(e.message)
+      }
+    })
   }
 
   return (
@@ -74,7 +84,7 @@ export const CreateSystemPage: NextPage = () => {
         />
         <Button
           type="submit"
-          disabled={!isValid}
+          disabled={!isValid || isLoading}
           isFullWidth
           label="制度をつくる"
         />
