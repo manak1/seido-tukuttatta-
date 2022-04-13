@@ -25,4 +25,5 @@ export const Modal = styled.div({}, ({ theme }) => ({
   borderRadius: "16px",
   maxWidth: theme.maxWidth.default,
   backgroundColor: theme.colors.white,
+  padding: "16px 20px 24px 20px",
 }))
