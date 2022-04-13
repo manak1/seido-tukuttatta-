@@ -14,22 +14,20 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Component> = (args) => {
   return (
-    <>
-      <Component {...args} domId={"root"}>
-        <div
-          data-testid="test"
-          style={{
-            textAlign: "center",
-            minHeight: "260px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          ここにModalの中身が入るよ
-        </div>
-      </Component>
-    </>
+    <Component {...args} domId={"root"}>
+      <div
+        data-testid="test"
+        style={{
+          textAlign: "center",
+          minHeight: "260px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        ここにModalの中身が入るよ
+      </div>
+    </Component>
   )
 }
 
