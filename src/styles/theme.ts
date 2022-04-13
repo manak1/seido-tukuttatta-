@@ -19,6 +19,11 @@ export const theme = {
     full: "100%",
     default: "580px",
   },
+  zIndex: {
+    default: 1,
+    overlay: 5,
+    modal: 10,
+  },
   focus: (extraStyle?: CSSObject) => ({
     transition: "box-shadow 0.2s ease",
     "&:focus": {
