@@ -6,10 +6,11 @@ import * as Styled from "./index.style"
 export type ModalProps = {
   onClose: () => void
   isOpen: boolean
+  domId?: string
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-  const { onClose, isOpen } = props
+  const { onClose, isOpen, domId } = props
 
   const preventEvent = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
@@ -18,7 +19,7 @@ const Modal: React.FC<ModalProps> = (props) => {
   return (
     <>
       {isOpen && (
-        <Portal>
+        <Portal domId={domId}>
           <Styled.Overlay onClick={onClose}>
             <Styled.Modal onClick={preventEvent}>{props.children}</Styled.Modal>
           </Styled.Overlay>
@@ -30,8 +31,12 @@ const Modal: React.FC<ModalProps> = (props) => {
 
 export default Modal
 
-const Portal: React.FC = (props) => {
-  const { children } = props
+type PortalProps = {
+  domId?: string
+}
+
+const Portal: React.FC<PortalProps> = (props) => {
+  const { children, domId } = props
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
@@ -42,7 +47,7 @@ const Portal: React.FC = (props) => {
   return isMounted
     ? createPortal(
         children,
-        document.getElementById("modal-portal") as HTMLElement
+        document.getElementById(domId ?? "modal-portal") as HTMLElement
       )
     : null
 }
