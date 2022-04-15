@@ -16,6 +16,7 @@
     }
   ],
   "rules": {
+    "@typescript-eslint/no-empty-interface": "off",
     "import/order": [
       "error",
       {
