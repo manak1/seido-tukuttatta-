@@ -17,6 +17,7 @@ export const theme = {
   } as const,
   maxWidth: {
     full: "100%",
+    modal: "420px",
     default: "580px",
   },
   zIndex: {

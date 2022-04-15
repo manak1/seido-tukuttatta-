@@ -23,7 +23,7 @@ export const Overlay = styled.div(
 export const Modal = styled.div({}, ({ theme }) => ({
   width: "100%",
   borderRadius: "16px",
-  maxWidth: theme.maxWidth.default,
+  maxWidth: theme.maxWidth.modal,
   backgroundColor: theme.colors.white,
   padding: "16px 20px 24px 20px",
 }))
