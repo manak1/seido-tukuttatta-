@@ -1,29 +1,31 @@
 import { useCallback } from "react"
 import { useState } from "react"
 
-import { client } from "~/libs/axios"
+import { CompanySystem, CreateCompanySystem } from "~/@types"
+import { useAxios } from "~/hooks/api/axios"
 
-import { CreateCompanySystem } from "~/@types"
+import { ApiResponseType } from "~/@types/api"
 
 export const usePostCompanySystem = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const client = useAxios()
 
   const post = useCallback(
     async (data: CreateCompanySystem) => {
       if (isLoading) return
       setIsLoading(true)
 
-      const res = await client
-        .post<CreateCompanySystem>("/api/companySystem", data)
-        .catch((e) => {
-          throw e
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-      return res.data
+      const res = await client.post<ApiResponseType<CompanySystem>>(
+        "/api/companySystem",
+        data
+      )
+      setIsLoading(false)
+
+      if (res && res.data.success) {
+        return res.data.data
+      }
     },
-    [isLoading]
+    [client, isLoading]
   )
 
   return {
