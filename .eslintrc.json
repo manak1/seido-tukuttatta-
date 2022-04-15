@@ -17,6 +17,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-empty-interface": "off",
+    "no-console": "warn",
     "import/order": [
       "error",
       {
