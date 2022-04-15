@@ -1,5 +1,4 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import axios from "axios"
 import { NextPage } from "next"
 import { useForm } from "react-hook-form"
 
@@ -40,13 +39,12 @@ export const CreateSystemPage: NextPage = () => {
   })
 
   const onSubmit = async (data: CreateCompanySystem) => {
-    console.log(data)
     if (isLoading) return
-    await post(data).catch((e) => {
-      if (axios.isAxiosError(e)) {
-        console.error(e.message)
-      }
-    })
+    const companySystem = await post(data)
+    if (companySystem) {
+      // ここで成功モーダルを表示する
+      alert("制度ができた")
+    }
   }
 
   return (
