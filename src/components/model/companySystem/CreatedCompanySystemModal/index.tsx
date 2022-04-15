@@ -7,14 +7,15 @@ import { CompanySystem } from "~/@types"
 
 import * as Styled from "./index.style"
 
-type CreatedCompanySystemModalProps = ModalProps & {
+export type CreatedCompanySystemModalProps = ModalProps & {
   companySystem: CompanySystem
+  onConfirm: () => void
 }
 
 const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
   props
 ) => {
-  const { onClose, isOpen, domId, companySystem } = props
+  const { onClose, onConfirm, isOpen, domId, companySystem } = props
 
   const createMessage = useMemo(() => {
     return `株式会社ぺんぎんにあたらしい制度
@@ -27,7 +28,7 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
       <Styled.Title>おめでとうございます！！ </Styled.Title>
       <Styled.Message>{createMessage}</Styled.Message>
       <Styled.Buttons>
-        <Button onClick={onClose} label="制度を共有する" isFullWidth />
+        <Button onClick={onConfirm} label="制度を共有する" isFullWidth />
         <Button onClick={onClose} label="閉じる" variant="cancel" isFullWidth />
       </Styled.Buttons>
     </Modal>
