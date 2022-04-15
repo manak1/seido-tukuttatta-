@@ -13,3 +13,7 @@ export type ApiErrorResponseType = Omit<
   ApiCommonResponseProperties<false, never>,
   "data"
 >
+
+export type ApiResponseType<T> =
+  | ApiSuccessResponseType<T>
+  | ApiErrorResponseType
