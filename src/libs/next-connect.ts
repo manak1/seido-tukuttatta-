@@ -7,10 +7,9 @@ import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api"
 
 const handler = nc<
   NextApiRequest,
-  NextApiResponse<ApiSuccessResponseType | ApiErrorResponseType>
+  NextApiResponse<ApiSuccessResponseType<unknown> | ApiErrorResponseType>
 >({
   onError(err, req, res) {
-    console.log(err)
     setResponse.InternalServerError(res, err)
   },
   onNoMatch(req, res) {
