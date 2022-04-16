@@ -15,13 +15,9 @@ handler.get(async (req, res) => {
     const companySystem = await prisma.companySystem.findMany()
     setResponse.OK(res, companySystem)
   } catch (error) {
-    if (error instanceof PrismaClientValidationError) {
-      setResponse.BadRequest(res)
-      return
-    }
     setResponse.InternalServerError(
       res,
-      "制度の作成に失敗しました。しばらく待ってからもう一度やりなおしてください。"
+      "制度の取得に失敗しました。しばらく待ってからもう一度やりなおしてください。"
     )
   }
 })
