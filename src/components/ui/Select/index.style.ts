@@ -60,7 +60,7 @@ export const Wrapper = styled.div(
   },
   ({ theme }) => ({
     "&:focus-within": {
-      [Icon as any]: {
+      [Icon as never]: {
         color: theme.colors.primary,
       },
     },
