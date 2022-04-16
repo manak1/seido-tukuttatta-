@@ -19,6 +19,9 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   useEffect(() => {
     isOpen ? disableScroll.on() : disableScroll.off()
+    return () => {
+      disableScroll.off()
+    }
   }, [isOpen])
 
   return (
