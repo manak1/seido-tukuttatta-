@@ -7,14 +7,14 @@ export const theme = {
     default: "16px",
     small: "14px",
     xsmall: "12px",
-  } as const,
+  },
   colors: {
     black: "#333",
     primary: "#7856FF",
     error: "#FF5656",
     white: "#fff",
     gray: "#d3d3d3",
-  } as const,
+  },
   maxWidth: {
     full: "100%",
     modal: "420px",
@@ -33,4 +33,4 @@ export const theme = {
       ...extraStyle,
     },
   }),
-}
+} as const
