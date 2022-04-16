@@ -1,7 +1,6 @@
+import disableScroll from "disable-scroll"
 import React, { useCallback, useState, useEffect } from "react"
 import { createPortal } from "react-dom"
-
-import { useBodyLock } from "~/hooks/bodyLock"
 
 import * as Styled from "./index.style"
 
@@ -13,15 +12,14 @@ export type ModalProps = {
 
 const Modal: React.FC<ModalProps> = (props) => {
   const { onClose, isOpen, domId } = props
-  const { lockBody, unLockBody } = useBodyLock()
 
   const preventEvent = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
   }, [])
 
   useEffect(() => {
-    isOpen ? lockBody() : unLockBody()
-  }, [isOpen, lockBody, unLockBody])
+    isOpen ? disableScroll.on() : disableScroll.off()
+  }, [isOpen])
 
   return (
     <>
