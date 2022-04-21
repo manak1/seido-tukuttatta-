@@ -3,6 +3,7 @@ import { RecoilRoot } from "recoil"
 
 import ErrorModalControl from "~/components/functional/ErrorModalControl"
 
+import { globalStyle } from "~/styles/global"
 import { theme } from "~/styles/theme"
 
 import type { AppProps } from "next/app"
@@ -14,14 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <ErrorModalControl />
-        <Global
-          styles={{
-            color: theme.colors.black,
-            "::placeholder": {
-              color: "rgb(117,117,117)",
-            },
-          }}
-        />
+        <Global styles={globalStyle} />
         <Component {...pageProps} />
       </ThemeProvider>
     </RecoilRoot>
