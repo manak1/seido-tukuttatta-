@@ -7,29 +7,18 @@ export const Nav = styled.nav(
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.white,
+    borderTop: `1px solid ${theme.colors.gray}`,
   })
 )
 
-export const List = styled.ul(
-  {
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "0",
-    listStyle: "none",
-  },
-  ({ theme }) => ({
-    "&:after": {
-      position: "absolute",
-      top: 0,
-      content: '""',
-      width: "100%",
-      height: "1px",
-      backgroundColor: theme.colors.gray,
-    },
-  })
-)
+export const List = styled.ul({
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  margin: "0",
+  listStyle: "none",
+})
 
 export const ListItem = styled.li(
   {
