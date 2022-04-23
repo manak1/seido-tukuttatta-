@@ -17,7 +17,7 @@ export const Title = styled.h1({}, ({ theme }) => ({
   color: theme.colors.black,
   fontWeight: "bold",
   fontSize: theme.fontSizes.medium,
-  margin: "0 0 0 32px",
+  margin: "0 0 0 16px",
 }))
 
 export const Link = styled.a({
