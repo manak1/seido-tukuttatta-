@@ -11,6 +11,18 @@ export const Header = styled.header(
   })
 )
 
+export const Box = styled.div({
+  display: "flex",
+  alignItems: "center",
+  gap: "4px",
+})
+
+export const Logo = styled.img({
+  width: "33px",
+  height: "33px",
+  transform: "scale(-1, 1)",
+})
+
 export const Title = styled.h1({}, ({ theme }) => ({
   color: theme.colors.black,
   fontSize: theme.fontSizes.medium,

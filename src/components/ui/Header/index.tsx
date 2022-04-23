@@ -11,11 +11,14 @@ const Header: React.VFC<HeaderProps> = (props) => {
   return (
     <Styled.Header {...props}>
       <Wrapper>
-        <Link href="/" passHref>
-          <Styled.Link>
-            <Styled.Title>制度作ってみたったー</Styled.Title>
-          </Styled.Link>
-        </Link>
+        <Styled.Box>
+          <Styled.Logo src="/logo.svg" />
+          <Link href="/" passHref>
+            <Styled.Link>
+              <Styled.Title>制度作ってみたったー</Styled.Title>
+            </Styled.Link>
+          </Link>
+        </Styled.Box>
       </Wrapper>
     </Styled.Header>
   )
