@@ -2,8 +2,37 @@
 
 exports[`Buttonのテスト snapshot 1`] = `
 <DocumentFragment>
-  <button
-    class="css-cii6lt"
+  .emotion-0 {
+  min-width: 36px;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 16px;
+  width: auto;
+  font-weight: bold;
+  background-color: #7856FF;
+  color: #fff;
+  -webkit-transition: box-shadow,filter,0.2s ease-in;
+  transition: box-shadow,filter,0.2s ease-in;
+}
+
+.emotion-0:hover {
+  -webkit-filter: brightness(95%);
+  filter: brightness(95%);
+  -webkit-transition: filter 0.2s ease-out;
+  transition: filter 0.2s ease-out;
+}
+
+.emotion-0:focus {
+  box-shadow: 0 0 0 2px rgba(120, 86, 255, 0.3);
+  -webkit-transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+}
+
+<button
+    class="emotion-0"
   >
     ボタン
   </button>

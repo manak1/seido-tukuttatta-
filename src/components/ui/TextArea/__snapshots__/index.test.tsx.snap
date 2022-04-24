@@ -2,21 +2,71 @@
 
 exports[`TextAreaのテスト snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="css-j7qwjs"
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  font-weight: bold;
+  color: #ddd;
+  color: #333;
+  font-size: 14px;
+}
+
+.emotion-3 {
+  outline: none;
+  border: 1px solid #d3d3d3;
+  margin-top: 8px;
+  padding: 8px;
+  min-height: 180px;
+  border-radius: 8px;
+  resize: none;
+  font-size: 16px;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+}
+
+.emotion-3:focus {
+  box-shadow: 0 0 0 2px rgba(120, 86, 255, 0.3);
+  -webkit-transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+}
+
+<div
+    class="emotion-0"
   >
     <div
-      class="css-69i1ev"
+      class="emotion-1"
     >
       <label
-        class="css-1lu35ut"
+        class="emotion-2"
         for="id"
       >
         ラベル
       </label>
     </div>
     <textarea
-      class="css-1qtiooa"
+      class="emotion-3"
       id="id"
     />
   </div>

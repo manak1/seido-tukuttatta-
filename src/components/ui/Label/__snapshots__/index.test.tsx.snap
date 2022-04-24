@@ -2,8 +2,15 @@
 
 exports[`Labelのテスト snapshot 1`] = `
 <DocumentFragment>
-  <label
-    class="css-1lu35ut"
+  .emotion-0 {
+  font-weight: bold;
+  color: #ddd;
+  color: #333;
+  font-size: 14px;
+}
+
+<label
+    class="emotion-0"
     for="for"
   >
     ラベル

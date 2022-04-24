@@ -2,26 +2,109 @@
 
 exports[`NavBottomテスト snapshot 1`] = `
 <DocumentFragment>
-  <nav
-    class="css-lg20g"
+  .emotion-0 {
+  width: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #fff;
+  border-top: 1px solid #d3d3d3;
+}
+
+.emotion-1 {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  padding: 0 16px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+  list-style: none;
+}
+
+.emotion-3 {
+  width: 25%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.emotion-4 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+  font-size: 14px;
+  opacity: 0.75;
+  -webkit-transition: background-color,opacity 0.2s ease-in-out;
+  transition: background-color,opacity 0.2s ease-in-out;
+}
+
+.emotion-4:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(120,86,255,0);
+  top: 1px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 8px;
+}
+
+.emotion-5 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  color: #333;
+}
+
+<nav
+    class="emotion-0"
   >
     <div
-      class="css-1y58jls-NavBottom"
+      class="emotion-1"
     >
       <ul
-        class="css-1c029c7"
+        class="emotion-2"
       >
         <li
-          class="css-1hxuc68"
+          class="emotion-3"
         >
           <a
-            class="css-eilro2"
+            class="emotion-4"
             href="/"
           >
             <svg
               aria-hidden="true"
               aria-label="ホーム"
-              class="css-p4649-EmotionIconBase ex0cdmw0"
+              class="emotion-5 emotion-6"
               fill="currentColor"
               focusable="false"
               height="40"
@@ -41,16 +124,16 @@ exports[`NavBottomテスト snapshot 1`] = `
           </a>
         </li>
         <li
-          class="css-1hxuc68"
+          class="emotion-3"
         >
           <a
-            class="css-eilro2"
+            class="emotion-4"
             href="/search"
           >
             <svg
               aria-hidden="true"
               aria-label="検索"
-              class="css-p4649-EmotionIconBase ex0cdmw0"
+              class="emotion-5 emotion-6"
               fill="currentColor"
               focusable="false"
               height="40"
@@ -70,16 +153,16 @@ exports[`NavBottomテスト snapshot 1`] = `
           </a>
         </li>
         <li
-          class="css-1hxuc68"
+          class="emotion-3"
         >
           <a
-            class="css-eilro2"
+            class="emotion-4"
             href="/ranking"
           >
             <svg
               aria-hidden="true"
               aria-label="ランキング"
-              class="css-p4649-EmotionIconBase ex0cdmw0"
+              class="emotion-5 emotion-6"
               fill="currentColor"
               focusable="false"
               height="40"
@@ -100,16 +183,16 @@ exports[`NavBottomテスト snapshot 1`] = `
           </a>
         </li>
         <li
-          class="css-1hxuc68"
+          class="emotion-3"
         >
           <a
-            class="css-eilro2"
+            class="emotion-4"
             href="/tag"
           >
             <svg
               aria-hidden="true"
               aria-label="タグ"
-              class="css-p4649-EmotionIconBase ex0cdmw0"
+              class="emotion-5 emotion-6"
               fill="currentColor"
               focusable="false"
               height="40"

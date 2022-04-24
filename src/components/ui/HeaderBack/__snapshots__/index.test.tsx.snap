@@ -2,18 +2,86 @@
 
 exports[`HeaderBackのテスト snapshot 1`] = `
 <DocumentFragment>
-  <header
-    class="css-11a06ge"
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 8px 0;
+}
+
+.emotion-1 {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  position: relative;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  width: 34px;
+  height: 34px;
+}
+
+.emotion-2:focus {
+  box-shadow: 0 0 0 2px rgba(120, 86, 255, 0.3);
+  -webkit-transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.emotion-3 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #333;
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  left: 5px;
+}
+
+.emotion-5 {
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 0 16px;
+}
+
+<header
+    class="emotion-0"
   >
     <div
-      class="css-jz0ogk"
+      class="emotion-1"
     >
       <button
-        class="css-2p1pmn"
+        class="emotion-2"
       >
         <svg
           aria-hidden="true"
-          class="css-10eisgu-EmotionIconBase ex0cdmw0"
+          class="emotion-3 emotion-4"
           fill="currentColor"
           focusable="false"
           height="20px"
@@ -32,7 +100,7 @@ exports[`HeaderBackのテスト snapshot 1`] = `
         </svg>
       </button>
       <h1
-        class="css-w2lwg"
+        class="emotion-5"
       >
         タイトル
       </h1>

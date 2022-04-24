@@ -2,25 +2,75 @@
 
 exports[`Headerのテスト snapshot 1`] = `
 <DocumentFragment>
-  <header
-    class="css-1h7t81j"
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  padding: 8px 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.emotion-1 {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.emotion-3 {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.emotion-4 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-5 {
+  color: #333;
+  font-size: 20px;
+  margin: 0;
+}
+
+<header
+    class="emotion-0"
   >
     <div
-      class="css-aphti2"
+      class="emotion-1"
     >
       <div
-        class="css-171onha"
+        class="emotion-2"
       >
         <img
-          class="css-61ghqo"
+          class="emotion-3"
           src="/logo.svg"
         />
         <a
-          class="css-ytumd6"
+          class="emotion-4"
           href="/"
         >
           <h1
-            class="css-1uk7tyj"
+            class="emotion-5"
           >
             制度作ってみたったー
           </h1>

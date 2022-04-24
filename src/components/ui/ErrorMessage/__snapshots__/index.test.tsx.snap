@@ -2,8 +2,15 @@
 
 exports[`ErrorMessageテスト snapshot 1`] = `
 <DocumentFragment>
-  <p
-    class="css-824kd8"
+  .emotion-0 {
+  font-size: 14px;
+  color: #FF5656;
+  margin: 0;
+  padding: 0;
+}
+
+<p
+    class="emotion-0"
   >
     エラー内容がここに入ります。
   </p>
