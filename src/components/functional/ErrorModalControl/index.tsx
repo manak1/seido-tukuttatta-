@@ -4,7 +4,12 @@ import ErrorModal from "~/components/ui/ErrorModal"
 
 import { useModalError } from "~/hooks/modalError"
 
-const ErrorModalControl: React.VFC = () => {
+type ErrorModalControlProps = {
+  domId?: string
+}
+
+const ErrorModalControl: React.VFC<ErrorModalControlProps> = (props) => {
+  const { domId } = props
   const { getError, popError } = useModalError()
 
   const getErrorMessage = useMemo(() => {
@@ -17,6 +22,7 @@ const ErrorModalControl: React.VFC = () => {
 
   return (
     <ErrorModal
+      domId={domId}
       isOpen={!!getError}
       onClose={removeError}
       message={getErrorMessage}
