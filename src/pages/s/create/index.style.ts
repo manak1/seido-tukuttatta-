@@ -5,6 +5,7 @@ export const Image = styled.img({
 })
 
 export const Form = styled.form({
+  marginTop: "24px",
   "> * + *": {
     marginTop: "16px",
   },

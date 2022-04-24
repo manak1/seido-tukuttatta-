@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { NextPage } from "next"
+import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 
 import { companySystemSchema } from "~/libs/zod"
@@ -14,10 +15,13 @@ import RfhTextArea from "~/components/functional/RfhTextArea"
 import DetailLayout from "~/layouts/DetailLayout"
 
 import { CreateCompanySystem } from "~/@types"
+import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import { usePostCompanySystem } from "~/hooks/api/companySystem"
+import { preventEventByEnter } from "~/utils/keyDown"
 
 import * as Styled from "./index.style"
 
+import { placeholderSystem } from "~/constants/companySystem"
 import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
@@ -26,7 +30,8 @@ export const CreateSystemPage: NextPage = () => {
   const {
     control,
     handleSubmit,
-    formState: { isValid },
+    watch,
+    formState: { isValid, isSubmitted },
   } = useForm<CreateCompanySystem>({
     mode: "onChange",
     resolver: zodResolver(companySystemSchema),
@@ -38,19 +43,50 @@ export const CreateSystemPage: NextPage = () => {
     },
   })
 
+  const isButtonDisabled = useMemo(
+    () => !isValid || isLoading || isSubmitted,
+    [isLoading, isSubmitted, isValid]
+  )
+
   const onSubmit = async (data: CreateCompanySystem) => {
     if (isLoading) return
     const companySystem = await post(data)
     if (companySystem) {
       // ここで成功モーダルを表示する
-      alert("制度ができた")
+      alert(`制度ができた${companySystem.id}`)
     }
   }
 
+  const formValues = watch()
+
+  const companySystem = useMemo(() => {
+    return {
+      name: formValues.name === "" ? placeholderSystem.name : formValues.name,
+      description:
+        formValues.description === ""
+          ? placeholderSystem.description
+          : formValues.description,
+      thumbnailType:
+        formValues.thumbnailType === ""
+          ? placeholderSystem.thumbnailType
+          : formValues.thumbnailType,
+      author:
+        formValues.author === "" ? placeholderSystem.author : formValues.author,
+    }
+  }, [
+    formValues.author,
+    formValues.description,
+    formValues.name,
+    formValues.thumbnailType,
+  ])
+
   return (
     <DetailLayout>
-      <Styled.Image src="/test.png" />
-      <Styled.Form onSubmit={handleSubmit(onSubmit)}>
+      <CompanySystemThumbnail companySystem={companySystem} />
+      <Styled.Form
+        onKeyDown={(e) => preventEventByEnter(e)}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <RfhInputText
           label="制度の名前は？"
           placeholder="有給取り放題制度"
@@ -71,7 +107,7 @@ export const CreateSystemPage: NextPage = () => {
         />
         <div>
           <Label label="完成イメージ" />
-          <Styled.Image src="/test.png" />
+          <CompanySystemThumbnail companySystem={companySystem} />
         </div>
         <RfhSelect
           items={thumbnailItems}
@@ -82,7 +118,7 @@ export const CreateSystemPage: NextPage = () => {
         />
         <Button
           type="submit"
-          disabled={!isValid || isLoading}
+          disabled={isButtonDisabled}
           isFullWidth
           label="制度をつくる"
         />
