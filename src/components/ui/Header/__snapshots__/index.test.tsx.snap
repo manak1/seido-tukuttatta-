@@ -8,16 +8,24 @@ exports[`Headerのテスト snapshot 1`] = `
     <div
       class="css-aphti2"
     >
-      <a
-        class="css-ytumd6"
-        href="/"
+      <div
+        class="css-171onha"
       >
-        <h1
-          class="css-1uk7tyj"
+        <img
+          class="css-61ghqo"
+          src="/logo.svg"
+        />
+        <a
+          class="css-ytumd6"
+          href="/"
         >
-          制度作ってみたったー
-        </h1>
-      </a>
+          <h1
+            class="css-1uk7tyj"
+          >
+            制度作ってみたったー
+          </h1>
+        </a>
+      </div>
     </div>
   </header>
 </DocumentFragment>
