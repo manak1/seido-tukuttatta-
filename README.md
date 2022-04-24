@@ -1,4 +1,4 @@
-![seido-tukuttatta-](https://user-images.githubusercontent.com/32151765/164985743-81c8ea10-030c-4ab9-a569-c9b41c18708b.jpg)
+![samune](https://user-images.githubusercontent.com/32151765/164986178-b885c99e-aac0-4fcc-88c8-d3271825e796.jpg)
 
 # 制度作ったったー
 
