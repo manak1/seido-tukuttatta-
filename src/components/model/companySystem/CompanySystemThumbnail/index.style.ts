@@ -122,7 +122,7 @@ export const Glass = {
   ),
   Wrapper: styled.div({}),
   Title: styled.h2({}, ({ theme }) => ({
-    margin: "-20px 0 0 0",
+    margin: "-10px 0 0 0",
     fontSize: theme.fontSizes.large,
     letterSpacing: theme.letterSpacing.wide,
     lineBreak: "anywhere",
@@ -142,7 +142,7 @@ export const Glass = {
     margin: "0 0 0 8px",
     lineHeight: "1",
     fontWeight: "normal",
-    fontSize: theme.fontSizes.small,
+    fontSize: theme.fontSizes.xsmall,
   })),
   Logo: styled.img({
     width: "33px",
