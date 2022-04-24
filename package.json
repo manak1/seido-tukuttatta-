@@ -43,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/jest": "^11.9.1",
     "@next/eslint-plugin-next": "^12.1.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
