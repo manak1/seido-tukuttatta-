@@ -1,6 +1,16 @@
 import styled from "@emotion/styled"
 import { NotificationImportant } from "emotion-icons/material"
 
+export const Target = styled.div({
+  position: "absolute",
+  top: "-20px",
+  left: "50%",
+  width: "16px",
+  height: "16px",
+  transform: "translateX(-50%)",
+  backgroundColor: "red",
+})
+
 export const Box = styled.div({
   display: "flex",
   alignItems: "center",
