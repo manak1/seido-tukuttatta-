@@ -16,7 +16,10 @@ import DetailLayout from "~/layouts/DetailLayout"
 
 import { CreateCompanySystem } from "~/@types"
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
+import ConfirmCompanySystemModal from "~/components/model/companySystem/ConfirmCompanySystemModal"
+import CreatedSystemCompanyModal from "~/components/model/companySystem/CreatedCompanySystemModal"
 import { usePostCompanySystem } from "~/hooks/api/companySystem"
+import { useBoolean } from "~/hooks/boolean"
 import { preventEventByEnter } from "~/utils/keyDown"
 
 import * as Styled from "./index.style"
@@ -26,12 +29,18 @@ import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
   const { post, isLoading } = usePostCompanySystem()
+  const [isConfirModalOpen, openConfirmModal, closeConfirmModal] =
+    useBoolean(false)
+  const [isSubmitted, setSubmittedTrue] = useBoolean(false)
+  const [isCreateModalOpen, openCreatedModal, closeCreatedModal] =
+    useBoolean(false)
 
   const {
     control,
     handleSubmit,
     watch,
-    formState: { isValid, isSubmitted },
+    getValues,
+    formState: { isValid },
   } = useForm<CreateCompanySystem>({
     mode: "onChange",
     resolver: zodResolver(companySystemSchema),
@@ -48,12 +57,18 @@ export const CreateSystemPage: NextPage = () => {
     [isLoading, isSubmitted, isValid]
   )
 
-  const onSubmit = async (data: CreateCompanySystem) => {
-    if (isLoading) return
-    const companySystem = await post(data)
+  const onSubmit = () => {
+    openConfirmModal()
+  }
+
+  const onConfirm = async () => {
+    if (isLoading || isSubmitted) return
+    const formData = getValues()
+    const companySystem = await post(formData)
     if (companySystem) {
-      // ここで成功モーダルを表示する
-      alert(`制度ができた${companySystem.id}`)
+      openCreatedModal()
+      closeConfirmModal()
+      setSubmittedTrue()
     }
   }
 
@@ -104,6 +119,7 @@ export const CreateSystemPage: NextPage = () => {
           placeholder="@mikeanakida"
           name="author"
           control={control}
+          isOptional
         />
         <div>
           <Label label="完成イメージ" />
@@ -123,6 +139,17 @@ export const CreateSystemPage: NextPage = () => {
           label="制度をつくる"
         />
       </Styled.Form>
+      <ConfirmCompanySystemModal
+        isOpen={isConfirModalOpen}
+        onClose={closeConfirmModal}
+        onConfirm={onConfirm}
+      />
+      <CreatedSystemCompanyModal
+        isOpen={isCreateModalOpen}
+        companyName={companySystem.name}
+        onClose={closeCreatedModal}
+        onConfirm={closeCreatedModal}
+      />
     </DetailLayout>
   )
 }
