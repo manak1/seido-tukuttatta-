@@ -3,10 +3,10 @@ import { SelectItem } from "~/components/ui/Select"
 export const thumbnailItems: SelectItem[] = [
   {
     value: "1",
-    label: "シンプル",
+    label: "グラデーション",
   },
   {
     value: "2",
-    label: "チーム",
+    label: "ガラス風",
   },
 ]
