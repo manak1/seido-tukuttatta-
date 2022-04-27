@@ -7,7 +7,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
   {
     minWidth: "36px",
     outline: "none",
-    padding: "8px 16px",
+    padding: "12px 16px",
     border: "none",
     borderRadius: "9999px",
     cursor: "pointer",
