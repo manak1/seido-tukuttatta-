@@ -2,6 +2,7 @@ import { CSSObject } from "@emotion/react"
 
 export const theme = {
   fontSizes: {
+    xlarge: "32px",
     large: "24px",
     medium: "20px",
     default: "16px",
