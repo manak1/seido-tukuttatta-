@@ -9,6 +9,7 @@
     "lint": "next lint --dir src",
     "prepare": "husky install",
     "format": "prettier --write ./**/*.{js,ts,tsx}",
+    "component": "hygen component new",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=",
