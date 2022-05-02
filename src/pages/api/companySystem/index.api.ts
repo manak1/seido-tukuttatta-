@@ -12,7 +12,9 @@ import { createCompanySystemSchema } from "~/constants/schemas"
 
 handler.get(async (req, res) => {
   try {
-    const companySystem = await prisma.companySystem.findMany()
+    const companySystem = await prisma.companySystem.findMany({
+      take: 5,
+    })
     setResponse.OK(res, companySystem)
   } catch (error) {
     setResponse.InternalServerError(
