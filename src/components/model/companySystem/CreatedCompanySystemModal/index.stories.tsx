@@ -1,14 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import Component, { CreatedCompanySystemModalProps } from "./index"
-
-const companySystem: CreatedCompanySystemModalProps["companySystem"] = {
-  name: "コーラ飲み放題制度",
-  description:
-    "勤務時間中に購入したコカコーラ社のコーラの経費で立て替えます。一日最大10本まで購入可能。",
-  id: 1,
-  thumbnailType: "1",
-}
+import Component from "./index"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,7 +9,7 @@ export default {
   argTypes: {
     onClose: { control: "action" },
     isOpen: { control: "boolean", defaultValue: true },
-    companySystem: { control: "object", defaultValue: companySystem },
+    companyName: { control: "string", defaultValue: "コーラ飲み放題制度" },
     onConfirm: { control: "action" },
   },
 } as ComponentMeta<typeof Component>
