@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Titleのテスト snapshot 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 20px;
+}
+
+<p
+    class="emotion-0"
+  >
+    タイトルだよ
+  </p>
+</DocumentFragment>
+`;
