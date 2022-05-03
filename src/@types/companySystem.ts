@@ -3,7 +3,9 @@ export type CompanySystem = {
   name: string
   description: string
   thumbnailType: string
-  author?: string
+  author: string
 }
 
-export type CreateCompanySystem = Omit<CompanySystem, "id">
+export type CreateCompanySystem = Omit<CompanySystem, "id"> & {
+  author?: string
+}
