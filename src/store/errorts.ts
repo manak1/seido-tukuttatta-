@@ -1,7 +1,6 @@
-import { AxiosError } from "axios"
 import { atom, selector } from "recoil"
 
-export type ModalError = Error | AxiosError
+export type ModalError = Error
 
 export const errorsAtom = atom<ModalError[]>({
   key: "errors/atom",

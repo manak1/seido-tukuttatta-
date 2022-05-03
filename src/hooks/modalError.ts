@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useMemo } from "react"
 import { useRecoilCallback, useRecoilValue } from "recoil"
 
@@ -12,9 +11,6 @@ export const useModalError = () => {
   }, [error])
 
   const addError = useRecoilCallback(({ set }) => (error: ModalError) => {
-    if (axios.isAxiosError(error)) {
-      error.message = error.response?.data?.message ?? error.message
-    }
     set(errorsAtom, (errors) => [...errors, error])
   })
 
