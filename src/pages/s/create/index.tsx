@@ -18,7 +18,6 @@ import { CreateCompanySystem } from "~/@types"
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import ConfirmCompanySystemModal from "~/components/model/companySystem/ConfirmCompanySystemModal"
 import CreatedSystemCompanyModal from "~/components/model/companySystem/CreatedCompanySystemModal"
-import { usePostCompanySystem } from "~/hooks/api/companySystem"
 import { useBoolean } from "~/hooks/boolean"
 import { preventEventByEnter } from "~/utils/keyDown"
 
@@ -28,7 +27,6 @@ import { placeholderSystem } from "~/constants/companySystem"
 import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
-  const { post, isLoading } = usePostCompanySystem()
   const [isConfirModalOpen, openConfirmModal, closeConfirmModal] =
     useBoolean(false)
   const [isSubmitted, setSubmittedTrue] = useBoolean(false)
@@ -53,24 +51,24 @@ export const CreateSystemPage: NextPage = () => {
   })
 
   const isButtonDisabled = useMemo(
-    () => !isValid || isLoading || isSubmitted,
-    [isLoading, isSubmitted, isValid]
+    () => !isValid || isSubmitted,
+    [isSubmitted, isValid]
   )
 
   const onSubmit = () => {
     openConfirmModal()
   }
-
+  /* 
   const onConfirm = async () => {
-    if (isLoading || isSubmitted) return
+    if (isSubmitted) return
     const formData = getValues()
-    const companySystem = await post(formData)
+    const companySystem = [] //await post(formData)
     if (companySystem) {
       openCreatedModal()
       closeConfirmModal()
       setSubmittedTrue()
     }
-  }
+  } */
 
   const formValues = watch()
 
@@ -142,7 +140,7 @@ export const CreateSystemPage: NextPage = () => {
       <ConfirmCompanySystemModal
         isOpen={isConfirModalOpen}
         onClose={closeConfirmModal}
-        onConfirm={onConfirm}
+        onConfirm={() => alert("onConfirm")}
       />
       <CreatedSystemCompanyModal
         isOpen={isCreateModalOpen}

@@ -1,32 +1,17 @@
-import { useEffect, useState } from "react"
-
 import DefaultLayout from "~/layouts/DefaultLayout"
 
-import { CompanySystem } from "~/@types"
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
-import { useGetCompanySystemList } from "~/hooks/api/companySystem"
+import { useGetCompanySystem } from "~/hooks/api/companySystem"
 
 import type { NextPage } from "next"
 
 const Home: NextPage = () => {
-  const [list, setList] = useState<CompanySystem[]>([])
-
-  const { get, isLoading } = useGetCompanySystemList()
-
-  useEffect(() => {
-    const init = async () => {
-      const result = await get()
-      if (result && result?.data) {
-        setList(result.data)
-      }
-    }
-    init()
-  }, [])
+  const { data } = useGetCompanySystem()
 
   return (
     <DefaultLayout>
-      {list &&
-        list.map((system) => (
+      {data &&
+        data.map((system) => (
           <>
             <CompanySystemThumbnail companySystem={system} />
           </>

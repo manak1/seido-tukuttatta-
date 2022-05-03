@@ -15,7 +15,8 @@ handler.get(async (req, res) => {
     const companySystem = await prisma.companySystem.findMany({
       take: 5,
     })
-    setResponse.OK(res, companySystem)
+
+    setResponse.OK(res, { companySystem })
   } catch (error) {
     setResponse.InternalServerError(
       res,
@@ -34,7 +35,7 @@ handler
         data: {
           name,
           description,
-          author,
+          author: author ?? "名無さん",
           thumbnailType,
         },
       })

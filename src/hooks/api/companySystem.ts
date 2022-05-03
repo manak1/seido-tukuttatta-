@@ -1,55 +1,17 @@
-import { useCallback } from "react"
+import useSWR from "swr"
 
-import { CompanySystem, CreateCompanySystem } from "~/@types"
-import { useAxios } from "~/hooks/api/axios"
-import { useBoolean } from "~/hooks/boolean"
+import { CompanySystem } from "~/@types"
+import { useFetcher } from "~/hooks/api/fetcher"
 
-import { ApiResponseType } from "~/@types/api"
+import { ApiSuccessResponseType } from "~/@types/api"
 
-export const useGetCompanySystemList = () => {
-  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
-  const client = useAxios()
-
-  const get = useCallback(async () => {
-    if (isLoading) return
-    setLoadingTrue()
-    const res = await client.get<ApiResponseType<CompanySystem[]>>(
-      "/api/companySystem"
-    )
-    setLoadingFalse()
-    if (res && res.data.success) {
-      return res.data
-    }
-  }, [client, isLoading, setLoadingFalse, setLoadingTrue])
-
+export const useGetCompanySystem = () => {
+  const fetcher = useFetcher()
+  const { data, error } = useSWR<
+    ApiSuccessResponseType<{ companySystem: CompanySystem[] }>
+  >(`/api/companySystem`, fetcher)
   return {
-    get,
-    isLoading,
-  }
-}
-
-export const usePostCompanySystem = () => {
-  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
-  const client = useAxios()
-
-  const post = useCallback(
-    async (data: CreateCompanySystem) => {
-      if (isLoading) return
-      setLoadingTrue()
-      const res = await client.post<ApiResponseType<CompanySystem>>(
-        "/api/companySystem",
-        data
-      )
-      setLoadingFalse()
-      if (res && res.data.success) {
-        return res.data.data
-      }
-    },
-    [client, isLoading, setLoadingFalse, setLoadingTrue]
-  )
-
-  return {
-    post,
-    isLoading,
+    data: data?.companySystem,
+    isLoading: !error && !data,
   }
 }
