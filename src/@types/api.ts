@@ -1,18 +1,12 @@
-type ApiCommonResponseProperties<T, U> = {
-  success: T
-  data: U
-  message: string
+export type ApiCommonResponseProperties = {
+  success: boolean
 }
 
-export type ApiSuccessResponseType<K> = Omit<
-  ApiCommonResponseProperties<true, K>,
-  "message"
->
+export type ApiSuccessResponseType<T> = T & ApiCommonResponseProperties
 
-export type ApiErrorResponseType = Omit<
-  ApiCommonResponseProperties<false, never>,
-  "data"
->
+export type ApiErrorResponseType = {
+  message: string
+} & ApiCommonResponseProperties
 
 export type ApiResponseType<T> =
   | ApiSuccessResponseType<T>
