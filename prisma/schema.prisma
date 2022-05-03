@@ -17,5 +17,5 @@ model CompanySystem {
   name String
   description String
   thumbnailType String
-  author String?
+  author String
 } 
