@@ -1,18 +1,18 @@
 import { Theme } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { ButtonProps, ButtonVariant } from "./index"
+import { ButtonProps, ButtonSize, ButtonVariant } from "./index"
 
 export const Button = styled.button<Omit<ButtonProps, "label">>(
   {
     minWidth: "36px",
     outline: "none",
-    padding: "12px 16px",
+    padding: "10px 16px",
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
   },
-  ({ variant, isFullWidth, theme, disabled }) => ({
+  ({ variant, isFullWidth, theme, disabled, size }) => ({
     fontSize: theme.fontSizes.default,
     width: isFullWidth ? "100%" : "auto",
     fontWeight: "bold",
@@ -22,6 +22,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     },
     ...setVariant(variant ?? "primary", theme, disabled),
     ...theme.focus(),
+    ...setSize(size ?? "default"),
     transition: "box-shadow, filter, 0.2s ease-in",
   })
 )
@@ -42,6 +43,13 @@ function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
         backgroundColor: theme.colors.primary,
         color: "#fff",
       }
+    case "outline": {
+      return {
+        backgroundColor: theme.colors.white,
+        border: `3px solid ${theme.colors.primary}`,
+        color: theme.colors.primary,
+      }
+    }
     case "danger":
       return {
         backgroundColor: theme.colors.error,
@@ -52,6 +60,20 @@ function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
         backgroundColor: "#fff",
         color: theme.colors.black,
         border: "1px solid #d3d3d3",
+      }
+  }
+}
+
+function setSize(buttonSize: ButtonSize) {
+  switch (buttonSize) {
+    case "default":
+      return {
+        padding: "10px 16px",
+      }
+
+    case "small":
+      return {
+        padding: "8px 16px",
       }
   }
 }

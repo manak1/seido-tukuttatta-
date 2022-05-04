@@ -2,20 +2,21 @@ import React from "react"
 
 import * as Styled from "./index.style"
 
-export type ButtonVariant = "primary" | "danger" | "cancel"
+export type ButtonVariant = "primary" | "danger" | "cancel" | "outline"
+export type ButtonSize = "default" | "small"
 
 export type ButtonProps = React.ComponentProps<"button"> & {
-  label: string
   variant?: ButtonVariant
+  size?: ButtonSize
   isFullWidth?: boolean
 }
 
-const Button: React.VFC<ButtonProps> = (props) => {
-  const { label, variant = "primary", ...rest } = props
+const Button: React.FC<ButtonProps> = (props) => {
+  const { children, variant = "primary", ...rest } = props
 
   return (
     <Styled.Button {...rest} variant={variant}>
-      {label}
+      {children}
     </Styled.Button>
   )
 }
