@@ -21,8 +21,12 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
         一度作成した制度は編集できません。書き忘れなどはありませんか？不安であれば一度見直してみる事をおすすめします！
       </Styled.Message>
       <Styled.Buttons>
-        <Button onClick={onConfirm} label="制度をつくる" isFullWidth />
-        <Button onClick={onClose} label="閉じる" variant="cancel" isFullWidth />
+        <Button onClick={onConfirm} isFullWidth>
+          制度をつくる
+        </Button>
+        <Button onClick={onClose} variant="cancel" isFullWidth>
+          閉じる
+        </Button>
       </Styled.Buttons>
     </Modal>
   )

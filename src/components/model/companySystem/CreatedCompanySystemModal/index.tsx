@@ -44,8 +44,12 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
       <Styled.Title>おめでとうございます！！ </Styled.Title>
       <Styled.Message>{createMessage}</Styled.Message>
       <Styled.Buttons>
-        <Button onClick={onConfirm} label="制度を共有する" isFullWidth />
-        <Button onClick={onClose} label="閉じる" variant="cancel" isFullWidth />
+        <Button onClick={onConfirm} isFullWidth>
+          制度を共有する
+        </Button>
+        <Button onClick={onClose} variant="cancel" isFullWidth>
+          閉じる
+        </Button>
       </Styled.Buttons>
     </Modal>
   )

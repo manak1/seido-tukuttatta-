@@ -130,12 +130,9 @@ export const CreateSystemPage: NextPage = () => {
           name="thumbnailType"
           control={control}
         />
-        <Button
-          type="submit"
-          disabled={isButtonDisabled}
-          isFullWidth
-          label="制度をつくる"
-        />
+        <Button type="submit" disabled={isButtonDisabled} isFullWidth>
+          制度をつくる
+        </Button>
       </Styled.Form>
       <ConfirmCompanySystemModal
         isOpen={isConfirModalOpen}
