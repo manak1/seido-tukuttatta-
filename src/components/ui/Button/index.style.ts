@@ -9,7 +9,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     outline: "none",
     padding: "12px 16px",
     border: "none",
-    borderRadius: "9999px",
+    borderRadius: "8px",
     cursor: "pointer",
   },
   ({ variant, isFullWidth, theme, disabled }) => ({
