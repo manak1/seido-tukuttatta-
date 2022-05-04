@@ -14,9 +14,6 @@ const companySystemList = new Array(5).fill(null).map((_, index) => ({
 export default {
   title: "model/companySystem/CompanySystemList",
   component: Component,
-  argTypes: {
-    companySystems: { defaultValue: companySystemList },
-  },
 } as ComponentMeta<typeof Component>
 
 const Template: ComponentStory<typeof Component> = (args) => {
@@ -24,3 +21,6 @@ const Template: ComponentStory<typeof Component> = (args) => {
 }
 
 export const Default = Template.bind({})
+Default.args = {
+  companySystems: companySystemList,
+}
