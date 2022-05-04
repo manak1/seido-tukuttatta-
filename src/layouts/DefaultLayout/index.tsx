@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 import React, { useCallback } from "react"
 
 import Header from "~/components/ui/Header"
-import IconButton from "~/components/ui/IconButton"
 import NavBottom from "~/components/ui/NavBottom"
 
 import * as Styled from "./index.style"
@@ -28,7 +27,8 @@ const DefaultLayout: React.FC = (props) => {
         links={navLinks}
         css={css`
           position: fixed;
-          left: 0;
+          left: 50%;
+          transform: translateX(-50%);
           margin: 0;
           bottom: 0;
         `}

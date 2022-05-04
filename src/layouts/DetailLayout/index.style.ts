@@ -19,7 +19,8 @@ export const ExtendWrapper = styled(Wrapper)(
 
 export const ExtendNavBottom = styled(NavBottom)({
   position: "fixed",
-  left: "0",
+  left: "50%",
   margin: "0",
   bottom: "0",
+  transform: "translate(-50%)",
 })

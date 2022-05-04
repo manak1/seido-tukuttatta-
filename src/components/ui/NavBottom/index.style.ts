@@ -4,10 +4,12 @@ export const Nav = styled.nav(
   {
     width: "100%",
     paddingBottom: "env(safe-area-inset-bottom)",
+    margin: "0 auto",
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.white,
-    borderTop: `1px solid ${theme.colors.gray}`,
+    border: `1px solid ${theme.colors.gray}`,
+    maxWidth: theme.maxWidth.default,
   })
 )
 
