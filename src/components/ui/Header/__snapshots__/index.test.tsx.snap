@@ -9,13 +9,16 @@ exports[`Headerのテスト snapshot 1`] = `
   display: flex;
   background-color: #fff;
   padding: 8px 0;
-  border-bottom: 1px solid #d3d3d3;
+  border: 1px solid #d3d3d3;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .emotion-1 {
+  background-color: #fff;
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 480px;
   padding: 0 16px;
   margin: 0 auto;
 }

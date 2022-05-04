@@ -17,6 +17,12 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
 }
 
 .emotion-2 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #333;
+}
+
+.emotion-3 {
   width: 100%;
   height: 198px;
   background-image: url('/garasuhu.svg');
@@ -37,13 +43,13 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
 }
 
 @media (min-width: 580px) {
-  .emotion-2 {
+  .emotion-3 {
     width: 350px;
     margin: 0 auto;
   }
 }
 
-.emotion-4 {
+.emotion-5 {
   margin: -10px 0 0 0;
   font-size: 24px;
   letter-spacing: 0.025em;
@@ -56,7 +62,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
   -webkit-box-orient: vertical;
 }
 
-.emotion-5 {
+.emotion-6 {
   margin-top: 4px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -68,12 +74,12 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
   align-items: center;
 }
 
-.emotion-6 {
+.emotion-7 {
   width: 33px;
   height: 33px;
 }
 
-.emotion-7 {
+.emotion-8 {
   margin: 0 0 0 8px;
   line-height: 1;
   font-weight: normal;
@@ -86,152 +92,177 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
     <li
       class="emotion-1"
     >
-      <div
+      <a
         class="emotion-2"
+        href="/s/0"
       >
         <div
-          class="emotion-1"
+          class="emotion-3"
         >
-          <h2
-            class="emotion-4"
-          >
-            おひるねし放題制度
-          </h2>
           <div
-            class="emotion-5"
+            class="emotion-1"
           >
-            <img
-              class="emotion-6"
-              src="/logo.svg"
-            />
-            <p
-              class="emotion-7"
+            <h2
+              class="emotion-5"
             >
-              @manaki
-            </p>
+              おひるねし放題制度
+            </h2>
+            <div
+              class="emotion-6"
+            >
+              <img
+                class="emotion-7"
+                src="/logo.svg"
+              />
+              <p
+                class="emotion-8"
+              >
+                @manaki
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </li>
     <li
       class="emotion-1"
     >
-      <div
+      <a
         class="emotion-2"
+        href="/s/1"
       >
         <div
-          class="emotion-1"
+          class="emotion-3"
         >
-          <h2
-            class="emotion-4"
-          >
-            おひるねし放題制度
-          </h2>
           <div
-            class="emotion-5"
+            class="emotion-1"
           >
-            <img
-              class="emotion-6"
-              src="/logo.svg"
-            />
-            <p
-              class="emotion-7"
+            <h2
+              class="emotion-5"
             >
-              @manaki
-            </p>
+              おひるねし放題制度
+            </h2>
+            <div
+              class="emotion-6"
+            >
+              <img
+                class="emotion-7"
+                src="/logo.svg"
+              />
+              <p
+                class="emotion-8"
+              >
+                @manaki
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </li>
     <li
       class="emotion-1"
     >
-      <div
+      <a
         class="emotion-2"
+        href="/s/2"
       >
         <div
-          class="emotion-1"
+          class="emotion-3"
         >
-          <h2
-            class="emotion-4"
-          >
-            おひるねし放題制度
-          </h2>
           <div
-            class="emotion-5"
+            class="emotion-1"
           >
-            <img
-              class="emotion-6"
-              src="/logo.svg"
-            />
-            <p
-              class="emotion-7"
+            <h2
+              class="emotion-5"
             >
-              @manaki
-            </p>
+              おひるねし放題制度
+            </h2>
+            <div
+              class="emotion-6"
+            >
+              <img
+                class="emotion-7"
+                src="/logo.svg"
+              />
+              <p
+                class="emotion-8"
+              >
+                @manaki
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </li>
     <li
       class="emotion-1"
     >
-      <div
+      <a
         class="emotion-2"
+        href="/s/3"
       >
         <div
-          class="emotion-1"
+          class="emotion-3"
         >
-          <h2
-            class="emotion-4"
-          >
-            おひるねし放題制度
-          </h2>
           <div
-            class="emotion-5"
+            class="emotion-1"
           >
-            <img
-              class="emotion-6"
-              src="/logo.svg"
-            />
-            <p
-              class="emotion-7"
+            <h2
+              class="emotion-5"
             >
-              @manaki
-            </p>
+              おひるねし放題制度
+            </h2>
+            <div
+              class="emotion-6"
+            >
+              <img
+                class="emotion-7"
+                src="/logo.svg"
+              />
+              <p
+                class="emotion-8"
+              >
+                @manaki
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </li>
     <li
       class="emotion-1"
     >
-      <div
+      <a
         class="emotion-2"
+        href="/s/4"
       >
         <div
-          class="emotion-1"
+          class="emotion-3"
         >
-          <h2
-            class="emotion-4"
-          >
-            おひるねし放題制度
-          </h2>
           <div
-            class="emotion-5"
+            class="emotion-1"
           >
-            <img
-              class="emotion-6"
-              src="/logo.svg"
-            />
-            <p
-              class="emotion-7"
+            <h2
+              class="emotion-5"
             >
-              @manaki
-            </p>
+              おひるねし放題制度
+            </h2>
+            <div
+              class="emotion-6"
+            >
+              <img
+                class="emotion-7"
+                src="/logo.svg"
+              />
+              <p
+                class="emotion-8"
+              >
+                @manaki
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </li>
   </ul>
 </DocumentFragment>

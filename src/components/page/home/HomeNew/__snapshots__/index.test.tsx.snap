@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeNewのテスト snapshot 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  text-align: left;
+}
+
+.emotion-1 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 20px;
+}
+
+.emotion-2 {
+  width: 1px;
+  height: 12px;
+  min-width: 1px;
+  min-height: 12px;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-4 {
+  width: 1px;
+  height: 16px;
+  min-width: 1px;
+  min-height: 16px;
+}
+
+.emotion-5 {
+  min-width: 36px;
+  outline: none;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px solid #7856FF;
+  color: #7856FF;
+  -webkit-transition: box-shadow,filter,0.2s ease-in;
+  transition: box-shadow,filter,0.2s ease-in;
+  padding: 8px 16px;
+}
+
+.emotion-5:hover {
+  -webkit-filter: brightness(95%);
+  filter: brightness(95%);
+  -webkit-transition: filter 0.2s ease-out;
+  transition: filter 0.2s ease-out;
+}
+
+.emotion-5:focus {
+  box-shadow: 0 0 0 2px rgba(120, 86, 255, 0.3);
+  -webkit-transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+}
+
+<div
+    class="emotion-0"
+  >
+    <p
+      class="emotion-1"
+    >
+      新しい制度
+    </p>
+    <div
+      class="emotion-2"
+      size="12"
+    />
+    <ul
+      class="emotion-3"
+    />
+    <div
+      class="emotion-4"
+      size="16"
+    />
+    <button
+      class="emotion-5"
+    >
+      もっとみる
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -1,7 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Buttonのテスト snapshot 1`] = `
+exports[`HomeTopのテスト snapshot 1`] = `
 <DocumentFragment>
+  .emotion-0 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+}
+
+<h1
+    class="emotion-0"
+  >
+    制度作ったったー
+  </h1>
+  .emotion-0 {
+  font-size: 14px;
+}
+
+<p
+    class="emotion-0"
+  >
+    こんな制度あったらいいな！を叶える事が出来るサイトです。もしかしたら本当に採用されちゃうかも..!?
+  </p>
   .emotion-0 {
   min-width: 36px;
   outline: none;
@@ -10,7 +31,7 @@ exports[`Buttonのテスト snapshot 1`] = `
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  width: auto;
+  width: 100%;
   font-weight: bold;
   background-color: #7856FF;
   color: #fff;
@@ -35,7 +56,7 @@ exports[`Buttonのテスト snapshot 1`] = `
 <button
     class="emotion-0"
   >
-    ボタン
+    制度をつくる
   </button>
 </DocumentFragment>
 `;

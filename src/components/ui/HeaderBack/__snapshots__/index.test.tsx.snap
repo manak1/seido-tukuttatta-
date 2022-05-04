@@ -8,14 +8,17 @@ exports[`HeaderBackのテスト snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   background-color: #fff;
-  border-bottom: 1px solid #d3d3d3;
+  border: 1px solid #d3d3d3;
+  max-width: 480px;
+  margin: 0 auto;
   padding: 8px 0;
 }
 
 .emotion-1 {
+  background-color: #fff;
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 480px;
   padding: 0 16px;
   margin: 0 auto;
   display: -webkit-box;
