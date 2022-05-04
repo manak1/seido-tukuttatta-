@@ -15,20 +15,22 @@ module.exports = {
         type: "select",
         name: "category",
         message: "🐧: コンポーネントのカテゴリーを選択してください。",
-        choices: ["ui", "model", "functional"],
+        choices: ["ui", "model", "functional", "page"],
         validate: inputValidator,
       },
       {
         type: "input",
-        name: "model",
+        name: "extraPath",
         message:
-          "🐧: カテゴリーで、modelを選択した場合は、モデル名を入力してください(それ以外はEnter)",
+          "🐧: カテゴリーで、model/pageを選択した場合は、モデル/page名を入力してください(それ以外はEnter)",
       },
     ]
 
     return inquirer.prompt(questions).then((answers) => {
-      const { name, category, model } = answers
-      const path = `${category}/${category === "model" ? model : ""}`
+      const { name, category, extraPath } = answers
+      const path = `${category}/${
+        ["model", "page"].includes(category) ? extraPath : ""
+      }`
       return {
         ...answers,
         path,
