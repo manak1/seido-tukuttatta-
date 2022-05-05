@@ -19,7 +19,9 @@ const ErrorModal: React.VFC<ErrorModal> = (props) => {
       </Styled.Box>
       <Styled.Message>{message}</Styled.Message>
       <Styled.Buttons>
-        <Button onClick={onClose} label="閉じる" variant="cancel" isFullWidth />
+        <Button onClick={onClose} variant="cancel" isFullWidth>
+          閉じる
+        </Button>
       </Styled.Buttons>
     </Modal>
   )
