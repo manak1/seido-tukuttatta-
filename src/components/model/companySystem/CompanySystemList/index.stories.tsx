@@ -9,6 +9,7 @@ const companySystemList = new Array(5).fill(null).map((_, index) => ({
     "業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。",
   thumbnailType: "2",
   author: "manaki",
+  number: index,
 }))
 
 export default {

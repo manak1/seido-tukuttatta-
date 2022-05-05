@@ -26,6 +26,9 @@ export type CompanySystem = {
   number: number
 }
 
-export type CreateCompanySystem = Omit<CompanySystem, "id" | "author"> & {
+export type CreateCompanySystem = Omit<
+  CompanySystem,
+  "id" | "author" | "number"
+> & {
   author?: string
 }
