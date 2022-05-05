@@ -48,7 +48,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { companySystem } = data
 
   if (!data || (data && !data.companySystem)) {
-    throw data
     return {
       notFound: true,
     }
