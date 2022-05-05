@@ -15,6 +15,7 @@ export const theme = {
     error: "#FF5656",
     white: "#fff",
     gray: "#d3d3d3",
+    link: "#1976D2",
   },
   letterSpacing: {
     wide: "0.025em",
