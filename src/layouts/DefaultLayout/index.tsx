@@ -16,7 +16,7 @@ const DefaultLayout: React.FC = (props) => {
   const router = useRouter()
 
   const jumpToCreatePage = useCallback(() => {
-    router.push("s/create")
+    router.push("/s/create")
   }, [router])
 
   return (
