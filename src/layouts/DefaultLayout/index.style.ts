@@ -6,6 +6,7 @@ import Wrapper from "~/components/ui/Wrapper"
 export const ExtendWrapper = styled(Wrapper)(
   {
     minHeight: "100vh",
+    paddingBottom: "126px",
   },
   ({ theme }) => ({
     [theme.mq.md]: {
