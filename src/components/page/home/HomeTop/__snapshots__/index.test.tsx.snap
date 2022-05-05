@@ -3,6 +3,17 @@
 exports[`HomeTopのテスト snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
+  width: 1px;
+  height: 16px;
+  min-width: 1px;
+  min-height: 16px;
+}
+
+<div
+    class="emotion-0"
+    size="16"
+  />
+  .emotion-0 {
   font-weight: bold;
   margin: 0;
   font-size: 32px;
@@ -16,6 +27,8 @@ exports[`HomeTopのテスト snapshot 1`] = `
   </h1>
   .emotion-0 {
   font-size: 14px;
+  margin-top: 16px;
+  line-height: 1.7;
 }
 
 <p
@@ -37,7 +50,7 @@ exports[`HomeTopのテスト snapshot 1`] = `
   color: #fff;
   -webkit-transition: box-shadow,filter,0.2s ease-in;
   transition: box-shadow,filter,0.2s ease-in;
-  padding: 10px 16px;
+  padding: 8px 16px;
 }
 
 .emotion-0:hover {
@@ -57,6 +70,53 @@ exports[`HomeTopのテスト snapshot 1`] = `
     class="emotion-0"
   >
     制度をつくる
+  </button>
+  .emotion-0 {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+<div
+    class="emotion-0"
+    size="8"
+  />
+  .emotion-0 {
+  min-width: 36px;
+  outline: none;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px solid #7856FF;
+  color: #7856FF;
+  -webkit-transition: box-shadow,filter,0.2s ease-in;
+  transition: box-shadow,filter,0.2s ease-in;
+  padding: 8px 16px;
+}
+
+.emotion-0:hover {
+  -webkit-filter: brightness(95%);
+  filter: brightness(95%);
+  -webkit-transition: filter 0.2s ease-out;
+  transition: filter 0.2s ease-out;
+}
+
+.emotion-0:focus {
+  box-shadow: 0 0 0 2px rgba(120, 86, 255, 0.3);
+  -webkit-transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+}
+
+<button
+    class="emotion-0"
+  >
+    制度つくったったーとは？
   </button>
 </DocumentFragment>
 `;
