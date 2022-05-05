@@ -13,6 +13,7 @@ export const validationMiddleware = (schema: object) => {
     res: NextApiResponse<ApiErrorResponseType>,
     next: NextHandler
   ) => {
+    if (req.method !== "POST") return next()
     const isValid = validate(req.body)
     if (isValid) {
       return next()
