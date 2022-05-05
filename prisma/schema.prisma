@@ -13,9 +13,11 @@ datasource db {
 }
 
 model CompanySystem {
-  id Int @default(autoincrement()) @id
+  number Int @id @default(autoincrement())
   name String
   description String
   thumbnailType String
   author String
+  createdAt DateTime @default(now())
+  id String @default(uuid())
 } 
