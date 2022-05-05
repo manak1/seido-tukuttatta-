@@ -3,7 +3,7 @@ import nc from "next-connect"
 
 import { setResponse } from "./api"
 
-import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api"
+import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api/api"
 
 const handler = nc<
   NextApiRequest,
