@@ -18,7 +18,9 @@ const CompanySystemList: React.VFC<CompanySystemListProps> = (props) => {
         companySystems.map((system) => (
           <Styled.Item key={system.id}>
             <Link href={`/s/${system.id}`} passHref>
-              <CompanySystemThumbnail companySystem={system} />
+              <Styled.Link>
+                <CompanySystemThumbnail companySystem={system} />
+              </Styled.Link>
             </Link>
           </Styled.Item>
         ))}

@@ -9,4 +9,13 @@ export const List = styled.ul({
   padding: 0,
 })
 
+export const Link = styled.a(
+  {
+    textDecoration: "none",
+  },
+  ({ theme }) => ({
+    color: theme.colors.black,
+  })
+)
+
 export const Item = styled.li({})
