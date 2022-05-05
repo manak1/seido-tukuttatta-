@@ -47,7 +47,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query, res } = context
   const id = query.id
-  const response = await fetch(`/api/companySystem/${id}`)
+  const response = await fetch(`${config.SITE_URL}/api/companySystem/${id}`)
 
   console.log(response)
 
