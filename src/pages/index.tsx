@@ -1,21 +1,18 @@
+import Spacer from "~/components/functional/Spacer"
+
 import DefaultLayout from "~/layouts/DefaultLayout"
 
-import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
-import { useGetCompanySystem } from "~/hooks/api/companySystem"
+import HomeNew from "~/components/page/home/HomeNew"
+import HomeTop from "~/components/page/home/HomeTop"
 
 import type { NextPage } from "next"
 
 const Home: NextPage = () => {
-  const { data } = useGetCompanySystem()
-
   return (
     <DefaultLayout>
-      {data &&
-        data.map((system) => (
-          <>
-            <CompanySystemThumbnail companySystem={system} />
-          </>
-        ))}
+      <HomeTop />
+      <Spacer axis="vertical" size={24} />
+      <HomeNew />
     </DefaultLayout>
   )
 }
