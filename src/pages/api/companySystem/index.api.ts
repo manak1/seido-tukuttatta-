@@ -8,15 +8,19 @@ import { validationMiddleware } from "~/middlewares/validation"
 
 import { CreateCompanySystem } from "~/@types/companySystem"
 
+import { FETCH_PER_PAGE } from "~/constants/api"
 import { createCompanySystemSchema } from "~/constants/schemas"
 
-handler.get(async (req, res) => {
+handler.get("api/companySystem", async (req, res) => {
+  const { page } = req.query
   try {
-    const companySystem = await prisma.companySystem.findMany({
-      take: 5,
+    const count = await prisma.companySystem.count()
+    const companySystems = await prisma.companySystem.findMany({
+      take: FETCH_PER_PAGE,
+      skip: Number(page) * FETCH_PER_PAGE,
     })
 
-    setResponse.OK(res, { companySystem })
+    setResponse.OK(res, { companySystems, count })
   } catch (error) {
     setResponse.InternalServerError(
       res,
@@ -27,7 +31,7 @@ handler.get(async (req, res) => {
 
 handler
   .use(validationMiddleware(createCompanySystemSchema))
-  .post(async (req, res) => {
+  .post("api/companySystem", async (req, res) => {
     const { name, description, author, thumbnailType } =
       req.body as CreateCompanySystem
     try {
