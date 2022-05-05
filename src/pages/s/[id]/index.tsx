@@ -44,7 +44,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = query.id
   const response = await fetch(`${config.SITE_URL}/api/companySystem/${id}`)
 
+  console.log(response)
+
   const data: ApiSuccessGetCompanySystem = await response.json()
+
+  console.log(data)
 
   if (!data || (data && !data.companySystem)) {
     return {
