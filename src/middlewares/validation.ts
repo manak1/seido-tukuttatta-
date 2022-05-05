@@ -4,7 +4,7 @@ import { NextHandler } from "next-connect"
 import { validateBody } from "~/libs/ajv"
 import { setResponse } from "~/libs/api"
 
-import { ApiErrorResponseType } from "~/@types/api"
+import { ApiErrorResponseType } from "~/@types/api/api"
 
 export const validationMiddleware = (schema: object) => {
   const validate = validateBody(schema)

@@ -1,6 +1,6 @@
 import { NextApiResponse } from "next"
 
-import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api"
+import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api/api"
 
 const OK = <T>(res: NextApiResponse<ApiSuccessResponseType<T>>, data: T) =>
   res.status(200).json({ ...data, success: true })
