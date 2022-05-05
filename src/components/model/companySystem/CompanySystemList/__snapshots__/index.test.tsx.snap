@@ -56,10 +56,10 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
   line-break: anywhere;
   max-width: 11ch;
   min-height: 36px;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
 }
 
 .emotion-6 {
