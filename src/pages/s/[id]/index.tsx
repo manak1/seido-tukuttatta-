@@ -15,14 +15,12 @@ import { config } from "~/constants/config"
 
 type CompanySystemDetailPageProps = {
   companySystem: CompanySystem
-  response: any
-  data: any
 }
 
 const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   props
 ) => {
-  const { companySystem, response, data } = props
+  const { companySystem } = props
 
   const systemNumber = useMemo(
     () => String(companySystem.number).padStart(3, "0"),
@@ -37,9 +35,6 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       <p>制度内容 : {companySystem.description}</p>
       <p>いいね数 : 12</p>
       <Button>制度をシェアする</Button>
-      <p>{JSON.stringify(response)}</p>
-      <p>{JSON.stringify(data)}</p>
-      {}
     </DefaultLayout>
   )
 }
@@ -49,17 +44,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = query.id
   const response = await fetch(`${config.SITE_URL}/api/companySystem/${id}`)
 
-  console.log(response)
-
   const data: ApiSuccessGetCompanySystem = await response.json()
+  const { companySystem } = data
 
-  console.log(data)
-
-  /*  if (!data || (data && !data.companySystem)) {
+  if (!data || (data && !data.companySystem)) {
+    throw data
     return {
       notFound: true,
     }
-  } */
+  }
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
@@ -67,9 +60,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      companySystem: data.companySystem,
-      response,
-      data,
+      companySystem,
     },
   }
 }
