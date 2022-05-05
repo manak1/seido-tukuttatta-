@@ -1,17 +1,17 @@
 import useSWR from "swr"
 
-import { CompanySystem } from "~/@types"
 import { useFetcher } from "~/hooks/api/fetcher"
 
-import { ApiSuccessResponseType } from "~/@types/api"
+import { ApiSuccessGetCompanySystems } from "~/@types/api/companySystem"
 
-export const useGetCompanySystem = () => {
+export const useGetCompanySystems = () => {
   const fetcher = useFetcher()
-  const { data, error } = useSWR<
-    ApiSuccessResponseType<{ companySystem: CompanySystem[] }>
-  >(`/api/companySystem`, fetcher)
+  const { data, error } = useSWR<ApiSuccessGetCompanySystems>(
+    "/api/companySystem",
+    fetcher
+  )
   return {
-    data: data?.companySystem,
+    data: data?.companySystems,
     isLoading: !error && !data,
   }
 }
