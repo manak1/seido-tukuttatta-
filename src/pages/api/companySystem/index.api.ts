@@ -1,7 +1,7 @@
 import { PrismaClientValidationError } from "@prisma/client/runtime"
 
 import { setResponse } from "~/libs/api"
-import handler from "~/libs/next-connect"
+import createHandler from "~/libs/next-connect"
 import prisma from "~/libs/prisma"
 
 import { validationMiddleware } from "~/middlewares/validation"
@@ -10,6 +10,8 @@ import { CreateCompanySystem } from "~/@types/companySystem"
 
 import { FETCH_PER_PAGE } from "~/constants/api"
 import { createCompanySystemSchema } from "~/constants/schemas"
+
+const handler = createHandler()
 
 handler.get("api/companySystem", async (req, res) => {
   const { page } = req.query

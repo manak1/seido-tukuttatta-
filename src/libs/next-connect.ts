@@ -5,16 +5,17 @@ import { setResponse } from "./api"
 
 import { ApiErrorResponseType, ApiSuccessResponseType } from "~/@types/api/api"
 
-const handler = nc<
-  NextApiRequest,
-  NextApiResponse<ApiSuccessResponseType<unknown> | ApiErrorResponseType>
->({
-  onError(err, req, res) {
-    setResponse.InternalServerError(res, err)
-  },
-  onNoMatch(req, res) {
-    setResponse.NotFound(res)
-  },
-})
+const createHandler = () =>
+  nc<
+    NextApiRequest,
+    NextApiResponse<ApiSuccessResponseType<unknown> | ApiErrorResponseType>
+  >({
+    onError(err, req, res) {
+      setResponse.InternalServerError(res, err)
+    },
+    onNoMatch(req, res) {
+      setResponse.NotFound(res)
+    },
+  })
 
-export default handler
+export default createHandler

@@ -1,6 +1,8 @@
 import { setResponse } from "~/libs/api"
-import handler from "~/libs/next-connect"
+import createHandler from "~/libs/next-connect"
 import prisma from "~/libs/prisma"
+
+const handler = createHandler()
 
 handler.get("api/companySystem/:id", async (req, res) => {
   const { id } = req.query
