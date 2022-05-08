@@ -7,6 +7,7 @@ export type ApiSuccessGetCompanySystem = ApiSuccessResponseType<{
    */
   companySystem: CompanySystem
 }>
+export type ApiSuccessCreateCompanySystem = ApiSuccessGetCompanySystem
 export type ApiSuccessGetCompanySystems = ApiSuccessResponseType<{
   /**
    * 制度一覧

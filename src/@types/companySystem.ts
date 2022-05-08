@@ -30,5 +30,8 @@ export type CreateCompanySystem = Omit<
   CompanySystem,
   "id" | "author" | "number"
 > & {
+  /**
+   * 作者
+   */
   author?: string
 }
