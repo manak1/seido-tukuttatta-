@@ -17,7 +17,7 @@ const HomeTop: React.FC = () => {
 
   return (
     <>
-      <Spacer axis="vertical" size={16} />
+      <Spacer axis="vertical" size={8} />
       <Title
         size="lg"
         as="h1"
@@ -27,8 +27,9 @@ const HomeTop: React.FC = () => {
       >
         制度作ったったー
       </Title>
+      <Styled.Image src="/hero.svg" />
       <Styled.Description>
-        こんな制度あったらいいな！を叶える事が出来るサイトです。もしかしたら本当に採用されちゃうかも..!?
+        こんな制度あったらいいな！を叶える事が出来るサイトです。自分の作った制度が本当にどこかの会社で採用されちゃうかも..!?
       </Styled.Description>
       <Button onClick={jumpToCreate} size="small" isFullWidth>
         制度をつくる
