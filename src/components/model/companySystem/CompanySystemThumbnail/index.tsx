@@ -1,4 +1,6 @@
-import React, { useMemo } from "react"
+import { readFileSync } from "fs"
+
+import React, { useEffect, useMemo, useRef, useState } from "react"
 
 import { CreateCompanySystem } from "~/@types"
 
@@ -31,22 +33,41 @@ export default CompanySystemThumbnail
 /* ここ以下にサムネパターンを定義 */
 const ThumbnailGradient: React.FC<CompanySystemThumbnailProps> = (props) => {
   const { companySystem } = props
+  const [titleLineNumber, setTitleLineNumber] = useState(1)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (!process.browser) return
+    const ref = document.getElementById("gradientTitle")
+    if (!ref) return
+    const height = ref.clientHeight
+    const fontSize = 24
+    const lineHeight = 1.4
+    const textHeight = fontSize * lineHeight
+    setTitleLineNumber(Math.round(height / textHeight))
+  }, [companySystem.name])
+
   return (
-    <Styled.Gradient.Thumbnail>
-      <Styled.Gradient.Wrapper>
-        <Styled.Gradient.Title>{companySystem.name}</Styled.Gradient.Title>
-        <Styled.Gradient.Description>
-          {companySystem.description}
-        </Styled.Gradient.Description>
-        <Styled.Gradient.Spacer />
-        <Styled.Gradient.Box>
-          <Styled.Gradient.Author>
-            @{companySystem.author}
-          </Styled.Gradient.Author>
-          <Styled.Gradient.Logo src="/logo.svg" />
-        </Styled.Gradient.Box>
-      </Styled.Gradient.Wrapper>
-    </Styled.Gradient.Thumbnail>
+    <>
+      <Styled.Gradient.Thumbnail>
+        <Styled.Gradient.Wrapper>
+          <Styled.Gradient.Title id="gradientTitle" ref={titleRef}>
+            {companySystem.name}
+          </Styled.Gradient.Title>
+          <Styled.Gradient.Description lineLength={titleLineNumber}>
+            {companySystem.description}
+          </Styled.Gradient.Description>
+          <Styled.Gradient.Spacer />
+          <Styled.Gradient.Box>
+            <Styled.Gradient.Author>
+              @{companySystem.author}
+            </Styled.Gradient.Author>
+            <Styled.Gradient.Logo src="/logo.svg" />
+          </Styled.Gradient.Box>
+        </Styled.Gradient.Wrapper>
+      </Styled.Gradient.Thumbnail>
+      {titleLineNumber}
+    </>
   )
 }
 

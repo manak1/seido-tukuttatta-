@@ -1,5 +1,7 @@
 import styled from "@emotion/styled"
 
+type LineLengthProps = { lineLength: number }
+
 export const Thumbnail = styled.div({
   width: "100%",
   height: "210px",
@@ -70,12 +72,12 @@ export const Gradient = {
     overflow: "hidden",
     display: "-webkit-box",
   })),
-  Description: styled.p({}, ({ theme }) => ({
+  Description: styled.p<LineLengthProps>({}, ({ theme, lineLength }) => ({
     margin: 0,
     marginTop: "8px",
     lineHeight: "1.65",
     fontSize: theme.fontSizes.small,
-    WebkitLineClamp: "3",
+    WebkitLineClamp: lineLength === 1 ? "3" : "2",
     WebkitBoxOrient: "vertical",
     overflow: "hidden",
     display: "-webkit-box",
