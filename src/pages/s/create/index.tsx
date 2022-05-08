@@ -146,12 +146,14 @@ export const CreateSystemPage: NextPage = () => {
         onClose={closeConfirmModal}
         onConfirm={onConfirm}
       />
-      <CreatedSystemCompanyModal
-        isOpen={isCreateModalOpen}
-        companyName={companySystem.name}
-        onClose={closeCreatedModal}
-        onConfirm={closeCreatedModal}
-      />
+      {isCreateModalOpen && (
+        <CreatedSystemCompanyModal
+          isOpen={isCreateModalOpen}
+          companyName={companySystem.name}
+          onClose={closeCreatedModal}
+          onConfirm={closeCreatedModal}
+        />
+      )}
     </DetailLayout>
   )
 }
