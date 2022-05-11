@@ -41,7 +41,8 @@ export const Gradient = {
     {
       width: "100%",
       height: "198px",
-      background: "linear-gradient(0.25turn, #987FF9, #7ABFFF)",
+      background:
+        "conic-gradient(from -60.2deg at 49.85% 50%, rgba(255, 113, 181, 0.958021) 0deg, rgba(112, 109, 255, 0.904531) 116.87deg, #FF71B5 177.81deg, rgba(112, 109, 255, 0.87) 302.34deg, rgba(255, 113, 181, 0.958021) 360deg);",
       backgroundSize: "cover",
       padding: "10px",
     },
