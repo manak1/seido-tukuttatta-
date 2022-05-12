@@ -20,9 +20,9 @@ const PADDING_TOP = 80
 const MAX_NAME_LINE_COUNT = 2
 const CANVAS_WIDTH = 654
 const CANVAS_HEIGHT = 356
-const FONT_BLACK = "./fonts/NotoSansJP-Black.otf"
-const FONT_MEDIUM = "./fonts/NotoSansJP-Medium.otf"
-const FONT_REGULAR = "./fonts/NotoSansJP-Regular.otf"
+const FONT_BLACK = path.resolve("./fonts/NotoSansJP-Black.otf")
+const FONT_MEDIUM = path.resolve("./fonts/NotoSansJP-Medium.otf")
+const FONT_REGULAR = path.resolve("./fonts/NotoSansJP-Regular.otf")
 
 const NAME_STYLE = {
   font: 'bold 40px "FONT_BLACK"',
