@@ -53,7 +53,7 @@ const createOGP = async (ogpData: {
   ctx.fillStyle = "#333"
 
   // 背景画像を描写
-  await drawBackground(ctx)
+  //await drawBackground(ctx)
 
   ctx.font = NAME_STYLE.font
 
