@@ -22,7 +22,7 @@ const CANVAS_WIDTH = 654
 const CANVAS_HEIGHT = 356
 const FONT_BLACK = path.resolve("./public", "fonts/NotoSansJP-Black.otf")
 const FONT_MEDIUM = path.resolve("./public", "fonts/NotoSansJP-Medium.otf")
-const FONT_REGULAR = path.resolve("./publicm", "fonts/NotoSansJP-Regular.otf")
+const FONT_REGULAR = path.resolve("./public", "fonts/NotoSansJP-Regular.otf")
 
 const NAME_STYLE = {
   font: 'bold 40px "FONT_BLACK"',
