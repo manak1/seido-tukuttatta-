@@ -1,4 +1,5 @@
 import { NextPage, GetServerSideProps } from "next"
+import Head from "next/head"
 import { useMemo } from "react"
 
 import Button from "~/components/ui/Button"
@@ -29,6 +30,16 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
 
   return (
     <DefaultLayout>
+      <Head>
+        <meta
+          property="og:image"
+          content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
+        />
+        <meta
+          property="twitter:image"
+          content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
+        />
+      </Head>
       <CompanySystemThumbnail companySystem={companySystem} />
       <p>No.{systemNumber}</p>
       <Title>{companySystem.name}</Title>
