@@ -20,22 +20,22 @@ const PADDING_TOP = 80
 const MAX_NAME_LINE_COUNT = 2
 const CANVAS_WIDTH = 654
 const CANVAS_HEIGHT = 356
-const FONT_BLACK = "./public/fonts/NotoSansJP-Black.otf"
+/* const FONT_BLACK = "./public/fonts/NotoSansJP-Black.otf"
 const FONT_MEDIUM = "./public/fonts/NotoSansJP-Medium.otf"
-const FONT_REGULAR = "./public/fonts/NotoSansJP-Regular.otf"
+const FONT_REGULAR = "./public/fonts/NotoSansJP-Regular.otf" */
 
 const NAME_STYLE = {
-  font: 'bold 40px "FONT_BLACK"',
+  font: 'bold 40px "serif"',
   lineHeight: 50,
 } as const
 
 const DESCRIPTION_STYLE = {
-  font: 'regular 24px "FONT_MEDIUM"',
+  font: 'regular 24px "serif"',
   lineHeight: 42,
 } as const
 
 const AUTHOR_STYLE = {
-  font: 'regular 20px "FONT_REGULAR"',
+  font: 'regular 20px "serif"',
   lineHeight: 30,
 }
 
@@ -45,9 +45,9 @@ const createOGP = async (ogpData: {
   description: string
 }): Promise<Buffer> => {
   const { name, author, description } = ogpData
-  registerFont(FONT_BLACK, { family: "FONT_BLACK" })
-  registerFont(FONT_MEDIUM, { family: "FONT_MEDIUM" })
-  registerFont(FONT_REGULAR, { family: "FONT_REGULAR" })
+  /*  registerFont(FONT_BLACK, { family: "FONT_BLACK" })
+   registerFont(FONT_MEDIUM, { family: "FONT_MEDIUM" })
+   registerFont(FONT_REGULAR, { family: "FONT_REGULAR" }) */
   const canvas = createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT)
   const ctx = canvas.getContext("2d")
   ctx.fillStyle = "#333"
