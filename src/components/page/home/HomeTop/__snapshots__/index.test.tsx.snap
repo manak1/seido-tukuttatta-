@@ -4,14 +4,14 @@ exports[`HomeTopのテスト snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
   width: 1px;
-  height: 16px;
+  height: 8px;
   min-width: 1px;
-  min-height: 16px;
+  min-height: 8px;
 }
 
 <div
     class="emotion-0"
-    size="16"
+    size="8"
   />
   .emotion-0 {
   font-weight: bold;
@@ -26,6 +26,16 @@ exports[`HomeTopのテスト snapshot 1`] = `
     制度作ったったー
   </h1>
   .emotion-0 {
+  width: 100%;
+  height: 140px;
+  margin-top: 8px;
+}
+
+<img
+    class="emotion-0"
+    src="/hero.svg"
+  />
+  .emotion-0 {
   font-size: 14px;
   margin-top: 16px;
   line-height: 1.7;
@@ -34,7 +44,7 @@ exports[`HomeTopのテスト snapshot 1`] = `
 <p
     class="emotion-0"
   >
-    こんな制度あったらいいな！を叶える事が出来るサイトです。もしかしたら本当に採用されちゃうかも..!?
+    こんな制度あったらいいな！を叶える事が出来るサイトです。自分の作った制度が本当にどこかの会社で採用されちゃうかも..!?
   </p>
   .emotion-0 {
   min-width: 36px;

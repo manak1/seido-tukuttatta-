@@ -23,6 +23,7 @@
     "@prisma/client": "^3.11.1",
     "@storybook/cli": "^6.4.19",
     "ajv": "^8.11.0",
+    "canvas": "^2.9.1",
     "disable-scroll": "^0.6.0",
     "emotion-icons": "^3.27.0",
     "hygen": "^6.2.0",
