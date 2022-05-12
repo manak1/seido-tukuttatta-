@@ -1,4 +1,5 @@
 import fs from "fs"
+import path from "path"
 import { join } from "path"
 
 import {
@@ -12,22 +13,17 @@ import createHandler from "~/libs/next-connect"
 
 import { isString } from "~/utils/type"
 
-const baseImagePath = join(
-  __dirname,
-  "../../../../../",
-  "public",
-  "baseOGP.png"
-)
-const fallBackImage = join(__dirname, "../../../../../", "public", "ogp.png")
+const BASE_IMAGE_PATH = path.resolve("./public", "baseOGP.png")
+const FALL_BACK_IMAGE = path.resolve("./public", "ogp.png")
 
 const PADDING_X = 60
 const PADDING_TOP = 80
 const MAX_NAME_LINE_COUNT = 2
 const CANVAS_WIDTH = 654
 const CANVAS_HEIGHT = 356
-const FONT_BLACK = "public/fonts/NotoSansJP-Black.otf"
-const FONT_MEDIUM = "public/fonts/NotoSansJP-Medium.otf"
-const FONT_REGULAR = "public/fonts/NotoSansJP-Regular.otf"
+const FONT_BLACK = "./public/fonts/NotoSansJP-Black.otf"
+const FONT_MEDIUM = "./public/fonts/NotoSansJP-Medium.otf"
+const FONT_REGULAR = "./public/fonts/NotoSansJP-Regular.otf"
 
 const NAME_STYLE = {
   font: 'bold 40px "FONT_BLACK"',
@@ -88,7 +84,7 @@ const createOGP = async (ogpData: {
 }
 
 async function drawBackground(ctx: CanvasRenderingContext2D) {
-  const baseImage = await loadImage(baseImagePath)
+  const baseImage = await loadImage(BASE_IMAGE_PATH)
   ctx.drawImage(baseImage, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
 }
 
@@ -148,7 +144,7 @@ handler.get("api/companySystem/ogp", async (req, res) => {
     })
     res.end(buffer, "binary")
   } else {
-    const buffer = fs.readFileSync(fallBackImage)
+    const buffer = fs.readFileSync(FALL_BACK_IMAGE)
     res.writeHead(200, {
       "Content-Type": "image/png",
       "Content-Length": buffer.length,
