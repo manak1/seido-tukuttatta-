@@ -18,7 +18,10 @@ import { CreateCompanySystem } from "~/@types"
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import ConfirmCompanySystemModal from "~/components/model/companySystem/ConfirmCompanySystemModal"
 import CreatedSystemCompanyModal from "~/components/model/companySystem/CreatedCompanySystemModal"
-import { usePostCompanySystem } from "~/hooks/api/companySystem"
+import {
+  usePostCompanySystem,
+  useGetInfinityCompanySystems,
+} from "~/hooks/api/companySystem"
 import { useBoolean } from "~/hooks/boolean"
 import { useModalError } from "~/hooks/modalError"
 import { preventEventByEnter } from "~/utils/keyDown"
@@ -35,6 +38,7 @@ export const CreateSystemPage: NextPage = () => {
   const [isCreateModalOpen, openCreatedModal, closeCreatedModal] =
     useBoolean(false)
   const { post } = usePostCompanySystem()
+  const { mutate } = useGetInfinityCompanySystems()
 
   const {
     control,
@@ -72,6 +76,7 @@ export const CreateSystemPage: NextPage = () => {
       openCreatedModal()
       closeConfirmModal()
       setSubmittedTrue()
+      mutate()
     }
   }
 

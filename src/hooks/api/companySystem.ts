@@ -32,8 +32,7 @@ export const useGetInfinityCompanySystems = () => {
   const getKey = (index: number) => {
     return `${config.SITE_URL}/api/companySystem?page=${index}`
   }
-
-  const { data, size, setSize, isValidating, error } =
+  const { data, size, setSize, isValidating, error, mutate } =
     useSWRInfinite<ApiSuccessGetCompanySystems>(getKey, fetcher)
   const result = data
     ?.map((d) => d.companySystems)
@@ -47,6 +46,7 @@ export const useGetInfinityCompanySystems = () => {
     isValidating,
     isEnd,
     isLoading: !data && !error,
+    mutate,
   }
 }
 
