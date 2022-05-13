@@ -10,7 +10,7 @@ export const navLinks: NavItem[] = [
   },
   {
     label: "検索",
-    href: "/search",
+    href: "/s/search",
     icon: Search,
   },
   {
