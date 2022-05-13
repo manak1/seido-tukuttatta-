@@ -98,6 +98,10 @@ export const Gradient = {
     lineHeight: "1",
     fontWeight: "bold",
     fontSize: theme.fontSizes.small,
+    WebkitLineClamp: "1",
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+    display: "-webkit-box",
   })),
   Logo: styled.img({
     width: "33px",

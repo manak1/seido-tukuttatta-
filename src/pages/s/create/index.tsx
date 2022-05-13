@@ -10,6 +10,7 @@ import Label from "~/components/ui/Label"
 
 import RfhInputText from "~/components/functional/RfhInputText"
 import RfhTextArea from "~/components/functional/RfhTextArea"
+import Spacer from "~/components/functional/Spacer"
 
 import DetailLayout from "~/layouts/DetailLayout"
 
@@ -91,7 +92,6 @@ export const CreateSystemPage: NextPage = () => {
   return (
     <DetailLayout>
       <CompanySystemThumbnail companySystem={companySystem} />
-      {isButtonDisabled ? "disabled" : "enabled"}
       <Styled.Form
         onKeyDown={(e) => preventEventByEnter(e)}
         onSubmit={handleSubmit(onSubmit)}
@@ -117,6 +117,7 @@ export const CreateSystemPage: NextPage = () => {
         />
         <div>
           <Label label="完成イメージ" />
+          <Spacer size={8} />
           <CompanySystemThumbnail companySystem={companySystem} />
         </div>
         <Button type="submit" disabled={isButtonDisabled} isFullWidth>
