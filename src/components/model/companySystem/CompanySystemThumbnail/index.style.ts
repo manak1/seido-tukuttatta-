@@ -95,7 +95,7 @@ export const Gradient = {
   }),
   Author: styled.p({}, ({ theme }) => ({
     margin: 0,
-    lineHeight: "1",
+    lineHeight: "1.2",
     fontWeight: "bold",
     fontSize: theme.fontSizes.small,
     WebkitLineClamp: "1",
