@@ -11,7 +11,7 @@ export const Overlay = styled.div(
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "24px",
+    padding: "20px 24px",
   },
   ({ theme }) => {
     return {

@@ -19,7 +19,7 @@ export const Box = styled.div({
 export const Title = styled.h2({}, ({ theme }) => ({
   fontSize: theme.fontSizes.medium,
   fontWeight: "bold",
-  color: theme.colors.primary,
+  margin: "0 0 12px 0",
 }))
 
 export const Icon = styled(NotificationImportant)({}, ({ theme }) => ({
@@ -30,6 +30,7 @@ export const Icon = styled(NotificationImportant)({}, ({ theme }) => ({
 export const Message = styled.p({}, ({ theme }) => ({
   margin: 0,
   fontSize: theme.fontSizes.default,
+  lineHeight: "1.65",
 }))
 
 export const Buttons = styled.div({
