@@ -16,7 +16,6 @@ model CompanySystem {
   number Int @id @default(autoincrement())
   name String
   description String
-  thumbnailType String
   author String
   createdAt DateTime @default(now())
   id String @default(uuid())

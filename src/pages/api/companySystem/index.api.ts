@@ -16,12 +16,11 @@ const handler = createHandler()
 handler.get("api/companySystem", async (req, res) => {
   const { page } = req.query
   try {
-    const count = await prisma.companySystem.count()
     const companySystems = await prisma.companySystem.findMany({
       take: FETCH_PER_PAGE,
       skip: Number(page) * FETCH_PER_PAGE,
     })
-
+    const count = await prisma.companySystem.count()
     setResponse.OK(res, { companySystems, count })
   } catch (error) {
     setResponse.InternalServerError(
@@ -34,15 +33,13 @@ handler.get("api/companySystem", async (req, res) => {
 handler
   .use(validationMiddleware(createCompanySystemSchema))
   .post("api/companySystem", async (req, res) => {
-    const { name, description, author, thumbnailType } =
-      req.body as CreateCompanySystem
+    const { name, description, author } = req.body as CreateCompanySystem
     try {
       const result = await prisma.companySystem.create({
         data: {
           name,
           description,
           author: author ?? "名無さん",
-          thumbnailType,
         },
       })
       setResponse.Created(res, result)

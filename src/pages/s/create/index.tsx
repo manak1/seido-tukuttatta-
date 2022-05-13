@@ -9,7 +9,6 @@ import Button from "~/components/ui/Button"
 import Label from "~/components/ui/Label"
 
 import RfhInputText from "~/components/functional/RfhInputText"
-import RfhSelect from "~/components/functional/RfhSelect"
 import RfhTextArea from "~/components/functional/RfhTextArea"
 
 import DetailLayout from "~/layouts/DetailLayout"
@@ -26,7 +25,6 @@ import { preventEventByEnter } from "~/utils/keyDown"
 import * as Styled from "./index.style"
 
 import { placeholderSystem } from "~/constants/companySystem"
-import { thumbnailItems } from "~/constants/select"
 
 export const CreateSystemPage: NextPage = () => {
   const [isConfirModalOpen, openConfirmModal, closeConfirmModal] =
@@ -50,7 +48,6 @@ export const CreateSystemPage: NextPage = () => {
       name: "",
       description: "",
       author: "",
-      thumbnailType: "1",
     },
   })
 
@@ -86,23 +83,15 @@ export const CreateSystemPage: NextPage = () => {
         formValues.description === ""
           ? placeholderSystem.description
           : formValues.description,
-      thumbnailType:
-        formValues.thumbnailType === ""
-          ? placeholderSystem.thumbnailType
-          : formValues.thumbnailType,
       author:
         formValues.author === "" ? placeholderSystem.author : formValues.author,
     }
-  }, [
-    formValues.author,
-    formValues.description,
-    formValues.name,
-    formValues.thumbnailType,
-  ])
+  }, [formValues.author, formValues.description, formValues.name])
 
   return (
     <DetailLayout>
       <CompanySystemThumbnail companySystem={companySystem} />
+      {isButtonDisabled ? "disabled" : "enabled"}
       <Styled.Form
         onKeyDown={(e) => preventEventByEnter(e)}
         onSubmit={handleSubmit(onSubmit)}
@@ -130,13 +119,6 @@ export const CreateSystemPage: NextPage = () => {
           <Label label="完成イメージ" />
           <CompanySystemThumbnail companySystem={companySystem} />
         </div>
-        <RfhSelect
-          items={thumbnailItems}
-          label="制度の名前は？"
-          placeholder="有給取り放題制度"
-          name="thumbnailType"
-          control={control}
-        />
         <Button type="submit" disabled={isButtonDisabled} isFullWidth>
           制度をつくる
         </Button>

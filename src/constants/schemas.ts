@@ -8,8 +8,7 @@ export const createCompanySystemSchema: JSONSchemaType<CreateCompanySystem> = {
     name: { type: "string", minLength: 1, maxLength: 100 },
     description: { type: "string", minLength: 10, maxLength: 1000 },
     author: { type: "string", minLength: 1, maxLength: 100, nullable: true },
-    thumbnailType: { type: "string" },
   },
-  required: ["name", "description", "thumbnailType"],
+  required: ["name", "description"],
   additionalProperties: false,
 }

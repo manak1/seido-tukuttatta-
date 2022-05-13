@@ -1,6 +1,4 @@
-import { readFileSync } from "fs"
-
-import React, { useEffect, useMemo, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 import { CreateCompanySystem } from "~/@types"
 
@@ -15,17 +13,7 @@ const CompanySystemThumbnail: React.FC<CompanySystemThumbnailProps> = (
 ) => {
   const { companySystem, ...rest } = props
 
-  const renderThumbnail = useMemo(() => {
-    const { thumbnailType } = companySystem
-    if (thumbnailType === "1")
-      return <ThumbnailGradient {...rest} companySystem={companySystem} />
-    if (thumbnailType === "2")
-      return <ThumbnailGlass {...rest} companySystem={companySystem} />
-
-    return <ThumbnailGradient {...rest} companySystem={companySystem} />
-  }, [companySystem, rest])
-
-  return <>{renderThumbnail}</>
+  return <ThumbnailGradient {...rest} companySystem={companySystem} />
 }
 
 export default CompanySystemThumbnail
@@ -37,7 +25,7 @@ const ThumbnailGradient: React.FC<CompanySystemThumbnailProps> = (props) => {
   const titleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    if (!process.browser) return
+    if (!document) return
     const ref = document.getElementById("gradientTitle")
     if (!ref) return
     const height = ref.clientHeight

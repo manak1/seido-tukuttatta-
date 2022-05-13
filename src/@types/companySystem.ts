@@ -13,10 +13,6 @@ export type CompanySystem = {
    */
   description: string
   /**
-   * サムネイルのタイプ
-   */
-  thumbnailType: string
-  /**
    * 作者
    */
   author: string
