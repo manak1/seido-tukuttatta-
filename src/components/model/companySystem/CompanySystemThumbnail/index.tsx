@@ -66,7 +66,6 @@ const ThumbnailGradient: React.FC<CompanySystemThumbnailProps> = (props) => {
           </Styled.Gradient.Box>
         </Styled.Gradient.Wrapper>
       </Styled.Gradient.Thumbnail>
-      {titleLineNumber}
     </>
   )
 }
