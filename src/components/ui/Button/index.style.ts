@@ -24,6 +24,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     ...theme.focus(),
     ...setSize(size ?? "default"),
     transition: "box-shadow, filter, 0.2s ease-in",
+    pointerEvents: disabled ? "none" : "auto",
   })
 )
 
@@ -33,7 +34,6 @@ function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
       opacity: 0.7,
       color: "rgba(0, 0, 0, 0.3)",
       backgroundColor: theme.colors.gray,
-      pointerEvent: "none",
     }
   }
 
