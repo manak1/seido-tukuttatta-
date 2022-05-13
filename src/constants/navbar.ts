@@ -15,7 +15,7 @@ export const navLinks: NavItem[] = [
   },
   {
     label: "ランキング",
-    href: "/ranking",
+    href: "/s/ranking",
     icon: EmojiEvents,
   },
   {
