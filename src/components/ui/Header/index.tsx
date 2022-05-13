@@ -15,7 +15,7 @@ const Header: React.VFC<HeaderProps> = (props) => {
           <Styled.Logo src="/logo.svg" />
           <Link href="/" passHref>
             <Styled.Link>
-              <Styled.Title>制度作ってみたったー</Styled.Title>
+              <Styled.Title>制度作ったったー</Styled.Title>
             </Styled.Link>
           </Link>
         </Styled.Box>
