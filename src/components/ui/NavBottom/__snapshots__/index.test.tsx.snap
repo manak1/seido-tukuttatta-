@@ -131,7 +131,7 @@ exports[`NavBottomテスト snapshot 1`] = `
         >
           <a
             class="emotion-4"
-            href="/search"
+            href="/s/search"
           >
             <svg
               aria-hidden="true"
@@ -160,7 +160,7 @@ exports[`NavBottomテスト snapshot 1`] = `
         >
           <a
             class="emotion-4"
-            href="/ranking"
+            href="/s/ranking"
           >
             <svg
               aria-hidden="true"

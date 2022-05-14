@@ -25,21 +25,10 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
 .emotion-3 {
   width: 100%;
   height: 198px;
-  background-image: url('/garasuhu.svg');
+  background: conic-gradient(from -60.2deg at 49.85% 50%, rgba(255, 113, 181, 0.958021) 0deg, rgba(112, 109, 255, 0.904531) 116.87deg, #FF71B5 177.81deg, rgba(112, 109, 255, 0.87) 302.34deg, rgba(255, 113, 181, 0.958021) 360deg);
   -webkit-background-size: cover;
   background-size: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding: 10px;
 }
 
 @media (min-width: 580px) {
@@ -49,13 +38,28 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
   }
 }
 
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  height: 100%;
+  border-radius: 12px;
+  padding: 10px 20px;
+}
+
 .emotion-5 {
-  margin: -10px 0 0 0;
+  margin: 0;
   font-size: 24px;
   letter-spacing: 0.025em;
+  font-weight: 900;
   line-break: anywhere;
-  max-width: 11ch;
-  min-height: 36px;
+  line-height: 1.4;
+  max-height: 76px;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -63,27 +67,54 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
 }
 
 .emotion-6 {
+  margin: 0;
+  margin-top: 8px;
+  line-height: 1.65;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  min-height: 48px;
+}
+
+.emotion-7 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-8 {
   margin-top: 4px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.emotion-7 {
-  width: 33px;
-  height: 33px;
+.emotion-9 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
 }
 
-.emotion-8 {
-  margin: 0 0 0 8px;
-  line-height: 1;
-  font-weight: normal;
-  font-size: 12px;
+.emotion-10 {
+  width: 33px;
+  height: 33px;
 }
 
 <ul
@@ -100,25 +131,34 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           class="emotion-3"
         >
           <div
-            class="emotion-1"
+            class="emotion-4"
           >
             <h2
               class="emotion-5"
+              id="gradientTitle"
             >
               おひるねし放題制度
             </h2>
-            <div
+            <p
               class="emotion-6"
             >
-              <img
-                class="emotion-7"
-                src="/logo.svg"
-              />
+              業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。
+            </p>
+            <div
+              class="emotion-7"
+            />
+            <div
+              class="emotion-8"
+            >
               <p
-                class="emotion-8"
+                class="emotion-9"
               >
                 @manaki
               </p>
+              <img
+                class="emotion-10"
+                src="/logo.svg"
+              />
             </div>
           </div>
         </div>
@@ -135,25 +175,34 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           class="emotion-3"
         >
           <div
-            class="emotion-1"
+            class="emotion-4"
           >
             <h2
               class="emotion-5"
+              id="gradientTitle"
             >
               おひるねし放題制度
             </h2>
-            <div
+            <p
               class="emotion-6"
             >
-              <img
-                class="emotion-7"
-                src="/logo.svg"
-              />
+              業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。
+            </p>
+            <div
+              class="emotion-7"
+            />
+            <div
+              class="emotion-8"
+            >
               <p
-                class="emotion-8"
+                class="emotion-9"
               >
                 @manaki
               </p>
+              <img
+                class="emotion-10"
+                src="/logo.svg"
+              />
             </div>
           </div>
         </div>
@@ -170,25 +219,34 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           class="emotion-3"
         >
           <div
-            class="emotion-1"
+            class="emotion-4"
           >
             <h2
               class="emotion-5"
+              id="gradientTitle"
             >
               おひるねし放題制度
             </h2>
-            <div
+            <p
               class="emotion-6"
             >
-              <img
-                class="emotion-7"
-                src="/logo.svg"
-              />
+              業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。
+            </p>
+            <div
+              class="emotion-7"
+            />
+            <div
+              class="emotion-8"
+            >
               <p
-                class="emotion-8"
+                class="emotion-9"
               >
                 @manaki
               </p>
+              <img
+                class="emotion-10"
+                src="/logo.svg"
+              />
             </div>
           </div>
         </div>
@@ -205,25 +263,34 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           class="emotion-3"
         >
           <div
-            class="emotion-1"
+            class="emotion-4"
           >
             <h2
               class="emotion-5"
+              id="gradientTitle"
             >
               おひるねし放題制度
             </h2>
-            <div
+            <p
               class="emotion-6"
             >
-              <img
-                class="emotion-7"
-                src="/logo.svg"
-              />
+              業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。
+            </p>
+            <div
+              class="emotion-7"
+            />
+            <div
+              class="emotion-8"
+            >
               <p
-                class="emotion-8"
+                class="emotion-9"
               >
                 @manaki
               </p>
+              <img
+                class="emotion-10"
+                src="/logo.svg"
+              />
             </div>
           </div>
         </div>
@@ -240,25 +307,34 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           class="emotion-3"
         >
           <div
-            class="emotion-1"
+            class="emotion-4"
           >
             <h2
               class="emotion-5"
+              id="gradientTitle"
             >
               おひるねし放題制度
             </h2>
-            <div
+            <p
               class="emotion-6"
             >
-              <img
-                class="emotion-7"
-                src="/logo.svg"
-              />
+              業務時間内中に一度だけ昼寝する事を可能にする制度。二度寝は禁止で、昼寝開始から終了までの睡眠時間を業務時間として申請することができる。
+            </p>
+            <div
+              class="emotion-7"
+            />
+            <div
+              class="emotion-8"
+            >
               <p
-                class="emotion-8"
+                class="emotion-9"
               >
                 @manaki
               </p>
+              <img
+                class="emotion-10"
+                src="/logo.svg"
+              />
             </div>
           </div>
         </div>

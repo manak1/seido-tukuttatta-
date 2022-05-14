@@ -20,7 +20,7 @@ describe("Buttonのテスト", () => {
     expect(onClick).not.toBeCalled()
   })
 
-  it("clickするとonChangeが呼ばれる", () => {
+  it("clickするとonClickが呼ばれる", () => {
     render(<Primary onClick={onClick} />)
     userEvent.click(screen.getByRole("button"))
     expect(onClick).toBeCalledTimes(1)

@@ -24,7 +24,6 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     ...theme.focus(),
     ...setSize(size ?? "default"),
     transition: "box-shadow, filter, 0.2s ease-in",
-    pointerEvents: disabled ? "none" : "auto",
   })
 )
 
