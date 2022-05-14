@@ -31,7 +31,13 @@ const Footer: React.VFC<FooterProps> = (props) => {
       <Spacer size={16} />
       <Styled.Box>
         <Styled.Author>開発&運営</Styled.Author>
-        <Styled.TwitterLink>@mikeanakida</Styled.TwitterLink>
+        <Styled.TwitterLink
+          target="_blank"
+          href="https://twitter.com/mikeanakida"
+          rel="noreferrer"
+        >
+          @mikeanakida
+        </Styled.TwitterLink>
       </Styled.Box>
     </Styled.Footer>
   )
