@@ -95,7 +95,7 @@ export const CreateSystemPage: NextPage = () => {
   }, [formValues.author, formValues.description, formValues.name])
 
   return (
-    <DetailLayout>
+    <DetailLayout title="新規作成">
       <CompanySystemThumbnail companySystem={companySystem} />
       <Styled.Form
         onKeyDown={(e) => preventEventByEnter(e)}

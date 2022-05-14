@@ -5,7 +5,9 @@ import { useMemo } from "react"
 import Button from "~/components/ui/Button"
 import Title from "~/components/ui/Title"
 
-import DefaultLayout from "~/layouts/DefaultLayout"
+import Spacer from "~/components/functional/Spacer"
+
+import DetailLayout from "~/layouts/DetailLayout"
 
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 
@@ -29,7 +31,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   )
 
   return (
-    <DefaultLayout>
+    <DetailLayout title="制度詳細">
       <Head>
         <meta
           property="og:image"
@@ -40,13 +42,14 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
           content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
         />
       </Head>
+      <Spacer size={4} />
       <CompanySystemThumbnail companySystem={companySystem} />
       <p>No.{systemNumber}</p>
       <Title>{companySystem.name}</Title>
       <p>制度内容 : {companySystem.description}</p>
       <p>いいね数 : 12</p>
       <Button>制度をシェアする</Button>
-    </DefaultLayout>
+    </DetailLayout>
   )
 }
 

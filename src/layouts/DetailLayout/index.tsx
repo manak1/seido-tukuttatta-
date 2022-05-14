@@ -6,15 +6,19 @@ import * as Styled from "./index.style"
 
 import { navLinks } from "~/constants/navbar"
 
-const DefaultLayout: React.FC = (props) => {
-  const { children } = props
+type DetailLayoutProps = {
+  title: string
+}
+
+const DetailLayout: React.FC<DetailLayoutProps> = (props) => {
+  const { children, title } = props
   return (
     <>
-      <HeaderBack title="新規作成" />
+      <HeaderBack title={title} />
       <Styled.ExtendWrapper>{children}</Styled.ExtendWrapper>
       <Styled.ExtendNavBottom links={navLinks} />
     </>
   )
 }
 
-export default DefaultLayout
+export default DetailLayout
