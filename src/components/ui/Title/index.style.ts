@@ -1,20 +1,35 @@
 import { Theme } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { TitleTags, TitleSizes, TitleProps } from "./index"
+import { TitleTags, TitleSizes, TitleProps, TitleBold } from "./index"
 
 export const createTitleStyle = (tag: TitleTags) => {
   const Component = styled(tag)<TitleProps>(
     {
-      fontWeight: "bold",
       margin: 0,
     },
-    ({ theme, size }) => ({
+    ({ theme, size, fontWeight }) => ({
       ...setTitleSize(size, theme),
+      ...setFontWeight(fontWeight),
     })
   )
 
   return Component
+}
+
+const setFontWeight = (fontWeight: TitleBold = "bold") => {
+  switch (fontWeight) {
+    case "black": {
+      return {
+        fontWeight: "900",
+      }
+    }
+    case "bold": {
+      return {
+        fontWeight: "700",
+      }
+    }
+  }
 }
 
 const setTitleSize = (size: TitleSizes = "default", theme: Theme) => {

@@ -10,6 +10,9 @@ import Spacer from "~/components/functional/Spacer"
 import DetailLayout from "~/layouts/DetailLayout"
 
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
+import DetailRecommended from "~/components/page/s/detail/DetailRecommended"
+
+import * as Styled from "./index.style"
 
 import { ApiSuccessGetCompanySystem } from "~/@types/api/companySystem"
 import { CompanySystem } from "~/@types/companySystem"
@@ -44,11 +47,24 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       </Head>
       <Spacer size={4} />
       <CompanySystemThumbnail companySystem={companySystem} />
-      <p>No.{systemNumber}</p>
-      <Title>{companySystem.name}</Title>
-      <p>制度内容 : {companySystem.description}</p>
-      <p>いいね数 : 12</p>
-      <Button>制度をシェアする</Button>
+      <Spacer size={24} />
+      <Styled.SystemNumber>No.{systemNumber}</Styled.SystemNumber>
+      <Title fontWeight="black" size="md">
+        {companySystem.name}
+      </Title>
+      <Spacer size={8} />
+      <Styled.Description>{companySystem.description}</Styled.Description>
+      <Spacer size={16} />
+      <Styled.Author>作成者 : @{companySystem.author}</Styled.Author>
+      <Spacer size={24} />
+      <Button variant="twitter" icon="twitter">
+        ツイートする
+      </Button>
+      <Spacer size={16} />
+      <Button icon="thumbsUp">ナイス制度 12</Button>
+      <Spacer size={16} />
+      <Styled.Divider />
+      <DetailRecommended />
     </DetailLayout>
   )
 }
