@@ -16,6 +16,7 @@ export const theme = {
     white: "#fff",
     gray: "#d3d3d3",
     link: "#1976D2",
+    bg: "#F7FAFC",
   },
   letterSpacing: {
     wide: "0.025em",

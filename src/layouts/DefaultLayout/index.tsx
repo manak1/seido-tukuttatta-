@@ -3,6 +3,7 @@ import { Add } from "emotion-icons/material"
 import { useRouter } from "next/router"
 import React, { useCallback } from "react"
 
+import Footer from "~/components/ui/Footer"
 import Header from "~/components/ui/Header"
 import NavBottom from "~/components/ui/NavBottom"
 
@@ -23,6 +24,7 @@ const DefaultLayout: React.FC = (props) => {
     <>
       <Header />
       <Styled.ExtendWrapper>{children}</Styled.ExtendWrapper>
+      <Footer />
       <NavBottom
         links={navLinks}
         css={css`
