@@ -20,11 +20,3 @@ const Template: ComponentStory<typeof Component> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {}
-
-export const Glass = Template.bind({})
-Glass.args = {
-  companySystem: {
-    ...placeholderSystem,
-    thumbnailType: "2",
-  },
-}
