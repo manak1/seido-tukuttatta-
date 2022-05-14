@@ -29,6 +29,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
   -webkit-background-size: cover;
   background-size: cover;
   padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media (min-width: 580px) {

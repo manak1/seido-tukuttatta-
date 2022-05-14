@@ -11,6 +11,11 @@ exports[`Buttonのテスト snapshot 1`] = `
   cursor: pointer;
   font-size: 16px;
   width: auto;
+  display: initial;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
   font-weight: bold;
   background-color: #7856FF;
   color: #fff;
@@ -32,10 +37,19 @@ exports[`Buttonのテスト snapshot 1`] = `
   transition: box-shadow 0.2s ease-out;
 }
 
+.emotion-1 {
+  margin: 0;
+  padding: 0;
+}
+
 <button
     class="emotion-0"
   >
-    ボタン
+    <p
+      class="emotion-1"
+    >
+      ボタン
+    </p>
   </button>
 </DocumentFragment>
 `;

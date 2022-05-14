@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footerのテスト snapshot 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  padding: 24px 16px 72px 16px;
+  margin: 0 auto;
+  background-color: #F7FAFC;
+  max-width: 480px;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1>*+* {
+  margin-left: 8px;
+}
+
+.emotion-2 {
+  width: 32px;
+  height: 32px;
+}
+
+.emotion-3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-7 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #333;
+}
+
+.emotion-14 {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.emotion-16 {
+  font-size: 14px;
+}
+
+.emotion-17 {
+  color: #1976D2;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+<footer
+    class="emotion-0"
+  >
+    <div
+      class="emotion-1"
+    >
+      <img
+        class="emotion-2"
+        src="/logo.svg"
+      />
+      <p
+        class="emotion-3"
+        font-weight="bold"
+      >
+        制度つくったったー
+      </p>
+    </div>
+    <div
+      class="emotion-4"
+      size="8"
+    />
+    <ul
+      class="emotion-5"
+    >
+      <li
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          href="/"
+        >
+          ホーム
+        </a>
+      </li>
+      <li
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          href="/s/ranking"
+        >
+          ランキング
+        </a>
+      </li>
+      <li
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          href="/s/search"
+        >
+          制度をさがす
+        </a>
+      </li>
+      <li
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          href="/s/create"
+        >
+          制度をつくる
+        </a>
+      </li>
+    </ul>
+    <div
+      class="emotion-14"
+      size="16"
+    />
+    <div
+      class="emotion-1"
+    >
+      <p
+        class="emotion-16"
+      >
+        開発&運営
+      </p>
+      <a
+        class="emotion-17"
+        href="https://twitter.com/mikeanakida"
+        rel="noreferrer"
+        target="_blank"
+      >
+        @mikeanakida
+      </a>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

@@ -3,13 +3,14 @@
 exports[`Titleのテスト snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  font-weight: bold;
   margin: 0;
   font-size: 20px;
+  font-weight: 700;
 }
 
 <p
     class="emotion-0"
+    font-weight="bold"
   >
     タイトルだよ
   </p>

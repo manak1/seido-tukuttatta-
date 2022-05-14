@@ -14,14 +14,15 @@ exports[`HomeTopのテスト snapshot 1`] = `
     size="8"
   />
   .emotion-0 {
-  font-weight: bold;
   margin: 0;
   font-size: 32px;
+  font-weight: 700;
   text-align: center;
 }
 
 <h1
     class="emotion-0"
+    font-weight="bold"
   >
     制度作ったったー
   </h1>
@@ -37,8 +38,9 @@ exports[`HomeTopのテスト snapshot 1`] = `
   />
   .emotion-0 {
   font-size: 14px;
-  margin-top: 16px;
-  line-height: 1.7;
+  margin-top: 24px;
+  line-height: 1.75;
+  font-weight: 500;
 }
 
 <p
@@ -46,6 +48,17 @@ exports[`HomeTopのテスト snapshot 1`] = `
   >
     こんな制度あったらいいな！を叶える事が出来るサイトです。自分の作った制度が本当にどこかの会社で採用されちゃうかも..!?
   </p>
+  .emotion-0 {
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+<div
+    class="emotion-0"
+    size="12"
+  />
   .emotion-0 {
   min-width: 36px;
   outline: none;
@@ -55,6 +68,11 @@ exports[`HomeTopのテスト snapshot 1`] = `
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  display: initial;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
   font-weight: bold;
   background-color: #7856FF;
   color: #fff;
@@ -76,21 +94,30 @@ exports[`HomeTopのテスト snapshot 1`] = `
   transition: box-shadow 0.2s ease-out;
 }
 
+.emotion-1 {
+  margin: 0;
+  padding: 0;
+}
+
 <button
     class="emotion-0"
   >
-    制度をつくる
+    <p
+      class="emotion-1"
+    >
+      制度をつくる
+    </p>
   </button>
   .emotion-0 {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
-  min-height: 8px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
 }
 
 <div
     class="emotion-0"
-    size="8"
+    size="12"
   />
   .emotion-0 {
   min-width: 36px;
@@ -101,6 +128,11 @@ exports[`HomeTopのテスト snapshot 1`] = `
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  display: initial;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
   font-weight: bold;
   background-color: #fff;
   border: 3px solid #7856FF;
@@ -123,10 +155,19 @@ exports[`HomeTopのテスト snapshot 1`] = `
   transition: box-shadow 0.2s ease-out;
 }
 
+.emotion-1 {
+  margin: 0;
+  padding: 0;
+}
+
 <button
     class="emotion-0"
   >
-    制度つくったったーとは？
+    <p
+      class="emotion-1"
+    >
+      制度つくったったーとは？
+    </p>
   </button>
 </DocumentFragment>
 `;

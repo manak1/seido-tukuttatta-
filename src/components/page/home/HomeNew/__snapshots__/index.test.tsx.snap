@@ -7,9 +7,9 @@ exports[`HomeNewのテスト snapshot 1`] = `
 }
 
 .emotion-1 {
-  font-weight: bold;
   margin: 0;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .emotion-2 {
@@ -35,6 +35,11 @@ exports[`HomeNewのテスト snapshot 1`] = `
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  display: initial;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
   font-weight: bold;
   opacity: 0.7;
   color: rgba(0, 0, 0, 0.3);
@@ -57,13 +62,19 @@ exports[`HomeNewのテスト snapshot 1`] = `
   transition: box-shadow 0.2s ease-out;
 }
 
+.emotion-5 {
+  margin: 0;
+  padding: 0;
+}
+
 <div
     class="emotion-0"
   >
     <p
       class="emotion-1"
+      font-weight="bold"
     >
-      # 新しい制度
+      新しい制度
     </p>
     <div
       class="emotion-2"
@@ -125,7 +136,11 @@ exports[`HomeNewのテスト snapshot 1`] = `
       class="emotion-4"
       disabled=""
     >
-      もっとみる
+      <p
+        class="emotion-5"
+      >
+        もっとみる
+      </p>
     </button>
   </div>
 </DocumentFragment>
