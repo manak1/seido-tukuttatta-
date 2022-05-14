@@ -7,7 +7,7 @@ export const ExtendWrapper = styled(Wrapper)(
   {
     minHeight: "100vh",
     paddingTop: "16px",
-    paddingBottom: "136px",
+    paddingBottom: "56px",
   },
   ({ theme }) => ({
     [theme.mq.md]: {
