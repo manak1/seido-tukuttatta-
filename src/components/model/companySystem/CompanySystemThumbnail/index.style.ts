@@ -45,6 +45,7 @@ export const Gradient = {
         "conic-gradient(from -60.2deg at 49.85% 50%, rgba(255, 113, 181, 0.958021) 0deg, rgba(112, 109, 255, 0.904531) 116.87deg, #FF71B5 177.81deg, rgba(112, 109, 255, 0.87) 302.34deg, rgba(255, 113, 181, 0.958021) 360deg);",
       backgroundSize: "cover",
       padding: "10px",
+      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     },
     ({ theme }) => ({
       [theme.mq.md]: {
