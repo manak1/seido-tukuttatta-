@@ -19,6 +19,9 @@ handler.get("api/companySystem", async (req, res) => {
     const companySystems = await prisma.companySystem.findMany({
       take: FETCH_PER_PAGE,
       skip: Number(page) * FETCH_PER_PAGE,
+      orderBy: {
+        createdAt: "desc",
+      },
     })
     const count = await prisma.companySystem.count()
     setResponse.OK(res, { companySystems, count })
