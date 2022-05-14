@@ -12,9 +12,11 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     borderRadius: "8px",
     cursor: "pointer",
   },
-  ({ variant, isFullWidth, theme, disabled, size }) => ({
+  ({ variant, isFullWidth, theme, disabled, size, icon }) => ({
     fontSize: theme.fontSizes.default,
     width: isFullWidth ? "100%" : "auto",
+    display: icon ? "flex" : "initial",
+    alignItems: icon ? "center" : "normal",
     fontWeight: "bold",
     "&:hover": {
       filter: "brightness(95%)",
@@ -26,6 +28,11 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     transition: "box-shadow, filter, 0.2s ease-in",
   })
 )
+
+export const Text = styled.p({
+  margin: "0",
+  padding: "0",
+})
 
 function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
   if (disabled) {
@@ -59,6 +66,11 @@ function setVariant(variant: ButtonVariant, theme: Theme, disabled?: boolean) {
         backgroundColor: "#fff",
         color: theme.colors.black,
         border: "1px solid #d3d3d3",
+      }
+    case "twitter":
+      return {
+        backgroundColor: theme.colors.blue,
+        color: theme.colors.white,
       }
   }
 }
