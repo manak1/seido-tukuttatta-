@@ -31,10 +31,11 @@ const HomeTop: React.FC = () => {
       <Styled.Description>
         こんな制度あったらいいな！を叶える事が出来るサイトです。自分の作った制度が本当にどこかの会社で採用されちゃうかも..!?
       </Styled.Description>
+      <Spacer size={12} />
       <Button onClick={jumpToCreate} size="small" isFullWidth>
         制度をつくる
       </Button>
-      <Spacer size={8} />
+      <Spacer size={12} />
       <Button onClick={jumpToCreate} size="small" variant="outline" isFullWidth>
         制度つくったったーとは？
       </Button>
