@@ -9,6 +9,7 @@ import { useBoolean } from "../boolean"
 
 import {
   ApiSuccessCreateCompanySystem,
+  ApiSuccessGetCompanySystemLike,
   ApiSuccessGetCompanySystems,
 } from "~/@types/api/companySystem"
 
@@ -80,6 +81,34 @@ export const usePostCompanySystem = () => {
 
   return {
     post,
+    isLoading,
+  }
+}
+
+export const useGetCompanySystemLike = () => {
+  const fetcher = useFetcher()
+  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
+
+  const getCompanySystemLike = useCallback(
+    async (id, number) => {
+      if (isLoading) return
+      setLoadingTrue()
+      const data: ApiSuccessGetCompanySystemLike = await fetcher(
+        `/api/companySystem/${id}/like?number=${number}`
+      )
+        .catch((error) => {
+          throw error
+        })
+        .finally(() => {
+          setLoadingFalse()
+        })
+      return data
+    },
+    [fetcher, isLoading, setLoadingFalse, setLoadingTrue]
+  )
+
+  return {
+    getCompanySystemLike,
     isLoading,
   }
 }

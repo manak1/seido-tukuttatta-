@@ -7,6 +7,10 @@ export type ApiSuccessGetCompanySystem = ApiSuccessResponseType<{
    */
   companySystem: CompanySystem
 }>
+export type ApiSuccessGetCompanySystemLike = ApiSuccessResponseType<{
+  count: number
+  liked: boolean
+}>
 export type ApiSuccessCreateCompanySystem = ApiSuccessGetCompanySystem
 export type ApiSuccessGetCompanySystems = ApiSuccessResponseType<{
   /**
