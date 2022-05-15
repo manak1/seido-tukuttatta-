@@ -11,14 +11,11 @@ export const SystemNumber = styled.p(
   })
 )
 
-export const Description = styled.p(
-  {
-    fontWeight: "500",
-    lineHeight: "1.75",
-    margin: "0",
-  },
-  ({ theme }) => ({})
-)
+export const Description = styled.p({
+  fontWeight: "500",
+  lineHeight: "1.75",
+  margin: "0",
+})
 
 export const Author = styled.p({}, ({ theme }) => ({
   fontSize: theme.fontSizes.small,
