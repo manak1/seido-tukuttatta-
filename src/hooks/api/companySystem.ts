@@ -112,3 +112,27 @@ export const useGetCompanySystemLike = () => {
     isLoading,
   }
 }
+
+export const useGetInfinityCompanySystemRanking = () => {
+  const fetcher = useFetcher()
+
+  const getKey = (index: number) => {
+    return `${config.SITE_URL}/api/companySystem/ranking?page=${index}`
+  }
+  const { data, size, setSize, isValidating, error, mutate } =
+    useSWRInfinite<ApiSuccessGetCompanySystems>(getKey, fetcher)
+  const result = data
+    ?.map((d) => d.companySystems)
+    .reduce((prev, current) => [...prev, ...current])
+  const max = (data && data[0].count) ?? 0
+  const isEnd = ((result && result.length) ?? 9999) >= max
+  return {
+    data: result ?? [],
+    size,
+    setSize,
+    isValidating,
+    isEnd,
+    isLoading: !data && !error,
+    mutate,
+  }
+}
