@@ -21,7 +21,7 @@ const HomeNew: React.FC = () => {
 
   return (
     <Styled.Wrapper>
-      <Title>新しい制度</Title>
+      <Title>＃新しい制度</Title>
       <Spacer axis="vertical" size={12} />
       <LoadingContent isLoading={isLoading}>
         <CompanySystemList companySystems={data ?? []} />
