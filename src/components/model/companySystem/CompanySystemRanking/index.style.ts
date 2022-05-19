@@ -24,8 +24,15 @@ export const Item = styled.li({
   position: "relative",
 })
 
-export const RankMedal = styled(Medal)({
-  position: "absolute",
-  top: "-13px",
-  left: "-13px",
-})
+export const RankMedal = styled(Medal)(
+  {
+    position: "absolute",
+    top: "-13px",
+    left: "-13px",
+  },
+  ({ theme }) => ({
+    [theme.mq.md]: {
+      left: "30px",
+    },
+  })
+)
