@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 
 import ButtonLink from "~/components/ui/ButtonLink"
 import Title from "~/components/ui/Title"
@@ -6,24 +6,24 @@ import Title from "~/components/ui/Title"
 import LoadingContent from "~/components/functional/LoadingContent"
 import Spacer from "~/components/functional/Spacer"
 
-import CompanySystemList from "~/components/model/companySystem/CompanySystemList"
-import { useGetInfinityCompanySystems } from "~/hooks/api/companySystem"
+import CompanySystemRanking from "~/components/model/companySystem/CompanySystemRanking"
+import { useGetInfinityCompanySystemRanking } from "~/hooks/api/companySystem"
 
 import * as Styled from "./index.style"
 
 const HomeNew: React.FC = () => {
-  const { data, isLoading } = useGetInfinityCompanySystems()
+  const { data, isLoading } = useGetInfinityCompanySystemRanking()
 
   return (
     <Styled.Wrapper>
-      <Title>＃新しい制度</Title>
+      <Title>#人気の制度</Title>
       <Spacer axis="vertical" size={12} />
       <LoadingContent isLoading={isLoading}>
-        <CompanySystemList companySystems={data ?? []} />
+        <CompanySystemRanking companySystems={data ?? []} />
       </LoadingContent>
       <Spacer axis="vertical" size={16} />
-      <ButtonLink isFullWidth variant="outline" size="small" href="/s/new">
-        もっとみる
+      <ButtonLink isFullWidth href="/s/ranking">
+        ランキングを見る
       </ButtonLink>
     </Styled.Wrapper>
   )

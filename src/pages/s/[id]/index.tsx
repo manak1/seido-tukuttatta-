@@ -1,6 +1,6 @@
 import { NextPage, GetServerSideProps } from "next"
 import Head from "next/head"
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 import Button from "~/components/ui/Button"
 import Title from "~/components/ui/Title"
@@ -11,6 +11,8 @@ import DetailLayout from "~/layouts/DetailLayout"
 
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import DetailRecommended from "~/components/page/s/detail/DetailRecommended"
+import { useGetCompanySystemLike } from "~/hooks/api/companySystem"
+import { useModalError } from "~/hooks/modalError"
 
 import * as Styled from "./index.style"
 
@@ -28,10 +30,34 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
 ) => {
   const { companySystem } = props
 
+  const { getCompanySystemLike, isLoading } = useGetCompanySystemLike()
+  const [liked, setLiked] = useState(false)
+  const [count, setCount] = useState(0)
+  const { addError } = useModalError()
+
   const systemNumber = useMemo(
     () => String(companySystem.number).padStart(3, "0"),
     [companySystem.number]
   )
+
+  useEffect(() => {
+    const init = async () => {
+      const data = await getCompanySystemLike(
+        companySystem.id,
+        companySystem.number
+      ).catch((error) => {
+        if (error instanceof Error) {
+          addError(error)
+        }
+        return Promise.reject(error)
+      })
+      if (data) {
+        setLiked(data.liked)
+        setCount(data.count)
+      }
+    }
+    init()
+  }, [])
 
   return (
     <DetailLayout title="制度詳細">
@@ -61,7 +87,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         ツイートする
       </Button>
       <Spacer size={16} />
-      <Button icon="thumbsUp">ナイス制度 12</Button>
+      <Button icon="thumbsUp">ナイス制度 {count}</Button>
       <Spacer size={16} />
       <Styled.Divider />
       <DetailRecommended />

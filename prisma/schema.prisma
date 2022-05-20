@@ -19,4 +19,13 @@ model CompanySystem {
   author String
   createdAt DateTime @default(now())
   id String @default(uuid())
+  like Like[]
 } 
+
+model Like {
+  id Int @id @default(autoincrement())
+  ip String
+  likeAt DateTime @default(now())
+  companySystem CompanySystem @relation(fields: [companySystemId], references: [number])
+  companySystemId Int
+}

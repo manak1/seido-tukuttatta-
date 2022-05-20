@@ -9,6 +9,7 @@ import { useBoolean } from "../boolean"
 
 import {
   ApiSuccessCreateCompanySystem,
+  ApiSuccessGetCompanySystemLike,
   ApiSuccessGetCompanySystems,
 } from "~/@types/api/companySystem"
 
@@ -81,5 +82,57 @@ export const usePostCompanySystem = () => {
   return {
     post,
     isLoading,
+  }
+}
+
+export const useGetCompanySystemLike = () => {
+  const fetcher = useFetcher()
+  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
+
+  const getCompanySystemLike = useCallback(
+    async (id, number) => {
+      if (isLoading) return
+      setLoadingTrue()
+      const data: ApiSuccessGetCompanySystemLike = await fetcher(
+        `/api/companySystem/${id}/like?number=${number}`
+      )
+        .catch((error) => {
+          throw error
+        })
+        .finally(() => {
+          setLoadingFalse()
+        })
+      return data
+    },
+    [fetcher, isLoading, setLoadingFalse, setLoadingTrue]
+  )
+
+  return {
+    getCompanySystemLike,
+    isLoading,
+  }
+}
+
+export const useGetInfinityCompanySystemRanking = () => {
+  const fetcher = useFetcher()
+
+  const getKey = (index: number) => {
+    return `${config.SITE_URL}/api/companySystem/ranking?page=${index}`
+  }
+  const { data, size, setSize, isValidating, error, mutate } =
+    useSWRInfinite<ApiSuccessGetCompanySystems>(getKey, fetcher)
+  const result = data
+    ?.map((d) => d.companySystems)
+    .reduce((prev, current) => [...prev, ...current])
+  const max = (data && data[0].count) ?? 0
+  const isEnd = ((result && result.length) ?? 9999) >= max
+  return {
+    data: result ?? [],
+    size,
+    setSize,
+    isValidating,
+    isEnd,
+    isLoading: !data && !error,
+    mutate,
   }
 }
