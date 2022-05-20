@@ -33,17 +33,24 @@ exports[`HomeNewのテスト snapshot 1`] = `
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
   font-size: 16px;
   width: 100%;
-  display: initial;
+  display: inline-block;
   -webkit-align-items: normal;
   -webkit-box-align: normal;
   -ms-flex-align: normal;
   align-items: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   font-weight: bold;
-  opacity: 0.7;
-  color: rgba(0, 0, 0, 0.3);
-  background-color: #d3d3d3;
+  background-color: #fff;
+  border: 3px solid #7856FF;
+  color: #7856FF;
   -webkit-transition: box-shadow,filter,0.2s ease-in;
   transition: box-shadow,filter,0.2s ease-in;
   padding: 8px 16px;
@@ -132,16 +139,16 @@ exports[`HomeNewのテスト snapshot 1`] = `
       class="emotion-3"
       size="16"
     />
-    <button
+    <a
       class="emotion-4"
-      disabled=""
+      href="/s/new"
     >
       <p
         class="emotion-5"
       >
         もっとみる
       </p>
-    </button>
+    </a>
   </div>
 </DocumentFragment>
 `;
