@@ -1,6 +1,6 @@
 import React, { useCallback } from "react"
 
-import Button from "~/components/ui/Button"
+import ButtonLink from "~/components/ui/ButtonLink"
 import Title from "~/components/ui/Title"
 
 import LoadingContent from "~/components/functional/LoadingContent"
@@ -12,12 +12,7 @@ import { useGetInfinityCompanySystemRanking } from "~/hooks/api/companySystem"
 import * as Styled from "./index.style"
 
 const HomeNew: React.FC = () => {
-  const { data, size, setSize, isEnd, isLoading, isValidating } =
-    useGetInfinityCompanySystemRanking()
-
-  const loadMore = useCallback(() => {
-    setSize(size + 1)
-  }, [setSize, size])
+  const { data, isLoading } = useGetInfinityCompanySystemRanking()
 
   return (
     <Styled.Wrapper>
@@ -27,15 +22,9 @@ const HomeNew: React.FC = () => {
         <CompanySystemRanking companySystems={data ?? []} />
       </LoadingContent>
       <Spacer axis="vertical" size={16} />
-      <Button
-        isFullWidth
-        variant="outline"
-        size="small"
-        onClick={loadMore}
-        disabled={isEnd || isValidating}
-      >
-        もっとみる
-      </Button>
+      <ButtonLink isFullWidth href="/s/ranking">
+        ランキングを見る
+      </ButtonLink>
     </Styled.Wrapper>
   )
 }

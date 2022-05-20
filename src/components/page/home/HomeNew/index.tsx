@@ -1,6 +1,6 @@
-import React, { useCallback } from "react"
+import React from "react"
 
-import Button from "~/components/ui/Button"
+import ButtonLink from "~/components/ui/ButtonLink"
 import Title from "~/components/ui/Title"
 
 import LoadingContent from "~/components/functional/LoadingContent"
@@ -12,12 +12,7 @@ import { useGetInfinityCompanySystems } from "~/hooks/api/companySystem"
 import * as Styled from "./index.style"
 
 const HomeNew: React.FC = () => {
-  const { data, size, setSize, isEnd, isLoading, isValidating } =
-    useGetInfinityCompanySystems()
-
-  const loadMore = useCallback(() => {
-    setSize(size + 1)
-  }, [setSize, size])
+  const { data, isLoading } = useGetInfinityCompanySystems()
 
   return (
     <Styled.Wrapper>
@@ -27,15 +22,9 @@ const HomeNew: React.FC = () => {
         <CompanySystemList companySystems={data ?? []} />
       </LoadingContent>
       <Spacer axis="vertical" size={16} />
-      <Button
-        isFullWidth
-        variant="outline"
-        size="small"
-        onClick={loadMore}
-        disabled={isEnd || isValidating}
-      >
+      <ButtonLink isFullWidth variant="outline" size="small" href="/s/new">
         もっとみる
-      </Button>
+      </ButtonLink>
     </Styled.Wrapper>
   )
 }
