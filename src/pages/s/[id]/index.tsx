@@ -1,6 +1,7 @@
 import { NextPage, GetServerSideProps } from "next"
 import Head from "next/head"
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { useReward } from "react-rewards"
 
 import Button from "~/components/ui/Button"
 import IconCheck from "~/components/ui/IconCheck"
@@ -12,7 +13,10 @@ import DetailLayout from "~/layouts/DetailLayout"
 
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import DetailRecommended from "~/components/page/s/detail/DetailRecommended"
-import { useGetCompanySystemLike } from "~/hooks/api/companySystem"
+import {
+  useGetCompanySystemLike,
+  usePostCompanySystemLike,
+} from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
 
 import * as Styled from "./index.style"
@@ -32,9 +36,17 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   const { companySystem } = props
 
   const { getCompanySystemLike, isLoading } = useGetCompanySystemLike()
+  const { postCompanySystemlike, isLoading: isLoadingPostLike } =
+    usePostCompanySystemLike()
   const [liked, setLiked] = useState(false)
   const [count, setCount] = useState(0)
   const { addError } = useModalError()
+
+  const { reward } = useReward("likeCheck", "confetti", {
+    lifetime: 100,
+    spread: 30,
+    startVelocity: 20,
+  })
 
   const systemNumber = useMemo(
     () => String(companySystem.number).padStart(3, "0"),
@@ -59,6 +71,32 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
     }
     init()
   }, [])
+
+  // この辺hookにすると良さそう
+  const updateLiked = () => {
+    reward()
+    setCount((prev) => prev + 1)
+    setLiked(true)
+  }
+
+  const updateDisliked = () => {
+    setCount((prev) => prev - 1)
+    setLiked(false)
+  }
+
+  const handleLike = useCallback(
+    (liked: boolean) => {
+      if (isLoadingPostLike) return
+      liked ? updateLiked() : updateDisliked()
+      postCompanySystemlike(companySystem.id, companySystem.number)
+    },
+    [
+      companySystem.id,
+      companySystem.number,
+      isLoadingPostLike,
+      postCompanySystemlike,
+    ]
+  )
 
   return (
     <DetailLayout title="制度詳細">
@@ -90,8 +128,9 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         <IconCheck
           disabled={isLoading}
           value={liked}
-          onChange={setLiked}
+          onChange={handleLike}
           icon="thumbsUp"
+          id="likeCheck"
         >
           {count}
         </IconCheck>

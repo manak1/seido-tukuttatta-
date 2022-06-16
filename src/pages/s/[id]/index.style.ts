@@ -17,9 +17,14 @@ export const Description = styled.p({
   margin: "0",
 })
 
-export const Author = styled.p({}, ({ theme }) => ({
-  fontSize: theme.fontSizes.small,
-}))
+export const Author = styled.p(
+  {
+    margin: "0",
+  },
+  ({ theme }) => ({
+    fontSize: theme.fontSizes.small,
+  })
+)
 
 export const Divider = styled.hr({}, ({ theme }) => ({
   borderColor: theme.colors.gray,
