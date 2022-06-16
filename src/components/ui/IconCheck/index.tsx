@@ -5,8 +5,8 @@ import * as Styled from "./index.style"
 
 export type IconCheckProps = Omit<React.ComponentProps<"label">, "onChange"> & {
   value: boolean
-  onChange: (checked: boolean) => void
   icon: CheckIcons
+  onChange: (value: boolean) => void
   disabled: boolean
 }
 
@@ -45,8 +45,8 @@ const IconCheck: React.FC<IconCheckProps> = (props) => {
           checked={value}
           onChange={(e) => onChange(e.target.checked)}
         />
-        <Icon icon={getIcon} />
-        <Styled.Text>{children}</Styled.Text>
+        <Icon icon={getIcon} color={value ? "primary" : "black"} />
+        <Styled.Text value={value}>{children}</Styled.Text>
       </Styled.Box>
     </Styled.Wrapper>
   )

@@ -1,5 +1,7 @@
 import styled from "@emotion/styled"
 
+import { IconCheckProps } from "."
+
 export const Wrapper = styled.label(
   {
     display: "inline-block",
@@ -19,12 +21,13 @@ export const CheckBox = styled.input({
   display: "none",
 })
 
-export const Text = styled.p(
+export const Text = styled.p<Pick<IconCheckProps, "value">>(
   {
-    fontWeight: "bold",
+    fontWeight: "900",
     marginLeft: "4px",
   },
-  ({ theme, color }) => ({
+  ({ theme, value }) => ({
     fontSize: theme.fontSizes.small,
+    color: value ? theme.colors.primary : theme.colors.black,
   })
 )
