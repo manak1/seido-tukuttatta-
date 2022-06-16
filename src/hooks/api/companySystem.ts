@@ -113,6 +113,34 @@ export const useGetCompanySystemLike = () => {
   }
 }
 
+export const usePostCompanySystemLike = () => {
+  const fetcher = useFetcher()
+  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
+
+  const postCompanySystemlike = useCallback(
+    async (id, number) => {
+      if (isLoading) return
+      setLoadingTrue()
+      await fetcher(`/api/companySystem/${id}/like`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ number }),
+      })
+        .catch((error) => {
+          throw error
+        })
+        .finally(() => setLoadingFalse())
+    },
+    [fetcher, isLoading, setLoadingFalse, setLoadingTrue]
+  )
+  return {
+    postCompanySystemlike,
+    isLoading,
+  }
+}
+
 export const useGetInfinityCompanySystemRanking = () => {
   const fetcher = useFetcher()
 
