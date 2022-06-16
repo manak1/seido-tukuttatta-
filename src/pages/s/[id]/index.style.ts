@@ -24,3 +24,9 @@ export const Author = styled.p({}, ({ theme }) => ({
 export const Divider = styled.hr({}, ({ theme }) => ({
   borderColor: theme.colors.gray,
 }))
+
+export const Share = styled.div({
+  display: "flex",
+  alignItems: "center",
+  gap: "20px",
+})

@@ -3,6 +3,7 @@ import Head from "next/head"
 import { useEffect, useMemo, useState } from "react"
 
 import Button from "~/components/ui/Button"
+import IconCheck from "~/components/ui/IconCheck"
 import Title from "~/components/ui/Title"
 
 import Spacer from "~/components/functional/Spacer"
@@ -80,14 +81,21 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       </Title>
       <Spacer size={8} />
       <Styled.Description>{companySystem.description}</Styled.Description>
-      <Spacer size={16} />
+      <Spacer size={32} />
       <Styled.Author>作成者 : @{companySystem.author}</Styled.Author>
-      <Spacer size={24} />
-      <Button variant="twitter" icon="twitter">
-        ツイートする
-      </Button>
-      <Spacer size={16} />
-      <Button icon="thumbsUp">ナイス制度 {count}</Button>
+      <Styled.Share>
+        <Button variant="twitter" icon="twitter">
+          ツイートする
+        </Button>
+        <IconCheck
+          disabled={isLoading}
+          value={liked}
+          onChange={setLiked}
+          icon="thumbsUp"
+        >
+          {count}
+        </IconCheck>
+      </Styled.Share>
       <Spacer size={16} />
       <Styled.Divider />
       <DetailRecommended />
