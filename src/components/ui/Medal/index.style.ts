@@ -15,6 +15,7 @@ export const Medal = styled.div<MedalProps>(
   ({ theme, variant }) => ({
     fontSize: theme.fontSizes.large,
     color: theme.colors.white,
+    boxShadow: theme.shadow.md,
     ...setVariant(variant),
   })
 )
