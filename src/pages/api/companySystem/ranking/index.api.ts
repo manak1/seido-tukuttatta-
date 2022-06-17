@@ -23,7 +23,9 @@ handler.get("api/companySystem/ranking", async (req, res) => {
         },
       },
     })
-    setResponse.OK(res, { companySystems })
+
+    const companySystemCount = await prisma.companySystem.count()
+    setResponse.OK(res, { companySystems, count: companySystemCount })
   } catch (error) {
     setResponse.InternalServerError(
       res,
