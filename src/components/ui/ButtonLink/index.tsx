@@ -16,7 +16,7 @@ export type ButtonLinkVariant =
   | "cancel"
   | "outline"
   | "twitter"
-export type ButtonLinkSize = "default" | "small"
+export type ButtonLinkSize = "default" | "small" | "oblong"
 export type ButtonLinkIcon = keyof typeof buttonIcons
 
 export type ButtonLinkProps = React.ComponentProps<"a"> & {

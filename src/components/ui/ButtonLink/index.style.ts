@@ -81,5 +81,10 @@ function setSize(buttonSize: ButtonLinkSize) {
       return {
         padding: "8px 16px",
       }
+
+    case "oblong":
+      return {
+        minWidth: "240px",
+      }
   }
 }
