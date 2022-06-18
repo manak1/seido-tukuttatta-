@@ -22,8 +22,8 @@ const HomeNew: React.FC = () => {
         <CompanySystemRanking companySystems={data ?? []} />
       </LoadingContent>
       <Spacer axis="vertical" size={16} />
-      <ButtonLink isFullWidth href="/s/ranking">
-        ランキングを見る
+      <ButtonLink isFullWidth variant="outline" href="/s/ranking">
+        ランキングをもっと見る
       </ButtonLink>
     </Styled.Wrapper>
   )

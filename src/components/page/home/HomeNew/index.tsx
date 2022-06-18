@@ -23,7 +23,7 @@ const HomeNew: React.FC = () => {
       </LoadingContent>
       <Spacer axis="vertical" size={16} />
       <ButtonLink isFullWidth variant="outline" size="small" href="/s/new">
-        もっとみる
+        あたらしい制度をもっとみる
       </ButtonLink>
     </Styled.Wrapper>
   )
