@@ -29,6 +29,7 @@ exports[`Footerのテスト snapshot 1`] = `
 .emotion-2 {
   width: 32px;
   height: 32px;
+  margin-right: 8px;
 }
 
 .emotion-3 {
@@ -162,7 +163,7 @@ exports[`Footerのテスト snapshot 1`] = `
       <p
         class="emotion-16"
       >
-        開発&運営
+        開発者
       </p>
       <a
         class="emotion-17"
