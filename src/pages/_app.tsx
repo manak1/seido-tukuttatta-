@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           description: PAGE_DESCRIPTION,
           images: [
             {
-              url: `config.SITE_URL/ogp.png`,
+              url: `${config.SITE_URL}/ogp.png`,
               type: "image/png",
               width: 654,
               height: 356,

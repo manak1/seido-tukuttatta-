@@ -70,18 +70,18 @@ exports[`Footerのテスト snapshot 1`] = `
   color: #333;
 }
 
-.emotion-14 {
+.emotion-16 {
   width: 16px;
   height: 16px;
   min-width: 16px;
   min-height: 16px;
 }
 
-.emotion-16 {
+.emotion-18 {
   font-size: 14px;
 }
 
-.emotion-17 {
+.emotion-19 {
   color: #1976D2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -127,9 +127,9 @@ exports[`Footerのテスト snapshot 1`] = `
       >
         <a
           class="emotion-7"
-          href="/s/ranking"
+          href="/about"
         >
-          ランキング
+          制度つくったったーとは？
         </a>
       </li>
       <li
@@ -137,9 +137,19 @@ exports[`Footerのテスト snapshot 1`] = `
       >
         <a
           class="emotion-7"
-          href="/s/search"
+          href="/s/new"
         >
-          制度をさがす
+          新しい制度
+        </a>
+      </li>
+      <li
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          href="/s/ranking"
+        >
+          ランキング
         </a>
       </li>
       <li
@@ -154,19 +164,19 @@ exports[`Footerのテスト snapshot 1`] = `
       </li>
     </ul>
     <div
-      class="emotion-14"
+      class="emotion-16"
       size="16"
     />
     <div
       class="emotion-1"
     >
       <p
-        class="emotion-16"
+        class="emotion-18"
       >
         開発者
       </p>
       <a
-        class="emotion-17"
+        class="emotion-19"
         href="https://twitter.com/mikeanakida"
         rel="noreferrer"
         target="_blank"
