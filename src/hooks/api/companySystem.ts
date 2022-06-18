@@ -27,6 +27,31 @@ export const useGetCompanySystems = () => {
   }
 }
 
+export const useGetRandomCompanySystem = () => {
+  const fetcher = useFetcher()
+  const [isLoading, setLoadingTrue, setLoadingFalse] = useBoolean(false)
+
+  const getRandomCompanySystem = useCallback(async () => {
+    if (isLoading) return
+    setLoadingTrue()
+    const data: ApiSuccessGetCompanySystems = await fetcher(
+      `/api/companySystem/random`
+    )
+      .catch((error) => {
+        throw error
+      })
+      .finally(() => {
+        setLoadingFalse()
+      })
+    return data
+  }, [fetcher, isLoading, setLoadingFalse, setLoadingTrue])
+
+  return {
+    getRandomCompanySystem,
+    isLoading,
+  }
+}
+
 export const useGetInfinityCompanySystems = () => {
   const fetcher = useFetcher()
 
