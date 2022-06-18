@@ -17,15 +17,6 @@ import { PAGE_DESCRIPTION, PAGE_TITLE } from "~/constants/seo"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <RecoilRoot>
-        <SwrConfig>
-          <ThemeProvider theme={theme}>
-            <ErrorModalControl />
-            <Global styles={globalStyle} />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </SwrConfig>
-      </RecoilRoot>
       <NextSeo
         title={`${PAGE_TITLE}`}
         openGraph={{
@@ -45,6 +36,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
         twitter={{ cardType: "summary_large_image" }}
       />
+      <RecoilRoot>
+        <SwrConfig>
+          <ThemeProvider theme={theme}>
+            <ErrorModalControl />
+            <Global styles={globalStyle} />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </SwrConfig>
+      </RecoilRoot>
     </>
   )
 }
