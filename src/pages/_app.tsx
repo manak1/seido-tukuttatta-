@@ -1,5 +1,6 @@
 import { ThemeProvider, Global } from "@emotion/react"
 import { NextSeo } from "next-seo"
+import { Head } from "next/head"
 import { RecoilRoot } from "recoil"
 
 import ErrorModalControl from "~/components/functional/ErrorModalControl"
@@ -17,6 +18,12 @@ import { PAGE_DESCRIPTION, PAGE_TITLE } from "~/constants/seo"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+      </Head>
       <NextSeo
         title={`${PAGE_TITLE}`}
         openGraph={{
