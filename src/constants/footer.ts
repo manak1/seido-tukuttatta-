@@ -4,12 +4,16 @@ export const footerLinks = [
     title: "ホーム",
   },
   {
-    href: "/s/ranking",
-    title: "ランキング",
+    href: "/about",
+    title: "制度つくったったーとは？",
   },
   {
-    href: "/s/search",
-    title: "制度をさがす",
+    href: "/s/new",
+    title: "新しい制度",
+  },
+  {
+    href: "/s/ranking",
+    title: "ランキング",
   },
   {
     href: "/s/create",
