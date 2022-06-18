@@ -27,6 +27,9 @@ export const Chat = styled.p<Pick<CharacterChatProps, "direction">>(
 )
 
 export const Box = styled.div<Pick<CharacterChatProps, "direction">>(
+  {
+    textAlign: "center",
+  },
   ({ direction }) => ({
     margin: direction === "left" ? "0 16px 0 0" : "0 0 0 16px",
   })
@@ -47,6 +50,8 @@ export const Icon = styled.img<Pick<CharacterChatProps, "direction">>(
 export const Name = styled.p(
   {
     margin: "0",
+    wordBreak: "keep-all",
+    whiteSpace: "break-spaces",
   },
   ({ theme }) => ({
     fontSize: theme.fontSizes.xxsmall,

@@ -1,6 +1,7 @@
 import { useCallback } from "react"
 
 import Button from "~/components/ui/Button"
+import CharacterChat from "~/components/ui/CharacterChat"
 import Divider from "~/components/ui/Divider"
 import Title from "~/components/ui/Title"
 
@@ -25,8 +26,15 @@ const NewShindanPage: NextPage = () => {
 
   return (
     <DefaultLayout>
+      <Spacer axis="vertical" size={12} />
       <Title>#あたらしい制度</Title>
       <Spacer axis="vertical" size={12} />
+      <CharacterChat
+        name="ぺんぎんシャチョ"
+        text={`新着制度の一覧だよ!!\n面白い制度がいっぱいあるね(｀・ω・´)`}
+        icon="/penchan2.svg"
+      />
+      <Spacer axis="vertical" size={36} />
       <LoadingContent isLoading={isLoading}>
         <CompanySystemList companySystems={data ?? []} />
       </LoadingContent>
