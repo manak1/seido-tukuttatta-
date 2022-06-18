@@ -15,6 +15,10 @@ const HomeTop: React.FC = () => {
     router.push("/s/create")
   }, [router])
 
+  const jumpToAbout = useCallback(() => {
+    router.push("/about")
+  }, [router])
+
   return (
     <>
       <Spacer axis="vertical" size={8} />
@@ -36,7 +40,7 @@ const HomeTop: React.FC = () => {
         制度をつくる
       </Button>
       <Spacer size={12} />
-      <Button onClick={jumpToCreate} size="small" variant="outline" isFullWidth>
+      <Button onClick={jumpToAbout} size="small" variant="outline" isFullWidth>
         制度つくったったーとは？
       </Button>
     </>
