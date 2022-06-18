@@ -1,4 +1,5 @@
 import { NextPage, GetServerSideProps } from "next"
+import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useReward } from "react-rewards"
@@ -26,6 +27,7 @@ import { ApiSuccessGetCompanySystem } from "~/@types/api/companySystem"
 import { CompanySystem } from "~/@types/companySystem"
 
 import { config } from "~/constants/config"
+import { PAGE_TITLE } from "~/constants/seo"
 
 type CompanySystemDetailPageProps = {
   companySystem: CompanySystem
@@ -101,19 +103,19 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
 
   return (
     <DetailLayout title="制度詳細">
-      <Head>
-        <meta
-          property="og:image"
-          content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
-        />
-        <meta
-          property="twitter:image"
-          content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={companySystem.name} />
-        <meta name="twitter:description" content={companySystem.description} />
-      </Head>
+      <NextSeo
+        title={`${companySystem.name} | ${PAGE_TITLE}`}
+        description={companySystem.description}
+        openGraph={{
+          description: companySystem.description,
+          images: [
+            {
+              url: `https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`,
+            },
+          ],
+          title: `${companySystem.name} | ${PAGE_TITLE}`,
+        }}
+      />
       <Spacer size={4} />
       <CompanySystemThumbnail companySystem={companySystem} />
       <Spacer size={24} />

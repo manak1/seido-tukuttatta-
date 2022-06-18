@@ -1,3 +1,5 @@
+import { NextSeo } from "next-seo"
+
 import ButtonLink from "~/components/ui/ButtonLink"
 import CharacterChatList from "~/components/ui/CharacterChatList"
 import Divider from "~/components/ui/Divider"
@@ -10,10 +12,12 @@ import DefaultLayout from "~/layouts/DefaultLayout"
 import type { NextPage } from "next"
 
 import { chat1, chat2 } from "~/constants/about"
+import { PAGE_TITLE } from "~/constants/seo"
 
 const Home: NextPage = () => {
   return (
     <DefaultLayout>
+      <NextSeo title={`制度作ったったーとは? | ${PAGE_TITLE}`} />
       <Spacer size={12} />
       <Title>ある日...</Title>
       <Spacer size={8} />

@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { NextPage } from "next"
+import { NextSeo } from "next-seo"
 import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 
@@ -29,6 +30,7 @@ import { preventEventByEnter } from "~/utils/keyDown"
 import * as Styled from "./index.style"
 
 import { placeholderSystem } from "~/constants/companySystem"
+import { PAGE_TITLE } from "~/constants/seo"
 
 export const CreateSystemPage: NextPage = () => {
   const [isConfirModalOpen, openConfirmModal, closeConfirmModal] =
@@ -96,6 +98,7 @@ export const CreateSystemPage: NextPage = () => {
 
   return (
     <DetailLayout title="新規作成">
+      <NextSeo title={`制度の新規作成 | ${PAGE_TITLE}`} />
       <CompanySystemThumbnail companySystem={companySystem} />
       <Styled.Form
         onKeyDown={(e) => preventEventByEnter(e)}

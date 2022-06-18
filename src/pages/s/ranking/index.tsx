@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo"
 import { useCallback } from "react"
 
 import Button from "~/components/ui/Button"
@@ -16,6 +17,8 @@ import { useGetInfinityCompanySystemRanking } from "~/hooks/api/companySystem"
 
 import type { NextPage } from "next"
 
+import { PAGE_TITLE } from "~/constants/seo"
+
 const Home: NextPage = () => {
   const { data, isLoading, isEnd, setSize, size } =
     useGetInfinityCompanySystemRanking()
@@ -26,12 +29,13 @@ const Home: NextPage = () => {
 
   return (
     <DefaultLayout>
+      <NextSeo title={`ランキング | ${PAGE_TITLE}`} />
       <Spacer axis="vertical" size={12} />
       <Title>#ランキング</Title>
       <Spacer axis="vertical" size={12} />
       <CharacterChat
         name="ひつじ社員"
-        text={`人気の制度の一覧だよ！!\n便利そうな制度がいっぱいあって\n楽しそうだね(｀・ω・´)`}
+        text={`人気の制度一覧だよ！!\n便利そうな制度がいっぱいあって\n楽しそうだね(｀・ω・´)`}
         icon="/sheep.svg"
       />
       <Spacer axis="vertical" size={36} />

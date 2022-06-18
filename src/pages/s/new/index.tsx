@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo"
 import { useCallback } from "react"
 
 import Button from "~/components/ui/Button"
@@ -16,6 +17,8 @@ import { useGetInfinityCompanySystems } from "~/hooks/api/companySystem"
 
 import type { NextPage } from "next"
 
+import { PAGE_TITLE } from "~/constants/seo"
+
 const NewShindanPage: NextPage = () => {
   const { data, isLoading, isEnd, setSize, size } =
     useGetInfinityCompanySystems()
@@ -26,6 +29,7 @@ const NewShindanPage: NextPage = () => {
 
   return (
     <DefaultLayout>
+      <NextSeo title={`新しい制度 | ${PAGE_TITLE}`} />
       <Spacer axis="vertical" size={12} />
       <Title>#あたらしい制度</Title>
       <Spacer axis="vertical" size={12} />
