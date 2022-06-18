@@ -1,6 +1,6 @@
 import { ThemeProvider, Global } from "@emotion/react"
 import { NextSeo } from "next-seo"
-import { Head } from "next/head"
+import Head from "next/head"
 import { RecoilRoot } from "recoil"
 
 import ErrorModalControl from "~/components/functional/ErrorModalControl"
