@@ -126,7 +126,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
           ツイートする
         </Button>
         <IconCheck
-          disabled={isLoading}
+          disabled={isLoading || isLoadingPostLike}
           value={liked}
           onChange={handleLike}
           icon="thumbsUp"
