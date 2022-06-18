@@ -24,6 +24,7 @@ export const Box = styled.div({
 export const Logo = styled.img({
   width: "32px",
   height: "32px",
+  marginRight: "8px",
 })
 
 export const List = styled.ul({

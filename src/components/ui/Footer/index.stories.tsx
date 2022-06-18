@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import Component from "./index"
 
 export default {
-  title: "",
+  title: "ui/Footer",
   component: Component,
   argTypes: {},
 } as ComponentMeta<typeof Component>
