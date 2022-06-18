@@ -31,7 +31,7 @@ const NAME_STYLE = {
 
 const DESCRIPTION_STYLE = {
   font: 'regular 22px "FONT_MEDIUM"',
-  lineHeight: 36,
+  lineHeight: 32,
 } as const
 
 const AUTHOR_STYLE = {
@@ -107,7 +107,10 @@ function drawDescription(
     ctx.fillText(
       line,
       PADDING_X,
-      PADDING_TOP + nameHeight + 10 + DESCRIPTION_STYLE.lineHeight * i
+      PADDING_TOP +
+        nameHeight +
+        (descriptionLineCount === 2 ? -5 : 10) +
+        DESCRIPTION_STYLE.lineHeight * i
     )
   }
 }
