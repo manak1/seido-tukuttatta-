@@ -3,7 +3,7 @@ import Head from "next/head"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useReward } from "react-rewards"
 
-import Button from "~/components/ui/Button"
+import ButtonLink from "~/components/ui/ButtonLink"
 import IconCheck from "~/components/ui/IconCheck"
 import Title from "~/components/ui/Title"
 
@@ -18,6 +18,7 @@ import {
   usePostCompanySystemLike,
 } from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
+import { createTwitterShareUrl } from "~/utils/twitter"
 
 import * as Styled from "./index.style"
 
@@ -109,6 +110,9 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
           property="twitter:image"
           content={`https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`}
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={companySystem.name} />
+        <meta name="twitter:description" content={companySystem.description} />
       </Head>
       <Spacer size={4} />
       <CompanySystemThumbnail companySystem={companySystem} />
@@ -122,9 +126,16 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       <Spacer size={32} />
       <Styled.Author>作成者 : @{companySystem.author}</Styled.Author>
       <Styled.Share>
-        <Button variant="twitter" icon="twitter">
+        <ButtonLink
+          href={createTwitterShareUrl(
+            "りんご食べ放題制度",
+            "https://seido-tukuttatta.vercel.app/s/31ba67b6-a366-43ab-b2b4-a58e415d9d5c"
+          )}
+          variant="twitter"
+          icon="twitter"
+        >
           ツイートする
-        </Button>
+        </ButtonLink>
         <IconCheck
           disabled={isLoading || isLoadingPostLike}
           value={liked}
