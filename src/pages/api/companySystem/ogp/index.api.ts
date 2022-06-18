@@ -136,7 +136,7 @@ const handler = createHandler()
 handler.get("api/companySystem/ogp", async (req, res) => {
   const { name, description, author } = req.query
   if (isString(name) && isString(description) && isString(author)) {
-    const buffer = await createOGP({ name, author, description })
+    const buffer = await createOGP({ name, author: `@${author}`, description })
     res.writeHead(200, {
       "Content-Type": "image/png",
       "Content-Length": buffer.length,
