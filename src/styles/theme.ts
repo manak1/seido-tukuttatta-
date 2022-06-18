@@ -8,6 +8,7 @@ export const theme = {
     default: "16px",
     small: "14px",
     xsmall: "12px",
+    xxsmall: "10px",
   },
   colors: {
     black: "#333",
@@ -18,6 +19,7 @@ export const theme = {
     link: "#1976D2",
     bg: "#F7FAFC",
     blue: "#3EA8FF",
+    chat: "#EFF3F4",
   },
   letterSpacing: {
     wide: "0.025em",
