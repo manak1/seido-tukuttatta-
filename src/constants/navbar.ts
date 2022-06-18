@@ -1,4 +1,4 @@
-import { Home, Search, EmojiEvents, FiberNew } from "@emotion-icons/material"
+import { Home, Help, EmojiEvents, FiberNew } from "@emotion-icons/material"
 
 import { NavItem } from "~/components/ui/NavBottom"
 
@@ -9,9 +9,9 @@ export const navLinks: NavItem[] = [
     icon: Home,
   },
   {
-    label: "検索",
-    href: "/s/search",
-    icon: Search,
+    label: "新着",
+    href: "/s/new",
+    icon: FiberNew,
   },
   {
     label: "ランキング",
@@ -19,8 +19,8 @@ export const navLinks: NavItem[] = [
     icon: EmojiEvents,
   },
   {
-    label: "新着",
-    href: "/s/new",
-    icon: FiberNew,
+    label: "制度作ったったーについて",
+    href: "/about",
+    icon: Help,
   },
 ]
