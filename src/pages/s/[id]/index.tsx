@@ -1,6 +1,5 @@
 import { NextPage, GetServerSideProps } from "next"
 import { NextSeo } from "next-seo"
-import Head from "next/head"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useReward } from "react-rewards"
 
@@ -108,9 +107,13 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         description={companySystem.description}
         openGraph={{
           description: companySystem.description,
+          url: `https://seido-tukuttatta.vercel/s/${companySystem.id}`,
           images: [
             {
               url: `https://seido-tukuttatta.vercel.app/api/companySystem/ogp?name=${companySystem.name}&description=${companySystem.description}&author=${companySystem.author}`,
+              width: 654,
+              height: 356,
+              type: "image/png",
             },
           ],
           title: `${companySystem.name} | ${PAGE_TITLE}`,
