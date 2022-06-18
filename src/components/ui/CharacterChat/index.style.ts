@@ -18,6 +18,7 @@ export const Chat = styled.p<Pick<CharacterChatProps, "direction">>(
     display: "flex",
     margin: "0",
     padding: "24px",
+    whiteSpace: "break-spaces",
   },
   ({ theme, direction }) => ({
     backgroundColor: theme.colors.chat,
@@ -51,7 +52,6 @@ export const Name = styled.p(
   {
     margin: "0",
     wordBreak: "keep-all",
-    whiteSpace: "break-spaces",
   },
   ({ theme }) => ({
     fontSize: theme.fontSizes.xxsmall,
