@@ -15,27 +15,27 @@ import { isString } from "~/utils/type"
 const BASE_IMAGE_PATH = path.resolve("./public", "baseOGP.png")
 const FALL_BACK_IMAGE = path.resolve("./public", "ogp.png")
 
-const PADDING_X = 60
-const PADDING_TOP = 80
+const PADDING_X = 45
+const PADDING_TOP = 75
 const MAX_NAME_LINE_COUNT = 2
-const CANVAS_WIDTH = 654
-const CANVAS_HEIGHT = 356
+const CANVAS_WIDTH = 600
+const CANVAS_HEIGHT = 314
 const FONT_BLACK = path.resolve("./public", "fonts/NotoSansJP-Black.otf")
 const FONT_MEDIUM = path.resolve("./public", "fonts/NotoSansJP-Medium.otf")
 const FONT_REGULAR = path.resolve("./public", "fonts/NotoSansJP-Regular.otf")
 
 const NAME_STYLE = {
-  font: 'bold 40px "FONT_BLACK"',
+  font: 'bold 38px "FONT_BLACK"',
   lineHeight: 50,
 } as const
 
 const DESCRIPTION_STYLE = {
-  font: 'regular 24px "FONT_MEDIUM"',
-  lineHeight: 42,
+  font: 'regular 22px "FONT_MEDIUM"',
+  lineHeight: 36,
 } as const
 
 const AUTHOR_STYLE = {
-  font: 'regular 20px "FONT_REGULAR"',
+  font: 'regular 18px "FONT_REGULAR"',
   lineHeight: 30,
 }
 
