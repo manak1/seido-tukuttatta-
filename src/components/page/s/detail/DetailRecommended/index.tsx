@@ -1,40 +1,36 @@
 import Link from "next/link"
-import { useRouter } from "next/router"
-import React, { useCallback } from "react"
+import React from "react"
 
-import Button from "~/components/ui/Button"
+import ButtonLink from "~/components/ui/ButtonLink"
 import Title from "~/components/ui/Title"
 
 import LoadingContent from "~/components/functional/LoadingContent"
 import Spacer from "~/components/functional/Spacer"
 
+import { CompanySystem } from "~/@types"
 import CompanySystemList from "~/components/model/companySystem/CompanySystemList"
-import { useGetInfinityCompanySystems } from "~/hooks/api/companySystem"
 
 import * as Styled from "./index.style"
 
-const DetailRecommended: React.FC = () => {
-  const { data, size, setSize, isEnd, isLoading, isValidating } =
-    useGetInfinityCompanySystems()
+type DetailRecommendedProps = {
+  companySystem: CompanySystem[]
+  isLoading: boolean
+}
 
-  const router = useRouter()
-
-  const jumpToHome = useCallback(() => {
-    router.push("/")
-  }, [router])
-
+const DetailRecommended: React.FC<DetailRecommendedProps> = (props) => {
+  const { isLoading, companySystem } = props
   return (
     <Styled.Wrapper>
-      <Title>おすすめの制度</Title>
+      <Title>#おすすめの制度</Title>
       <Spacer axis="vertical" size={12} />
       <LoadingContent isLoading={isLoading}>
-        <CompanySystemList companySystems={data ?? []} />
+        <CompanySystemList companySystems={companySystem ?? []} />
       </LoadingContent>
-      <Spacer axis="vertical" size={16} />
-      <Button isFullWidth variant="outline" size="small" onClick={jumpToHome}>
+      <Spacer axis="vertical" size={32} />
+      <ButtonLink isFullWidth variant="outline" size="small" href="/s/create">
         制度をつくる
-      </Button>
-      <Spacer axis="vertical" size={12} />
+      </ButtonLink>
+      <Spacer axis="vertical" size={16} />
       <Link href="/" passHref>
         <Styled.Link>トップページに戻る</Styled.Link>
       </Link>

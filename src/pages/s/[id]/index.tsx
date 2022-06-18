@@ -15,6 +15,7 @@ import CompanySystemThumbnail from "~/components/model/companySystem/CompanySyst
 import DetailRecommended from "~/components/page/s/detail/DetailRecommended"
 import {
   useGetCompanySystemLike,
+  useGetRandomCompanySystem,
   usePostCompanySystemLike,
 } from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
@@ -40,6 +41,12 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   const { getCompanySystemLike, isLoading } = useGetCompanySystemLike()
   const { postCompanySystemlike, isLoading: isLoadingPostLike } =
     usePostCompanySystemLike()
+
+  const { getRandomCompanySystem, isLoading: isLoadingRandomSystem } =
+    useGetRandomCompanySystem()
+  const [randomCompanySystems, setRandomCompanySystems] = useState<
+    CompanySystem[]
+  >([])
   const [liked, setLiked] = useState(false)
   const [count, setCount] = useState(0)
   const { addError } = useModalError()
@@ -57,18 +64,29 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
 
   useEffect(() => {
     const init = async () => {
-      const data = await getCompanySystemLike(
+      const likeData = getCompanySystemLike(
         companySystem.id,
         companySystem.number
-      ).catch((error) => {
-        if (error instanceof Error) {
-          addError(error)
+      )
+      const randomSysytem = getRandomCompanySystem()
+      const results = await Promise.all([likeData, randomSysytem]).catch(
+        (error) => {
+          if (error instanceof Error) {
+            addError(error)
+          }
+          return Promise.reject(error)
         }
-        return Promise.reject(error)
-      })
-      if (data) {
-        setLiked(data.liked)
-        setCount(data.count)
+      )
+
+      const likeResponse = results[0]
+      if (likeResponse) {
+        setLiked(likeResponse.liked)
+        setCount(likeResponse.count)
+      }
+
+      const randomCompanySystemResponse = results[1]
+      if (randomCompanySystemResponse) {
+        setRandomCompanySystems(randomCompanySystemResponse.companySystems)
       }
     }
     init()
@@ -153,7 +171,11 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       </Styled.Share>
       <Spacer size={16} />
       <Styled.Divider />
-      <DetailRecommended />
+      <Spacer size={8} />
+      <DetailRecommended
+        isLoading={isLoadingRandomSystem}
+        companySystem={randomCompanySystems}
+      />
     </DetailLayout>
   )
 }
