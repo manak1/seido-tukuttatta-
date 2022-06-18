@@ -9,9 +9,11 @@ export type CharacterChatProps = {
   icon: string
   name: string
   direction?: CharacterDirection
-} & React.ComponentProps<"div">
+}
 
-const CharacterChat: React.VFC<CharacterChatProps> = (props) => {
+const CharacterChat: React.VFC<
+  CharacterChatProps & React.ComponentProps<"div">
+> = (props) => {
   const { text, icon, direction = "right", name, ...rest } = props
   return (
     <Styled.Wrapper direction={direction} {...rest}>
