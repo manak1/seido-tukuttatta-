@@ -2,13 +2,17 @@ import React, { useEffect, useMemo } from "react"
 import { useReward } from "react-rewards"
 
 import Button from "~/components/ui/Button"
+import ButtonLink from "~/components/ui/ButtonLink"
 import Modal, { ModalProps } from "~/components/ui/Modal"
 
-import { useBoolean } from "~/hooks/boolean"
+import { createdCompanySystemUrl } from "~/utils/twitter"
 
 import * as Styled from "./index.style"
 
+import { config } from "~/constants/config"
+
 export type CreatedCompanySystemModalProps = ModalProps & {
+  id: string
   companyName: string
   onConfirm: () => void
 }
@@ -16,7 +20,7 @@ export type CreatedCompanySystemModalProps = ModalProps & {
 const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
   props
 ) => {
-  const { onClose, onConfirm, isOpen, domId, companyName } = props
+  const { onClose, id, isOpen, domId, companyName } = props
 
   const { reward } = useReward("created-system", "confetti", {
     lifetime: 300,
@@ -26,13 +30,12 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
   })
 
   useEffect(() => {
-    if (rewarded) return
     reward()
-  }, [reward, rewarded])
+  }, [])
 
   const createMessage = useMemo(() => {
     return `株式会社ぺんぎんにあたらしい制度
-    ${companyName} が誕生しました。
+    「${companyName}」 が誕生しました。
    素晴らしい制度の誕生をTwitterで皆さんに知らせてあげてください。`
   }, [companyName])
 
@@ -42,9 +45,15 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
       <Styled.Title>おめでとうございます！！ </Styled.Title>
       <Styled.Message>{createMessage}</Styled.Message>
       <Styled.Buttons>
-        <Button onClick={onConfirm} isFullWidth>
+        <ButtonLink
+          isFullWidth
+          href={createdCompanySystemUrl(
+            companyName,
+            `${config.SITE_URL}s/${id}`
+          )}
+        >
           制度を共有する
-        </Button>
+        </ButtonLink>
         <Button onClick={onClose} variant="cancel" isFullWidth>
           閉じる
         </Button>
