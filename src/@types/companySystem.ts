@@ -20,11 +20,15 @@ export type CompanySystem = {
    * 作成番号
    */
   number: number
+  /**
+   * 作成日
+   */
+  createdAt: string
 }
 
 export type CreateCompanySystem = Omit<
   CompanySystem,
-  "id" | "author" | "number"
+  "id" | "author" | "number" | "createdAt"
 > & {
   /**
    * 作者
