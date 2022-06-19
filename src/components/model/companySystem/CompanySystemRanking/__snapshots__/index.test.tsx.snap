@@ -244,7 +244,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           >
             <h2
               class="emotion-6"
-              id="gradientTitle"
+              id="gradientTitle0"
             >
               おひるねし放題制度
             </h2>
@@ -293,7 +293,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           >
             <h2
               class="emotion-6"
-              id="gradientTitle"
+              id="gradientTitle1"
             >
               おひるねし放題制度
             </h2>
@@ -342,7 +342,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           >
             <h2
               class="emotion-6"
-              id="gradientTitle"
+              id="gradientTitle2"
             >
               おひるねし放題制度
             </h2>
@@ -391,7 +391,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           >
             <h2
               class="emotion-6"
-              id="gradientTitle"
+              id="gradientTitle3"
             >
               おひるねし放題制度
             </h2>
@@ -440,7 +440,7 @@ exports[`CompanySystemListのテスト snapshot 1`] = `
           >
             <h2
               class="emotion-6"
-              id="gradientTitle"
+              id="gradientTitle4"
             >
               おひるねし放題制度
             </h2>
