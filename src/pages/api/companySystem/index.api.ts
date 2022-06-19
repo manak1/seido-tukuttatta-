@@ -38,14 +38,14 @@ handler
   .post("api/companySystem", async (req, res) => {
     const { name, description, author } = req.body as CreateCompanySystem
     try {
-      const result = await prisma.companySystem.create({
+      const companySystem = await prisma.companySystem.create({
         data: {
           name,
           description,
           author: author ?? "名無さん",
         },
       })
-      setResponse.Created(res, result)
+      setResponse.Created(res, { companySystem })
     } catch (error) {
       if (error instanceof PrismaClientValidationError) {
         setResponse.BadRequest(res)
