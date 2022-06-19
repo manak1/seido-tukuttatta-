@@ -26,6 +26,8 @@ export const Author = styled.p(
   })
 )
 
+export const CreatedDate = Author
+
 export const Divider = styled.hr({}, ({ theme }) => ({
   borderColor: theme.colors.gray,
 }))

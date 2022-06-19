@@ -19,7 +19,8 @@ import {
   usePostCompanySystemLike,
 } from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
-import { createTwitterShareUrl } from "~/utils/twitter"
+import { formatDate } from "~/utils/date"
+import { createTwitterShareUrl, shareCompanySystemUrl } from "~/utils/twitter"
 
 import * as Styled from "./index.style"
 
@@ -147,12 +148,17 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
       <Spacer size={8} />
       <Styled.Description>{companySystem.description}</Styled.Description>
       <Spacer size={32} />
+      <Styled.CreatedDate>
+        作成日 : {formatDate(companySystem.createdAt)}
+      </Styled.CreatedDate>
+      <Spacer size={4} />
       <Styled.Author>作成者 : @{companySystem.author}</Styled.Author>
       <Styled.Share>
         <ButtonLink
-          href={createTwitterShareUrl(
-            "りんご食べ放題制度",
-            "https://seido-tukuttatta.vercel.app/s/31ba67b6-a366-43ab-b2b4-a58e415d9d5c"
+          href={shareCompanySystemUrl(
+            companySystem.name,
+            companySystem.number,
+            `${config.SITE_URL}${companySystem.id}`
           )}
           variant="twitter"
           icon="twitter"
