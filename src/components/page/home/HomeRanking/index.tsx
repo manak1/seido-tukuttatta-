@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React from "react"
 
 import ButtonLink from "~/components/ui/ButtonLink"
 import Title from "~/components/ui/Title"
