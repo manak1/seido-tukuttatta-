@@ -18,13 +18,11 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
 ) => {
   const { onClose, onConfirm, isOpen, domId, companyName } = props
 
-  const [rewarded, setRewarded] = useBoolean(false)
-
-  const { reward } = useReward("rewardId", "confetti", {
-    lifetime: 1000,
+  const { reward } = useReward("created-system", "confetti", {
+    lifetime: 300,
     spread: 60,
-    elementCount: 100,
-    onAnimationComplete: () => setRewarded(),
+    elementCount: 80,
+    startVelocity: 70,
   })
 
   useEffect(() => {

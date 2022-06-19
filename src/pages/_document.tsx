@@ -1,4 +1,15 @@
+import styled from "@emotion/styled"
 import { Html, Head, Main, NextScript } from "next/document"
+
+export const Target = styled.div({
+  position: "absolute",
+  top: "0",
+  left: "50%",
+  width: "16px",
+  height: "16px",
+  transform: "translateX(-50%)",
+  zIndex: "999",
+})
 
 const Docuemnt = () => {
   return (
@@ -30,6 +41,7 @@ const Docuemnt = () => {
       </Head>
       <body>
         <Main />
+        <Target id="created-system" />
         <div id="modal-portal" />
         <NextScript />
       </body>
