@@ -20,7 +20,7 @@ import {
 } from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
 import { formatDate } from "~/utils/date"
-import { createTwitterShareUrl, shareCompanySystemUrl } from "~/utils/twitter"
+import { shareCompanySystemUrl } from "~/utils/twitter"
 
 import * as Styled from "./index.style"
 
