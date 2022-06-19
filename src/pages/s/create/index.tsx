@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { NextPage } from "next"
 import { NextSeo } from "next-seo"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 
 import { companySystemSchema } from "~/libs/zod"
@@ -39,6 +39,7 @@ export const CreateSystemPage: NextPage = () => {
   const [isSubmitted, setSubmittedTrue] = useBoolean(false)
   const [isCreateModalOpen, openCreatedModal, closeCreatedModal] =
     useBoolean(false)
+  const [createdCompanySystemId, setCreatedCompanySystemId] = useState("")
   const { post } = usePostCompanySystem()
   const { mutate } = useGetInfinityCompanySystems()
 
@@ -70,11 +71,12 @@ export const CreateSystemPage: NextPage = () => {
   const onConfirm = async () => {
     if (isSubmitted) return
     const formData = getValues()
-    const companySystem = await post(formData).catch((error) => {
+    const data = await post(formData).catch((error) => {
       addError(error)
     })
 
-    if (companySystem) {
+    if (data?.companySystem) {
+      setCreatedCompanySystemId(data.companySystem.id)
       openCreatedModal()
       closeConfirmModal()
       setSubmittedTrue()
@@ -99,14 +101,14 @@ export const CreateSystemPage: NextPage = () => {
   return (
     <DetailLayout title="新規作成">
       <NextSeo title={`制度の新規作成 | ${PAGE_TITLE}`} />
-      <CompanySystemThumbnail companySystem={companySystem} />
+      <CompanySystemThumbnail id="createNew" companySystem={companySystem} />
       <Styled.Form
         onKeyDown={(e) => preventEventByEnter(e)}
         onSubmit={handleSubmit(onSubmit)}
       >
         <RfhInputText
           label="制度の名前は？"
-          placeholder="有給取り放題制度"
+          placeholder="おひるねし放題制度"
           name="name"
           control={control}
         />
@@ -114,11 +116,11 @@ export const CreateSystemPage: NextPage = () => {
           control={control}
           label="どんな制度?"
           name="description"
-          placeholder="傷病、育児、家族の看護・介護など、不測の事態、避けられない事態によって、将来、働けなくなるリスクを少しでも解消するために、無制限で有給休暇を取得することが可能です。"
+          placeholder="一日に一度お昼寝することを許可する。二度寝は禁止で睡眠開始から起床までの時間を業務時間として申請する事が出来る制度"
         />
         <RfhInputText
           label="あなたのお名前は？"
-          placeholder="@mikeanakida"
+          placeholder="ひつじ社員"
           name="author"
           control={control}
           isOptional
@@ -126,7 +128,10 @@ export const CreateSystemPage: NextPage = () => {
         <div>
           <Label label="完成イメージ" />
           <Spacer size={8} />
-          <CompanySystemThumbnail companySystem={companySystem} />
+          <CompanySystemThumbnail
+            id="createNew"
+            companySystem={companySystem}
+          />
         </div>
         <Button type="submit" disabled={isButtonDisabled} isFullWidth>
           制度をつくる
@@ -141,6 +146,7 @@ export const CreateSystemPage: NextPage = () => {
         <CreatedSystemCompanyModal
           isOpen={isCreateModalOpen}
           companyName={companySystem.name}
+          id={createdCompanySystemId}
           onClose={closeCreatedModal}
           onConfirm={closeCreatedModal}
         />

@@ -138,7 +138,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         }}
       />
       <Spacer size={4} />
-      <CompanySystemThumbnail companySystem={companySystem} />
+      <CompanySystemThumbnail id="detail" companySystem={companySystem} />
       <Spacer size={24} />
       <Styled.SystemNumber>No.{systemNumber}</Styled.SystemNumber>
       <Title fontWeight="black" size="md">

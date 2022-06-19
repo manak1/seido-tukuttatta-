@@ -29,7 +29,7 @@ const CompanySystemRanking: React.VFC<CompanySystemListProps> = (props) => {
                 <Styled.RankMedal variant={setMedalVariant(index)}>
                   {index + 1}
                 </Styled.RankMedal>
-                <CompanySystemThumbnail companySystem={system} />
+                <CompanySystemThumbnail id={system.id} companySystem={system} />
               </Styled.Link>
             </Link>
           </Styled.Item>

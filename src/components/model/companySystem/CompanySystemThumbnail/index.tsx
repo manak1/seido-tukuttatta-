@@ -20,13 +20,13 @@ export default CompanySystemThumbnail
 
 /* ここ以下にサムネパターンを定義 */
 const ThumbnailGradient: React.FC<CompanySystemThumbnailProps> = (props) => {
-  const { companySystem } = props
+  const { companySystem, id } = props
   const [titleLineNumber, setTitleLineNumber] = useState(1)
   const titleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     if (!document) return
-    const ref = document.getElementById("gradientTitle")
+    const ref = document.getElementById(`gradientTitle${id}`)
     if (!ref) return
     const height = ref.clientHeight
     const fontSize = 24
@@ -39,7 +39,7 @@ const ThumbnailGradient: React.FC<CompanySystemThumbnailProps> = (props) => {
     <>
       <Styled.Gradient.Thumbnail>
         <Styled.Gradient.Wrapper>
-          <Styled.Gradient.Title id="gradientTitle" ref={titleRef}>
+          <Styled.Gradient.Title id={`gradientTitle${id}`} ref={titleRef}>
             {companySystem.name}
           </Styled.Gradient.Title>
           <Styled.Gradient.Description lineLength={titleLineNumber}>
