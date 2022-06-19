@@ -3,7 +3,7 @@ export type CompanySystem = {
   /**
    * id
    */
-  id: number
+  id: string
   /**
    * 名前
    */
