@@ -21,7 +21,7 @@ export const companySystemSchema = schemaForType<CreateCompanySystem>()(
     author: z.string().optional(),
     description: z
       .string()
-      .min(30, messages.minMaxLength("制度の概要", 30, 300))
+      .min(10, messages.minMaxLength("制度の概要", 10, 300))
       .max(300, messages.maxLength("制度の内容", 300)),
   })
 )
