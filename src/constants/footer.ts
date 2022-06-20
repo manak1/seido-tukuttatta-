@@ -19,4 +19,8 @@ export const footerLinks = [
     href: "/s/create",
     title: "制度をつくる",
   },
+  {
+    href: "/term",
+    title: "利用規約",
+  },
 ]
