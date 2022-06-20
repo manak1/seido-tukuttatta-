@@ -22,20 +22,20 @@ const CreatedSystemCompanyModal: React.VFC<CreatedCompanySystemModalProps> = (
 ) => {
   const { onClose, id, isOpen, domId, companyName } = props
 
-  const { reward } = useReward("created-system", "confetti", {
+  const { reward } = useReward("rewardId", "confetti", {
     lifetime: 300,
     spread: 60,
     elementCount: 80,
-    startVelocity: 70,
+    startVelocity: 50,
   })
 
   useEffect(() => {
-    reward()
+    setTimeout(() => reward(), 400)
   }, [])
 
   const createMessage = useMemo(() => {
     return `株式会社ぺんぎんにあたらしい制度
-    「${companyName}」 が誕生しました。
+    「${companyName}」 が爆誕しました。
    素晴らしい制度の誕生をTwitterで皆さんに知らせてあげてください。`
   }, [companyName])
 

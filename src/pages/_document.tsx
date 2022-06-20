@@ -41,7 +41,6 @@ const Docuemnt = () => {
       </Head>
       <body>
         <Main />
-        <Target id="created-system" />
         <div id="modal-portal" />
         <NextScript />
       </body>
