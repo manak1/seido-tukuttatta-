@@ -3,6 +3,8 @@ import { NextSeo } from "next-seo"
 import Head from "next/head"
 import { RecoilRoot } from "recoil"
 
+import { GoogleAnalytics, usePageView } from "~/libs/gtag"
+
 import ErrorModalControl from "~/components/functional/ErrorModalControl"
 import SwrConfig from "~/components/functional/SwrConfig"
 
@@ -16,6 +18,7 @@ import { config } from "~/constants/config"
 import { PAGE_DESCRIPTION, PAGE_TITLE } from "~/constants/seo"
 
 function MyApp({ Component, pageProps }: AppProps) {
+  usePageView()
   return (
     <>
       <Head>
@@ -43,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
         twitter={{ cardType: "summary_large_image" }}
       />
+      <GoogleAnalytics />
       <RecoilRoot>
         <SwrConfig>
           <ThemeProvider theme={theme}>
