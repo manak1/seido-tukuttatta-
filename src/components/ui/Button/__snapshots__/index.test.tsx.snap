@@ -16,6 +16,10 @@ exports[`Buttonのテスト snapshot 1`] = `
   -webkit-box-align: normal;
   -ms-flex-align: normal;
   align-items: normal;
+  -webkit-box-pack: normal;
+  -ms-flex-pack: normal;
+  -webkit-justify-content: normal;
+  justify-content: normal;
   font-weight: bold;
   background-color: #7856FF;
   color: #fff;
