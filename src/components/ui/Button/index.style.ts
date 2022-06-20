@@ -17,6 +17,7 @@ export const Button = styled.button<Omit<ButtonProps, "label">>(
     width: isFullWidth ? "100%" : "auto",
     display: icon ? "flex" : "initial",
     alignItems: icon ? "center" : "normal",
+    justifyContent: isFullWidth ? "center" : "normal",
     fontWeight: "bold",
     "&:hover": {
       filter: "brightness(95%)",
