@@ -3,13 +3,14 @@ import { NextSeo } from "next-seo"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useReward } from "react-rewards"
 
+import Button from "~/components/ui/Button"
 import ButtonLink from "~/components/ui/ButtonLink"
 import IconCheck from "~/components/ui/IconCheck"
 import Title from "~/components/ui/Title"
 
 import Spacer from "~/components/functional/Spacer"
 
-import DetailLayout from "~/layouts/DetailLayout"
+import DefaultLayout from "~/layouts/DefaultLayout"
 
 import CompanySystemThumbnail from "~/components/model/companySystem/CompanySystemThumbnail"
 import DetailRecommended from "~/components/page/s/detail/DetailRecommended"
@@ -19,6 +20,7 @@ import {
   usePostCompanySystemLike,
 } from "~/hooks/api/companySystem"
 import { useModalError } from "~/hooks/modalError"
+import useCopyToClipboard from "~/hooks/useCopyToClipboard"
 import { formatDate } from "~/utils/date"
 import { shareCompanySystemUrl } from "~/utils/twitter"
 
@@ -51,6 +53,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   const [liked, setLiked] = useState(false)
   const [count, setCount] = useState(0)
   const { addError } = useModalError()
+  const [, copy] = useCopyToClipboard()
 
   const { reward } = useReward("likeCheck", "confetti", {
     lifetime: 100,
@@ -58,10 +61,21 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
     startVelocity: 20,
   })
 
+  const { reward: copySuccess } = useReward("linkCopy", "emoji", {
+    startVelocity: 20,
+    spread: 30,
+    emoji: ["🔗"],
+  })
+
   const systemNumber = useMemo(
     () => String(companySystem.number).padStart(3, "0"),
     [companySystem.number]
   )
+
+  const clickCopyLink = useCallback(async () => {
+    const isCopied = await copy(`${config.SITE_URL}${companySystem.id}`)
+    isCopied ? copySuccess() : alert("リンクのコピーに失敗しました(´・ω・`)")
+  }, [companySystem.id, copy, copySuccess])
 
   useEffect(() => {
     const init = async () => {
@@ -120,7 +134,8 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   )
 
   return (
-    <DetailLayout title="制度詳細">
+    <DefaultLayout>
+      <Spacer size={16} />
       <NextSeo
         title={`${companySystem.name} | ${PAGE_TITLE}`}
         description={companySystem.description}
@@ -175,6 +190,10 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
           {count}
         </IconCheck>
       </Styled.Share>
+      <Spacer size={4} />
+      <Button icon="link" isFullWidth id="linkCopy" onClick={clickCopyLink}>
+        リンクをコピーする
+      </Button>
       <Spacer size={16} />
       <Styled.Divider />
       <Spacer size={8} />
@@ -182,7 +201,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         isLoading={isLoadingRandomSystem}
         companySystem={randomCompanySystems}
       />
-    </DetailLayout>
+    </DefaultLayout>
   )
 }
 

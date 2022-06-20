@@ -1,4 +1,4 @@
-import { Twitter, HandThumbsUpFill } from "@emotion-icons/bootstrap"
+import { Twitter, HandThumbsUpFill, Link } from "@emotion-icons/bootstrap"
 import { css } from "@emotion/react"
 import React, { useCallback } from "react"
 
@@ -7,6 +7,7 @@ import * as Styled from "./index.style"
 const buttonIcons = {
   twitter: Twitter,
   thumbsUp: HandThumbsUpFill,
+  link: Link,
 }
 
 export type ButtonVariant =
