@@ -3,9 +3,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import Component from "./index"
 
 export default {
-  title: "",
+  title: "ui/Icon",
   component: Component,
-  argTypes: {},
+  argTypes: {
+    icon: {
+      control: "radio",
+      options: ["twitter", "thumbsUp", "thumbsUpFill"],
+      defaultValue: "twitter",
+    },
+  },
 } as ComponentMeta<typeof Component>
 
 const Template: ComponentStory<typeof Component> = (args) => {
