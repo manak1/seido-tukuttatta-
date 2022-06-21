@@ -35,7 +35,7 @@ const NewShindanPage: NextPage = () => {
       <Spacer axis="vertical" size={12} />
       <CharacterChat
         name="ぺんぎんシャチョ"
-        text={`新着制度の一覧だよ!!\n面白い制度がいっぱいあるね(｀・ω・´)`}
+        text={`あたらしく誕生した制度の一覧だよ!!\n面白い制度がいっぱいあるね(｀・ω・´)`}
         icon="/penchan2.svg"
       />
       <Spacer axis="vertical" size={36} />
