@@ -172,7 +172,6 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
         <ButtonLink
           href={shareCompanySystemUrl(
             companySystem.name,
-            companySystem.number,
             `${config.SITE_URL}s/${companySystem.id}`
           )}
           variant="twitter"
