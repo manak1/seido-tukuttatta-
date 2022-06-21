@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@emotion/react"
 import { theme } from "~/styles/theme"
+import "sanitize.css"
 
 export const decorators = [
   (Story) => {
