@@ -7,7 +7,6 @@ export const Target = styled.div({
   width: "16px",
   height: "16px",
   transform: "translateX(-50%)",
-  backgroundColor: "red",
 })
 
 export const Box = styled.div({
