@@ -53,5 +53,10 @@ const setTitleSize = (size: TitleSizes = "default", theme: Theme) => {
       return {
         fontSize: theme.fontSizes.xlarge,
       }
+
+    case "xlg":
+      return {
+        fontSize: theme.fontSizes.xxlarge,
+      }
   }
 }

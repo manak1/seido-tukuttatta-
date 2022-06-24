@@ -2,7 +2,7 @@ import React, { useMemo } from "react"
 
 import * as Styled from "./index.style"
 
-export type TitleSizes = "sm" | "default" | "md" | "lg"
+export type TitleSizes = "sm" | "default" | "md" | "lg" | "xlg"
 export type TitleTags = "h1" | "h2" | "h3" | "p"
 export type TitleBold = "bold" | "black"
 
