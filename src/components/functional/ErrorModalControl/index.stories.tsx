@@ -1,10 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import React, { useCallback, useEffect } from "react"
-import { useSetRecoilState } from "recoil"
+import { useCallback, useEffect } from "react"
 
 import { useModalError } from "~/hooks/modalError"
-import { errorsAtom } from "~/store/errorts"
-import { add } from "~/utils/math"
 
 import { recoilProvider } from "../../../../.storybook/provider"
 
