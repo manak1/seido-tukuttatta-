@@ -1,4 +1,4 @@
-![samune](https://user-images.githubusercontent.com/32151765/164986178-b885c99e-aac0-4fcc-88c8-d3271825e796.jpg)
+<img src="https://user-images.githubusercontent.com/32151765/175820428-0be090ab-0452-4d0d-b14a-61e7ff5cf231.png" width="520"/>
 
 # 制度作ったったー
 
