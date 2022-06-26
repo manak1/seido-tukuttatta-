@@ -73,7 +73,7 @@ const CompanySystemDetailPage: NextPage<CompanySystemDetailPageProps> = (
   )
 
   const clickCopyLink = useCallback(async () => {
-    const isCopied = await copy(`${config.SITE_URL}${companySystem.id}`)
+    const isCopied = await copy(`${config.SITE_URL}s/${companySystem.id}`)
     isCopied ? copySuccess() : alert("リンクのコピーに失敗しました(´・ω・`)")
   }, [companySystem.id, copy, copySuccess])
 
