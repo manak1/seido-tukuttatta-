@@ -15,7 +15,7 @@ import { isString } from "~/utils/type"
 const BASE_IMAGE_PATH = path.resolve("./public", "baseOGP.png")
 const FALL_BACK_IMAGE = path.resolve("./public", "ogp.png")
 
-const PADDING_X = 45
+const PADDING_X = 50
 const PADDING_TOP = 75
 const MAX_NAME_LINE_COUNT = 2
 const CANVAS_WIDTH = 600
